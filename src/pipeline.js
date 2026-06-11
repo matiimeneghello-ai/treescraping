@@ -1,0 +1,110 @@
+// ============================================================
+// PIPELINE — lógica de scan reutilizable (la usan el CLI y el server web).
+//   buscar -> normalizar -> dedupe -> detectar cadenas ->
+//   chequear webs -> gates + score -> escribir output/
+// ============================================================
+
+import { writeFileSync, mkdirSync, existsSync, readFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+
+import { RUBROS, ZONAS, QUERY, SCORE_THRESHOLD } from "./config.js";
+import { searchPlaces } from "./apify.js";
+import { normalizePlace, normName, isWebsiteAlive } from "./normalize.js";
+import { applyGates, scorePlace, webLabel } from "./score.js";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+export const ROOT = join(__dirname, "..");
+export const OUT = join(ROOT, "output");
+
+// Carga .env de forma mínima (sin dependencias). En Railway las vars
+// vienen del entorno, así que esto es no-op ahí.
+export function loadEnv() {
+  const p = join(ROOT, ".env");
+  if (!existsSync(p)) return;
+  for (const line of readFileSync(p, "utf8").split("\n")) {
+    const m = line.match(/^\s*([A-Z0-9_]+)\s*=\s*(.*)\s*$/);
+    if (m && !process.env[m[1]]) process.env[m[1]] = m[2].replace(/^["']|["']$/g, "");
+  }
+}
+
+function buildQueries(rubros, zonas) {
+  const qs = [];
+  for (const rubro of rubros) for (const zona of zonas) qs.push(`${rubro} en ${zona}`);
+  return qs;
+}
+
+function toCsv(rows) {
+  const cols = ["score", "name", "webLabel", "site", "rating", "reviews", "photos",
+    "verified", "phone", "borough", "address", "mapsUrl"];
+  const esc = (v) => {
+    const s = v === undefined || v === null ? "" : String(v);
+    return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+  };
+  return [cols.join(","), ...rows.map((r) => cols.map((c) => esc(r[c])).join(","))].join("\n");
+}
+
+// onLog: (msg:string) => void  para reportar progreso a CLI o web.
+export async function runScan({ rubros = RUBROS, zonas = ZONAS, query = QUERY, onLog = () => {} } = {}) {
+  const queries = buildQueries(rubros, zonas);
+  onLog(`Queries: ${queries.length} (${rubros.length} rubros x ${zonas.length} zonas, limit ${query.limit})`);
+  onLog("Corriendo el actor de Apify (1–4 min)...");
+
+  let last = "";
+  const raw = await searchPlaces(queries, query, {
+    onTick: (st) => { if (st !== last) { last = st; onLog(`estado: ${st}`); } },
+  });
+  onLog(`${raw.length} lugares crudos recibidos.`);
+
+  // Normalizar + dedupe por placeId
+  const now = Date.now();
+  const byId = new Map();
+  for (const r of raw) {
+    const p = normalizePlace(r, now);
+    p._normName = normName(p.name);
+    if (!p.placeId) p.placeId = `${p._normName}|${p.address || ""}`;
+    if (!byId.has(p.placeId)) byId.set(p.placeId, p);
+  }
+  const places = [...byId.values()];
+  onLog(`${places.length} únicos tras dedupe.`);
+
+  // Conteo de cadenas (mismo nombre normalizado)
+  const chainCounts = new Map();
+  for (const p of places) chainCounts.set(p._normName, (chainCounts.get(p._normName) || 0) + 1);
+
+  // Chequear webs propias (HEAD, en paralelo)
+  const ownSites = places.filter((p) => p.webState === "own");
+  onLog(`Chequeando ${ownSites.length} webs propias...`);
+  await Promise.all(ownSites.map(async (p) => { p.webAlive = await isWebsiteAlive(p.site); }));
+
+  // Gates + score
+  for (const p of places) {
+    const g = applyGates(p, chainCounts);
+    p.passed = g.passed;
+    p.gateReasons = g.reasons;
+    const s = scorePlace(p);
+    p.score = s.score;
+    p.breakdown = s.breakdown;
+    p.webLabel = webLabel(p.webState);
+    delete p._normName;
+  }
+
+  const candidates = places
+    .filter((p) => p.passed && p.score >= SCORE_THRESHOLD)
+    .sort((a, b) => b.score - a.score);
+
+  const payload = {
+    generatedAt: new Date().toISOString(),
+    queries,
+    counts: { raw: raw.length, unique: places.length, candidates: candidates.length },
+    candidates,
+    all: places,
+  };
+
+  mkdirSync(OUT, { recursive: true });
+  writeFileSync(join(OUT, "candidates.json"), JSON.stringify(payload, null, 2));
+  writeFileSync(join(OUT, "candidates.csv"), toCsv(candidates));
+  onLog(`Listo: ${candidates.length} candidatos de ${places.length} negocios.`);
+
+  return payload;
+}

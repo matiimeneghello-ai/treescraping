@@ -26,9 +26,14 @@ export const RUBROS_SUGERIDOS = [
 ];
 
 export const QUERY = {
-  limit: 60,        // resultados por query (Outscraper pagina solo)
+  limit: 60,          // resultados por query (maxCrawledPlacesPerSearch)
   language: "es",
-  region: "AR",
+  countryCode: "ar",  // minúscula (lo exige el actor)
+  // Reviews por lugar. 0 = scan barato/rápido (score base hasta 75).
+  // > 0 trae respuestas del dueño + antigüedad de reviews => score completo,
+  // pero cuesta más crédito y tarda más. Empezá en 0 y subí a 5 si querés señal fina.
+  maxReviews: 0,
+  reviewsSort: "newest",
 };
 
 // ---------- Clasificación de website ----------

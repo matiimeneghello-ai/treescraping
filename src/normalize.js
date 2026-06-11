@@ -1,18 +1,10 @@
 // ============================================================
-// Normalización: mapea el registro crudo de Outscraper a un objeto
-// limpio y clasifica el estado del website (own/social/none).
+// Normalización: mapea el item del actor de Apify
+// (compass/crawler-google-places) a un objeto limpio y clasifica
+// el estado del website (own/social/none).
 // ============================================================
 
 import { SOCIAL_HOSTS } from "./config.js";
-
-// Outscraper varía algunos nombres de campo según endpoint/versión.
-// Tomamos el primero que exista.
-const pick = (o, ...keys) => {
-  for (const k of keys) {
-    if (o[k] !== undefined && o[k] !== null && o[k] !== "") return o[k];
-  }
-  return undefined;
-};
 
 export function classifyWebsite(site) {
   if (!site || typeof site !== "string" || !site.trim()) return "none";
@@ -21,44 +13,62 @@ export function classifyWebsite(site) {
   return "own";
 }
 
-export function normalizePlace(raw) {
-  const site = pick(raw, "site", "website", "web", "url");
-  const rating = Number(pick(raw, "rating") ?? 0) || 0;
-  const reviews = Number(pick(raw, "reviews", "reviews_count", "user_ratings_total") ?? 0) || 0;
-  const photos = Number(pick(raw, "photos_count", "photos") ?? 0) || 0;
+const DAY = 86400000;
 
-  // `verified`: en Outscraper, true = ficha reclamada por el dueño.
-  let verified = pick(raw, "verified");
-  if (typeof verified === "string") verified = verified.toLowerCase() === "true";
+// Extrae respuestas del dueño y antigüedad de la review más nueva
+// desde el array reviews[] del item (sólo viene si maxReviews > 0).
+function reviewSignals(reviews, now) {
+  if (!Array.isArray(reviews) || reviews.length === 0) {
+    return { ownerReplies: null, lastReviewDays: null };
+  }
+  const replies = reviews.filter((r) => r.responseFromOwnerText).length;
+  const dates = reviews
+    .map((r) => Date.parse(r.publishedAtDate))
+    .filter((t) => !Number.isNaN(t));
+  const newest = dates.length ? Math.max(...dates) : null;
+  return {
+    ownerReplies: replies,
+    lastReviewDays: newest ? Math.round((now - newest) / DAY) : null,
+  };
+}
 
-  const hours = pick(raw, "working_hours", "working_hours_old_format", "hours");
-  const hasHours = !!hours && (typeof hours === "object" ? Object.keys(hours).length > 0 : String(hours).trim() !== "");
+export function normalizePlace(raw, now = Date.now()) {
+  const site = raw.website || "";
+  const rating = Number(raw.totalScore ?? 0) || 0;
+  const reviews = Number(raw.reviewsCount ?? 0) || 0;
+  const photos = Number(raw.imagesCount ?? 0) || 0;
+
+  // claimThisBusiness === true  => muestra "Reclamar este negocio" => NO reclamado.
+  const unclaimed = raw.claimThisBusiness === true;
+
+  const oh = raw.openingHours;
+  const hasHours = Array.isArray(oh) ? oh.length > 0 : !!oh;
+
+  const closed = raw.permanentlyClosed === true || raw.temporarilyClosed === true;
+
+  const { ownerReplies, lastReviewDays } = reviewSignals(raw.reviews, now);
 
   return {
-    placeId: pick(raw, "place_id", "google_id", "place_id_2"),
-    name: pick(raw, "name", "title") || "(sin nombre)",
-    rubro: pick(raw, "query") || "",   // Outscraper devuelve la query origen
-    category: pick(raw, "category", "type", "subtypes"),
-    address: pick(raw, "full_address", "address", "formatted_address"),
-    borough: pick(raw, "borough", "city"),
-    phone: pick(raw, "phone", "phone_1", "international_phone_number"),
-    site: site || "",
+    placeId: raw.placeId || raw.cid || raw.fid,
+    name: raw.title || "(sin nombre)",
+    rubro: raw.searchString || "",
+    category: raw.categoryName || (Array.isArray(raw.categories) ? raw.categories[0] : ""),
+    address: raw.address || "",
+    borough: raw.neighborhood || raw.city || "",
+    phone: raw.phone || raw.phoneUnformatted || "",
+    site,
     webState: classifyWebsite(site),
     rating,
     reviews,
     photos,
-    verified: verified === true,
+    verified: !unclaimed,
     hasHours,
-    reviewsLink: pick(raw, "reviews_link"),
-    businessStatus: (pick(raw, "business_status") || "OPERATIONAL").toUpperCase(),
-    lat: pick(raw, "latitude", "lat"),
-    lng: pick(raw, "longitude", "lng"),
-    mapsUrl: pick(raw, "location_link", "place_link") ||
-      (pick(raw, "place_id") ? `https://www.google.com/maps/place/?q=place_id:${pick(raw, "place_id")}` : ""),
-    // campos que completa el enriquecimiento de reviews:
-    ownerReplies: null,
-    lastReviewDays: null,
-    _raw: undefined, // se setea afuera si se quiere conservar
+    businessStatus: closed ? "CLOSED" : "OPERATIONAL",
+    lat: raw.location?.lat,
+    lng: raw.location?.lng,
+    mapsUrl: raw.url || (raw.placeId ? `https://www.google.com/maps/place/?q=place_id:${raw.placeId}` : ""),
+    ownerReplies,
+    lastReviewDays,
   };
 }
 

@@ -56,6 +56,18 @@
   .btn.no.on{background:var(--danger);color:#fff;border-color:var(--danger)}
   .empty{padding:60px 20px;text-align:center;color:var(--muted)}
   .empty code{color:var(--acid)}
+  .scanbox{background:var(--panel);border:1px solid var(--soft);border-radius:10px;padding:14px 16px;margin-bottom:16px}
+  .scan-row{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap}
+  .scan-row label{display:flex;flex-direction:column;gap:5px;font-size:11px;color:var(--muted);
+    text-transform:uppercase;letter-spacing:.08em;flex:1;min-width:200px}
+  .scan-row label span{text-transform:none;letter-spacing:0;opacity:.6}
+  .scan-row input{background:var(--bg);color:var(--text);border:1px solid var(--soft);
+    border-radius:7px;padding:10px 12px;font-family:inherit;font-size:13.5px}
+  .scan-row input:focus{outline:1px solid var(--acid);border-color:var(--acid)}
+  .scan-row .btn{padding:11px 20px;white-space:nowrap}
+  .scan-log{margin-top:12px;background:var(--bg);border:1px solid var(--soft);border-radius:7px;
+    padding:10px 12px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);
+    max-height:160px;overflow:auto;white-space:pre-wrap;line-height:1.55}
   dialog{background:var(--panel);color:var(--text);border:1px solid var(--border);
     border-radius:12px;max-width:520px;width:92vw;padding:0}
   dialog::backdrop{background:rgba(0,0,0,.6)}
@@ -81,6 +93,15 @@
 </header>
 
 <div class="wrap">
+  <section class="scanbox">
+    <div class="scan-row">
+      <label>Rubros <span>(coma)</span><input id="inRubros" placeholder="estudio contable, odontologo" /></label>
+      <label>Zonas <span>(coma)</span><input id="inZonas" placeholder="Caballito CABA, Villa Urquiza CABA" /></label>
+      <button class="btn primary" id="btnScan">Correr scan</button>
+    </div>
+    <div class="scan-log" id="scanLog" hidden></div>
+  </section>
+
   <div class="bar">
     <div class="stat" id="s1"><b>0</b> candidatos</div>
     <div class="stat" id="s2"><b>0</b> aprobados</div>
@@ -212,19 +233,72 @@ document.querySelectorAll(".chip").forEach(ch=>ch.onclick=()=>{
   ch.classList.add("on"); FILTER = ch.dataset.f; render();
 });
 
-fetch("/candidates.json").then(r=>r.json()).then(j=>{
-  if(j.error){ document.getElementById("content").innerHTML =
-    `<div class="empty">Todavía no hay datos. Corré <code>npm run scan</code> y recargá.</div>`;
-    document.getElementById("genat").textContent = "sin datos"; return; }
-  DATA = j.candidates || [];
-  const d = new Date(j.generatedAt);
-  document.getElementById("genat").textContent =
-    `${j.counts.candidates} candidatos de ${j.counts.unique} negocios · ${d.toLocaleString("es-AR")}`;
-  render();
-}).catch(()=>{
-  document.getElementById("content").innerHTML =
-    `<div class="empty">No pude cargar los datos. ¿Está corriendo <code>npm run serve</code>?</div>`;
-});
+function loadData(){
+  return fetch("/candidates.json").then(r=>r.json()).then(j=>{
+    if(j.error){ document.getElementById("content").innerHTML =
+      `<div class="empty">Todavía no hay datos. Configurá rubros y zonas arriba y tocá <b>Correr scan</b>.</div>`;
+      document.getElementById("genat").textContent = "sin datos"; return; }
+    DATA = j.candidates || [];
+    const d = new Date(j.generatedAt);
+    document.getElementById("genat").textContent =
+      `${j.counts.candidates} candidatos de ${j.counts.unique} negocios · ${d.toLocaleString("es-AR")}`;
+    render();
+  }).catch(()=>{
+    document.getElementById("content").innerHTML =
+      `<div class="empty">No pude cargar los datos. ¿Está corriendo el server?</div>`;
+  });
+}
+
+// ---------- control de scan ----------
+const KEYLS = "treeprospect_key";
+let NEEDS_KEY = false, POLL = null;
+const logEl = document.getElementById("scanLog");
+const btn = document.getElementById("btnScan");
+
+fetch("/api/defaults").then(r=>r.json()).then(d=>{
+  document.getElementById("inRubros").value = (d.rubros||[]).join(", ");
+  document.getElementById("inZonas").value  = (d.zonas||[]).join(", ");
+  NEEDS_KEY = d.needsKey;
+  if(!d.hasToken){ btn.disabled = true; btn.textContent = "falta APIFY_TOKEN"; }
+}).catch(()=>{});
+
+function setLog(lines){ logEl.hidden=false; logEl.textContent = (lines||[]).join("\n"); logEl.scrollTop = logEl.scrollHeight; }
+
+btn.onclick = async ()=>{
+  const headers = {"Content-Type":"application/json"};
+  if(NEEDS_KEY){
+    let k = localStorage.getItem(KEYLS);
+    if(!k){ k = prompt("Clave del dashboard:"); if(!k) return; localStorage.setItem(KEYLS,k); }
+    headers["x-key"] = k;
+  }
+  const body = JSON.stringify({
+    rubros: document.getElementById("inRubros").value,
+    zonas: document.getElementById("inZonas").value,
+  });
+  btn.disabled = true; btn.textContent = "Corriendo…"; setLog(["Iniciando scan…"]);
+  const res = await fetch("/api/scan",{method:"POST",headers,body});
+  if(!res.ok){
+    const e = await res.json().catch(()=>({error:"error"}));
+    if(res.status===401){ localStorage.removeItem(KEYLS); }
+    setLog([`Error: ${e.error||res.status}`]); btn.disabled=false; btn.textContent="Correr scan"; return;
+  }
+  POLL = setInterval(pollStatus, 2500); pollStatus();
+};
+
+async function pollStatus(){
+  const s = await fetch("/api/status").then(r=>r.json()).catch(()=>null);
+  if(!s) return;
+  setLog(s.log);
+  if(s.status==="done"){
+    clearInterval(POLL); btn.disabled=false; btn.textContent="Correr scan";
+    setLog([...(s.log||[]), `✓ ${s.counts?.candidates} candidatos. Cargando…`]);
+    await loadData();
+  } else if(s.status==="error"){
+    clearInterval(POLL); btn.disabled=false; btn.textContent="Correr scan";
+  }
+}
+
+loadData();
 </script>
 </body>
 </html>
