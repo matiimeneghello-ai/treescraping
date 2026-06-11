@@ -11,6 +11,8 @@ export const SERVICE_LABELS = {
   seo: "SEO",
   social: "Redes sociales",
   paid: "Pauta (paid)",
+  reviews: "Gestión de reseñas",
+  gbp: "Ficha de Google (GBP)",
 };
 
 export function recommendServices(p, audit) {
@@ -73,18 +75,43 @@ export function recommendServices(p, audit) {
       reason: "Maneja sus redes solo; podríamos profesionalizar el contenido y la constancia." });
   }
 
-  // ---- PAID: oferta de crecimiento si está sano ----
-  if (healthy) {
-    services.push({ key: "paid", label: SERVICE_LABELS.paid, score: rating >= 4.5 && reviews >= 50 ? 54 : 42,
-      reason: `Tiene buena reputación (${rating}★, ${reviews} reseñas) pero depende de que lo encuentren solos; con pauta llega a más gente que ya busca lo suyo.` });
+  // ---- GESTIÓN DE RESEÑAS: recencia/respuestas (necesita maxReviews > 0) ----
+  if (p.lastReviewDays != null && p.lastReviewDays > 90) {
+    const meses = Math.round(p.lastReviewDays / 30);
+    services.push({ key: "reviews", label: SERVICE_LABELS.reviews, score: p.lastReviewDays > 180 ? 64 : 56,
+      reason: `Su última reseña es de hace ~${meses} meses: Google premia la actividad reciente. Un sistema para pedir reseñas (WhatsApp + QR) sube reputación y posición.` });
+  } else if (p.ownerReplies === 0 && reviews >= 10) {
+    services.push({ key: "reviews", label: SERVICE_LABELS.reviews, score: 50,
+      reason: "No responde las reseñas de Google; responderlas mejora la imagen y ayuda al posicionamiento local." });
   }
 
-  // ---- señal extra: ficha pobre alimenta el caso web/seo ----
-  if (!p.verified && p.webState !== "own") {
-    const web = services.find((s) => s.key === "web");
-    if (web) web.reason += " Además su ficha de Google figura sin reclamar.";
+  // ---- FICHA DE GOOGLE (GBP): foto/horarios/sin reclamar ----
+  const gbpGaps = [];
+  if (photos <= 5) gbpGaps.push("pocas fotos");
+  if (!p.hasHours) gbpGaps.push("sin horarios cargados");
+  if (!p.verified) gbpGaps.push("ficha sin reclamar");
+  if (p.ownerReplies === 0 && reviews >= 10) gbpGaps.push("sin responder reseñas");
+  if (gbpGaps.length >= 2) {
+    services.push({ key: "gbp", label: SERVICE_LABELS.gbp, score: Math.min(72, 44 + gbpGaps.length * 9),
+      reason: `Su ficha de Google está incompleta (${gbpGaps.slice(0, 3).join(", ")}): en 2026 la ficha es lo que te muestra en Maps y en las IA, más que la web.` });
   }
-  void photos;
+
+  // ---- PAID: oferta de crecimiento si está sano ----
+  if (healthy) {
+    const noPixel = p.webState === "own" && a.checked && a.reachable && !a.hasPixel;
+    services.push({ key: "paid", label: SERVICE_LABELS.paid, score: rating >= 4.5 && reviews >= 50 ? 54 : 42,
+      reason: noPixel
+        ? `Tiene buena reputación (${rating}★, ${reviews} reseñas) y su sitio no tiene pixel instalado: no puede retargetear ni medir; con pauta bien armada llega a más gente.`
+        : `Tiene buena reputación (${rating}★, ${reviews} reseñas) pero depende de que lo encuentren solos; con pauta llega a más gente que ya busca lo suyo.` });
+  }
+
+  // ---- señal extra: footer viejo refuerza rehacer sitio ----
+  if (p.webState === "own" && a.copyrightYear && a.copyrightYear < new Date().getFullYear() - 2) {
+    const rd = services.find((s) => s.key === "redesign");
+    if (rd) rd.reason += ` El pie de página dice ${a.copyrightYear}: el sitio quedó viejo.`;
+    else services.push({ key: "redesign", label: SERVICE_LABELS.redesign, score: 58,
+      reason: `El pie de su sitio dice ${a.copyrightYear}: quedó desactualizado y conviene renovarlo.` });
+  }
 
   services.sort((x, y) => y.score - x.score);
   return {

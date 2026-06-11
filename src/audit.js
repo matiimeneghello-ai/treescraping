@@ -22,6 +22,7 @@ export async function auditSite(url) {
     checked: true, reachable: false, https: false, status: 0, finalUrl: "",
     hasTitle: false, titleLen: 0, hasMetaDesc: false, hasViewport: false,
     hasSchema: false, hasOG: false, hasH1: false, social: [], words: 0,
+    hasPixel: false, hasGA: false, copyrightYear: null,
     error: null,
   };
   if (!url) { out.checked = false; return out; }
@@ -74,6 +75,11 @@ export async function auditSite(url) {
     }
     out.social = [...socials];
     out.words = textWordCount(html);
+    // Señales de marketing: pixel de Meta, Google Analytics, antigüedad del footer.
+    out.hasPixel = /fbq\(|connect\.facebook\.net\/[^"']*fbevents/i.test(html);
+    out.hasGA = /gtag\(|googletagmanager\.com\/gtag|google-analytics\.com\/(analytics|ga)\.js/i.test(html);
+    const cy = html.match(/(?:©|&copy;|copyright)[^0-9]{0,14}(20[0-9]{2})/i);
+    out.copyrightYear = cy ? Number(cy[1]) : null;
   } catch (e) {
     out.error = e.name === "AbortError" ? "timeout" : (e.message || "fetch error");
   }

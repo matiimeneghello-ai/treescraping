@@ -176,6 +176,8 @@
   .send-btn.gmail{background:rgba(255,255,255,.05);color:var(--text);border-color:var(--soft)}
   .send-btn.gmail:hover{border-color:var(--acid);color:var(--acid)}
   .send-btn.off{opacity:.4;pointer-events:none}
+  .wa-note{margin-top:8px;font-size:11px;color:var(--warn);line-height:1.5;display:flex;gap:6px}
+  .wa-note::before{content:"⚠";opacity:.8}
   .kit-analysis{margin:0;padding-left:18px;color:var(--text);font-size:13.5px;line-height:1.65}
   .kit-analysis li{margin-bottom:5px}
   .kit-input,.kit-ta{width:100%;box-sizing:border-box;background:var(--bg);color:var(--text);
@@ -262,6 +264,7 @@
         <div class="kit-label">WhatsApp <button class="copy-mini" data-copy="kitWa">copiar</button>
           <a class="send-btn wa" id="btnWa" target="_blank" rel="noopener">Enviar por WhatsApp ↗</a></div>
         <textarea id="kitWa" class="kit-ta" style="min-height:96px"></textarea>
+        <div class="wa-note">Mandá el mail primero; usá WhatsApp como 2º toque. Máx. ~30 nuevos por día por número para no comerte un ban.</div>
       </div>
     </div>
   </div>

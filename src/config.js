@@ -32,10 +32,10 @@ export const QUERY = {
   // la define el texto de la zona ("Miami, FL, USA"). Para acotar a un país,
   // poné su código en minúscula ("ar", "us", "mx", "es", "br", ...).
   countryCode: "",
-  // Reviews por lugar. 0 = scan barato/rápido (score base hasta 75).
-  // > 0 trae respuestas del dueño + antigüedad de reviews => score completo,
-  // pero cuesta más crédito y tarda más. Empezá en 0 y subí a 5 si querés señal fina.
-  maxReviews: 0,
+  // Reviews por lugar. >0 trae respuestas del dueño + antigüedad de reseñas, que
+  // desbloquea la señal #1 de local en 2026 (recencia/velocidad) y los servicios
+  // de "gestión de reseñas". 6 alcanza para la señal y el costo extra es marginal.
+  maxReviews: 6,
   reviewsSort: "newest",
 };
 

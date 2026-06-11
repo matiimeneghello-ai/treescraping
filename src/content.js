@@ -73,81 +73,88 @@ No es una plantilla genérica, es para su {{RUBRO}}. Si les gusta, la dejamos an
 // (demo de sitio para web/redesign, diagnóstico /report para seo/social/paid).
 export const SERVICE_COPY = {
   web: {
-    emailSubject: "{{NAME}}, te armé el sitio y quiero que lo veas",
+    emailSubject: "Así se vería {{NAME}} cuando te buscan en {{NEIGHBORHOOD}}",
     emailBody:
-`Hola, soy de Tree Marketing. Encontramos {{NAME}} en {{NEIGHBORHOOD}} y vimos que tienen {{RATING}} estrellas con {{REVIEWS}} reseñas en Google. Eso habla muy bien del laburo que hacen.
+`Hola, soy de Tree Marketing. {{NAME}} tiene {{RATING}}★ con {{REVIEWS}} reseñas en Google: el laburo se nota. Lo que le falta es un lugar propio donde esa gente que ya los busca pueda conocerlos y escribirles directo.
 
-Lo que notamos es que, cuando alguien los busca, no aparece un sitio propio para conocerlos ni contactarlos directo. Esa gente que ya los busca muchas veces termina en otro lado.
+Así que en vez de explicártelo, lo armamos: mirá cómo se vería tu sitio, listo y con tu info: {{DEAL_URL}}
 
-Así que lo armamos: te dejamos una demo de tu propio sitio, lista, con la info de {{NAME}}. Miralo acá: {{DEAL_URL}}
-
-Si te cierra, respondé este mail y lo dejamos andando. Un saludo.`,
+Si te gusta, lo dejamos andando esta semana. Un saludo.`,
     whatsapp:
-`Hola {{NAME}}, soy de Tree Marketing. Vimos su ficha en {{NEIGHBORHOOD}} con {{RATING}}★ y {{REVIEWS}} reseñas, muy buena.
-
-Notamos que no tienen sitio web propio, así que les armamos una demo con su info: {{DEAL_URL}}
-
-Si les gusta, la dejamos andando. ¿La miran y me cuentan?`,
+`Hola {{NAME}}, soy de Tree Marketing. Les armé una demo de cómo se vería su sitio propio: {{DEAL_URL}}
+¿La miran y me cuentan?`,
   },
   redesign: {
-    emailSubject: "{{NAME}}, tu sitio puede verse mucho mejor",
+    emailSubject: "Tu sitio, más rápido y pensado para el celular",
     emailBody:
-`Hola, soy de Tree Marketing. Vimos {{NAME}} en {{NEIGHBORHOOD}} ({{RATING}}★, {{REVIEWS}} reseñas, muy buen laburo). Entramos a su sitio actual y notamos que se queda corto frente a lo que ofrecen, sobre todo desde el celular, que es donde la mayoría lo abre.
+`Hola, soy de Tree Marketing. {{NAME}} ({{RATING}}★, {{REVIEWS}} reseñas) merece una web a la altura. Entramos a la actual y, sobre todo desde el celular —donde la mayoría la abre—, se queda corta.
 
-Les armamos una versión nueva para que vean cómo se vería: más rápida, clara y pensada para el teléfono. Miralo acá: {{DEAL_URL}}
+Le armamos una versión nueva para que veas la diferencia: {{DEAL_URL}}
 
-Si te gusta, lo dejamos andando. Un saludo.`,
+Si te gusta, la dejamos andando. Un saludo.`,
     whatsapp:
-`Hola {{NAME}}, soy de Tree Marketing. Vi su sitio y su laburo ({{RATING}}★) y creo que la web puede acompañar mucho mejor.
-
-Les armé una versión nueva para que la vean: {{DEAL_URL}}
-
-¿La miran y me dicen?`,
+`Hola {{NAME}}, soy de Tree Marketing. Les armé una versión nueva de su web, más rápida y para celular: {{DEAL_URL}}
+¿La miran?`,
   },
   seo: {
-    emailSubject: "Por qué {{NAME}} no aparece primero cuando te buscan",
+    emailSubject: "Que {{NAME}} aparezca cuando buscan tu rubro en {{NEIGHBORHOOD}}",
     emailBody:
-`Hola, soy de Tree Marketing. {{NAME}} tiene muy buena reputación ({{RATING}}★ con {{REVIEWS}} reseñas), pero cuando alguien busca su rubro en {{NEIGHBORHOOD}}, no aparecen como deberían. Hay detalles concretos en el sitio que lo están frenando.
+`Hola, soy de Tree Marketing. {{NAME}} tiene muy buena reputación ({{RATING}}★, {{REVIEWS}} reseñas), pero cuando alguien busca tu rubro en {{NEIGHBORHOOD}} no aparecés como deberías. Hay detalles concretos del sitio que lo están frenando.
 
-Les armamos un diagnóstico rápido de qué encontramos y qué se puede mejorar, sin vueltas: {{DEAL_URL}}
+Te armamos un diagnóstico con qué encontramos y cómo subir: {{DEAL_URL}}
 
 Son cosas solucionables. ¿Lo miramos juntos?`,
     whatsapp:
-`Hola {{NAME}}, soy de Tree Marketing. Tienen muy buena reputación ({{RATING}}★) pero no aparecen bien en Google cuando los buscan.
-
-Les armé un diagnóstico de qué lo frena y cómo mejorarlo: {{DEAL_URL}}
-
+`Hola {{NAME}}, soy de Tree Marketing. Tienen reputación bárbara pero no aparecen bien en Google. Les armé un diagnóstico de qué lo frena: {{DEAL_URL}}
 ¿Lo vemos?`,
   },
   social: {
-    emailSubject: "{{NAME}}, tu presencia en redes tiene margen",
+    emailSubject: "Más clientes desde las redes para {{NAME}}",
     emailBody:
-`Hola, soy de Tree Marketing. Encontramos {{NAME}} en {{NEIGHBORHOOD}} y nos gustó el laburo ({{RATING}}★, {{REVIEWS}} reseñas). Vimos que hay margen para aprovechar mucho mejor las redes, que es donde tu público pasa el día.
+`Hola, soy de Tree Marketing. Nos gustó el laburo de {{NAME}} ({{RATING}}★) y vimos que las redes —donde tu público pasa el día— están desaprovechadas.
 
-Te dejamos un diagnóstico de tu presencia digital y dónde está la oportunidad: {{DEAL_URL}}
+Te armamos un diagnóstico de tu presencia y dónde está la oportunidad: {{DEAL_URL}}
 
 ¿Te interesa que lo charlemos?`,
     whatsapp:
-`Hola {{NAME}}, soy de Tree Marketing. Buen laburo el de ustedes ({{RATING}}★). Vimos que en redes hay bastante para aprovechar.
-
-Les armé un diagnóstico de su presencia: {{DEAL_URL}}
-
+`Hola {{NAME}}, soy de Tree Marketing. Vimos que en redes hay mucho para aprovechar. Les armé un diagnóstico: {{DEAL_URL}}
 ¿Lo charlamos?`,
   },
   paid: {
-    emailSubject: "{{NAME}}, llegar a más gente que ya te busca",
+    emailSubject: "Que te encuentre más de la gente que ya te busca",
     emailBody:
-`Hola, soy de Tree Marketing. {{NAME}} tiene una reputación muy buena ({{RATING}}★, {{REVIEWS}} reseñas) — el tema no es la calidad, es que te encuentre más gente de la que ya te busca.
+`Hola, soy de Tree Marketing. {{NAME}} tiene una reputación muy buena ({{RATING}}★, {{REVIEWS}} reseñas) — el tema no es la calidad, es el alcance. Hay gente buscando tu rubro en {{NEIGHBORHOOD}} que hoy no te encuentra.
 
-Te armamos un diagnóstico de tu presencia y dónde está la oportunidad de crecer con pauta bien hecha: {{DEAL_URL}}
+Te armamos un diagnóstico con dónde está la oportunidad de crecer con pauta bien hecha: {{DEAL_URL}}
 
 ¿Lo vemos sin compromiso?`,
     whatsapp:
-`Hola {{NAME}}, soy de Tree Marketing. Tienen una reputación bárbara ({{RATING}}★). El laburo está; falta que los encuentre más gente.
-
-Les armé un diagnóstico con la oportunidad: {{DEAL_URL}}
-
+`Hola {{NAME}}, soy de Tree Marketing. El laburo está ({{RATING}}★); falta que los encuentre más gente. Les armé un diagnóstico con la oportunidad: {{DEAL_URL}}
 ¿Lo charlamos?`,
+  },
+  reviews: {
+    emailSubject: "Más reseñas nuevas para {{NAME}} (y mejor lugar en Google)",
+    emailBody:
+`Hola, soy de Tree Marketing. {{NAME}} tiene buena reputación, pero las reseñas nuevas vienen lentas — y Google premia a los que reciben reseñas seguido, te muestra más arriba en Maps.
+
+Te armamos un diagnóstico y un sistema simple para pedir reseñas por WhatsApp y QR, sin que persigas a nadie: {{DEAL_URL}}
+
+¿Te muestro cómo funciona?`,
+    whatsapp:
+`Hola {{NAME}}, soy de Tree Marketing. Google muestra más arriba al que recibe reseñas seguido. Les armé un sistema simple para conseguir más: {{DEAL_URL}}
+¿Te muestro?`,
+  },
+  gbp: {
+    emailSubject: "Que tu ficha de Google trabaje para vos, {{NAME}}",
+    emailBody:
+`Hola, soy de Tree Marketing. En 2026 tu ficha de Google es lo que te muestra en Maps y hasta en las respuestas de IA (más que la web). La de {{NAME}} tiene cosas para completar que hoy te hacen perder lugar frente a tus competidores.
+
+Te armamos un diagnóstico de qué le falta y cómo dejarla impecable: {{DEAL_URL}}
+
+¿Lo vemos?`,
+    whatsapp:
+`Hola {{NAME}}, soy de Tree Marketing. Tu ficha de Google tiene cosas para completar que te hacen perder lugar en Maps. Les armé un diagnóstico: {{DEAL_URL}}
+¿Lo vemos?`,
   },
 };
 

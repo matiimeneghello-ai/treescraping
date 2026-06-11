@@ -36,7 +36,7 @@
       "_normName": "centro dr miranda marcelo",
       "passed": true,
       "gateReasons": [],
-      "score": 75,
+      "score": 90,
       "breakdown": {
         "web": 35,
         "health": 15,
@@ -46,7 +46,33 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "services": [
+        {
+          "key": "web",
+          "label": "Sitio web",
+          "score": 90,
+          "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+        },
+        {
+          "key": "gbp",
+          "label": "Ficha de Google (GBP)",
+          "score": 71,
+          "reason": "Su ficha de Google está incompleta (pocas fotos, sin horarios cargados, ficha sin reclamar): en 2026 la ficha es lo que te muestra en Maps y en las IA, más que la web."
+        },
+        {
+          "key": "paid",
+          "label": "Pauta (paid)",
+          "score": 42,
+          "reason": "Tiene buena reputación (4.3★, 52 reseñas) pero depende de que lo encuentren solos; con pauta llega a más gente que ya busca lo suyo."
+        }
+      ],
+      "primaryService": {
+        "key": "web",
+        "label": "Sitio web",
+        "score": 90,
+        "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      }
     },
     {
       "placeId": "ChIJgzjOHGe2vJURzcOkvCEVwcY",
@@ -72,7 +98,7 @@
       "_normName": "calderoni maria rosa",
       "passed": true,
       "gateReasons": [],
-      "score": 70,
+      "score": 90,
       "breakdown": {
         "web": 35,
         "health": 20,
@@ -82,7 +108,27 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "services": [
+        {
+          "key": "web",
+          "label": "Sitio web",
+          "score": 90,
+          "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+        },
+        {
+          "key": "paid",
+          "label": "Pauta (paid)",
+          "score": 54,
+          "reason": "Tiene buena reputación (4.9★, 162 reseñas) pero depende de que lo encuentren solos; con pauta llega a más gente que ya busca lo suyo."
+        }
+      ],
+      "primaryService": {
+        "key": "web",
+        "label": "Sitio web",
+        "score": 90,
+        "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      }
     },
     {
       "placeId": "ChIJreWGzRfLvJURlCIx263D_-Q",
@@ -108,7 +154,7 @@
       "_normName": "odontologo hansen",
       "passed": true,
       "gateReasons": [],
-      "score": 70,
+      "score": 90,
       "breakdown": {
         "web": 35,
         "health": 15,
@@ -118,7 +164,33 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "services": [
+        {
+          "key": "web",
+          "label": "Sitio web",
+          "score": 90,
+          "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+        },
+        {
+          "key": "gbp",
+          "label": "Ficha de Google (GBP)",
+          "score": 62,
+          "reason": "Su ficha de Google está incompleta (pocas fotos, ficha sin reclamar): en 2026 la ficha es lo que te muestra en Maps y en las IA, más que la web."
+        },
+        {
+          "key": "paid",
+          "label": "Pauta (paid)",
+          "score": 42,
+          "reason": "Tiene buena reputación (4.9★, 31 reseñas) pero depende de que lo encuentren solos; con pauta llega a más gente que ya busca lo suyo."
+        }
+      ],
+      "primaryService": {
+        "key": "web",
+        "label": "Sitio web",
+        "score": 90,
+        "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      }
     },
     {
       "placeId": "ChIJN2U2jby1vJURbq1--DOBbts",
@@ -144,7 +216,7 @@
       "_normName": "consultora stivala",
       "passed": true,
       "gateReasons": [],
-      "score": 70,
+      "score": 90,
       "breakdown": {
         "web": 35,
         "health": 15,
@@ -154,43 +226,33 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
-    },
-    {
-      "placeId": "ChIJyyYVWwC3vJURBiAP7kHY08g",
-      "name": "Lm Dentista",
-      "rubro": "odontologo en Villa Urquiza, CABA, Argentina",
-      "category": "Dentista",
-      "address": "Av. Álvarez Thomas 2751, C1431FOE C1431FOE, Cdad. Autónoma de Buenos Aires, Argentina",
-      "borough": "Villa Urquiza",
-      "phone": "",
-      "site": "https://www.instagram.com/lm_odont?igsh=cTYwNWtxb3NkbWQw",
-      "webState": "social",
-      "rating": 4.5,
-      "reviews": 24,
-      "photos": 1,
-      "verified": false,
-      "hasHours": false,
-      "businessStatus": "OPERATIONAL",
-      "lat": -34.5745465,
-      "lng": -58.4790126,
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Lm%20Dentista&query_place_id=ChIJyyYVWwC3vJURBiAP7kHY08g",
-      "ownerReplies": null,
-      "lastReviewDays": null,
-      "_normName": "lm dentista",
-      "passed": true,
-      "gateReasons": [],
-      "score": 68,
-      "breakdown": {
-        "web": 28,
-        "health": 15,
-        "photos": 15,
-        "ownerReplies": 0,
-        "hours": 5,
-        "recency": 0,
-        "unclaimed": 5
-      },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "services": [
+        {
+          "key": "web",
+          "label": "Sitio web",
+          "score": 90,
+          "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+        },
+        {
+          "key": "gbp",
+          "label": "Ficha de Google (GBP)",
+          "score": 62,
+          "reason": "Su ficha de Google está incompleta (pocas fotos, ficha sin reclamar): en 2026 la ficha es lo que te muestra en Maps y en las IA, más que la web."
+        },
+        {
+          "key": "paid",
+          "label": "Pauta (paid)",
+          "score": 42,
+          "reason": "Tiene buena reputación (4.9★, 38 reseñas) pero depende de que lo encuentren solos; con pauta llega a más gente que ya busca lo suyo."
+        }
+      ],
+      "primaryService": {
+        "key": "web",
+        "label": "Sitio web",
+        "score": 90,
+        "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      }
     },
     {
       "placeId": "ChIJmY8rSYa3vJURMqc-NB4SLg4",
@@ -216,7 +278,7 @@
       "_normName": "estudio contable cima",
       "passed": true,
       "gateReasons": [],
-      "score": 65,
+      "score": 90,
       "breakdown": {
         "web": 35,
         "health": 15,
@@ -226,7 +288,27 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "services": [
+        {
+          "key": "web",
+          "label": "Sitio web",
+          "score": 90,
+          "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+        },
+        {
+          "key": "paid",
+          "label": "Pauta (paid)",
+          "score": 42,
+          "reason": "Tiene buena reputación (5★, 21 reseñas) pero depende de que lo encuentren solos; con pauta llega a más gente que ya busca lo suyo."
+        }
+      ],
+      "primaryService": {
+        "key": "web",
+        "label": "Sitio web",
+        "score": 90,
+        "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      }
     },
     {
       "placeId": "ChIJ5RDEeYnLvJUR_vqvM7GOL70",
@@ -252,7 +334,7 @@
       "_normName": "silvia lirosi soluciones odontologicas",
       "passed": true,
       "gateReasons": [],
-      "score": 65,
+      "score": 90,
       "breakdown": {
         "web": 35,
         "health": 15,
@@ -262,7 +344,27 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "services": [
+        {
+          "key": "web",
+          "label": "Sitio web",
+          "score": 90,
+          "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+        },
+        {
+          "key": "paid",
+          "label": "Pauta (paid)",
+          "score": 42,
+          "reason": "Tiene buena reputación (5★, 21 reseñas) pero depende de que lo encuentren solos; con pauta llega a más gente que ya busca lo suyo."
+        }
+      ],
+      "primaryService": {
+        "key": "web",
+        "label": "Sitio web",
+        "score": 90,
+        "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      }
     },
     {
       "placeId": "ChIJoc3CZjK1vJURFCj5Dg--jB4",
@@ -288,7 +390,7 @@
       "_normName": "nicolas garibotti estudio contable",
       "passed": true,
       "gateReasons": [],
-      "score": 65,
+      "score": 90,
       "breakdown": {
         "web": 35,
         "health": 15,
@@ -298,7 +400,27 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "services": [
+        {
+          "key": "web",
+          "label": "Sitio web",
+          "score": 90,
+          "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+        },
+        {
+          "key": "paid",
+          "label": "Pauta (paid)",
+          "score": 42,
+          "reason": "Tiene buena reputación (5★, 43 reseñas) pero depende de que lo encuentren solos; con pauta llega a más gente que ya busca lo suyo."
+        }
+      ],
+      "primaryService": {
+        "key": "web",
+        "label": "Sitio web",
+        "score": 90,
+        "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      }
     },
     {
       "placeId": "ChIJf5aTVN61vJURwmb-Bqcfzq4",
@@ -324,7 +446,7 @@
       "_normName": "centro crea",
       "passed": true,
       "gateReasons": [],
-      "score": 65,
+      "score": 90,
       "breakdown": {
         "web": 35,
         "health": 15,
@@ -334,7 +456,27 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "services": [
+        {
+          "key": "web",
+          "label": "Sitio web",
+          "score": 90,
+          "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+        },
+        {
+          "key": "paid",
+          "label": "Pauta (paid)",
+          "score": 42,
+          "reason": "Tiene buena reputación (4.9★, 28 reseñas) pero depende de que lo encuentren solos; con pauta llega a más gente que ya busca lo suyo."
+        }
+      ],
+      "primaryService": {
+        "key": "web",
+        "label": "Sitio web",
+        "score": 90,
+        "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      }
     },
     {
       "placeId": "ChIJ7eJMMMy3vJURsphl2ZfFGZI",
@@ -360,7 +502,7 @@
       "_normName": "bucarelli odontologia",
       "passed": true,
       "gateReasons": [],
-      "score": 63,
+      "score": 90,
       "breakdown": {
         "web": 35,
         "health": 20,
@@ -370,7 +512,27 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "services": [
+        {
+          "key": "web",
+          "label": "Sitio web",
+          "score": 90,
+          "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+        },
+        {
+          "key": "paid",
+          "label": "Pauta (paid)",
+          "score": 54,
+          "reason": "Tiene buena reputación (5★, 89 reseñas) pero depende de que lo encuentren solos; con pauta llega a más gente que ya busca lo suyo."
+        }
+      ],
+      "primaryService": {
+        "key": "web",
+        "label": "Sitio web",
+        "score": 90,
+        "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      }
     },
     {
       "placeId": "ChIJIcuKZ8-3vJURwjSvyncGc7A",
@@ -396,7 +558,7 @@
       "_normName": "consultorio dr bazerque y equipo",
       "passed": true,
       "gateReasons": [],
-      "score": 63,
+      "score": 90,
       "breakdown": {
         "web": 35,
         "health": 20,
@@ -406,43 +568,27 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
-    },
-    {
-      "placeId": "ChIJfxoJzknLvJUR2uHc_MZL4C0",
-      "name": "Sonrisas Caballito",
-      "rubro": "odontologo en Caballito, CABA, Argentina",
-      "category": "Dentista",
-      "address": "Av. La Plata 148 consultorio 8, C1184 Cdad. Autónoma de Buenos Aires, Argentina",
-      "borough": "Caballito, Comuna 5",
-      "phone": "+54 11 4179-7324",
-      "site": "https://wa.me/5491141797324?text=Hola%20vi%20tu%20perfil%20y%20quiero%20consultar%20por%20un%20turno",
-      "webState": "social",
-      "rating": 5,
-      "reviews": 81,
-      "photos": 0,
-      "verified": true,
-      "hasHours": true,
-      "businessStatus": "OPERATIONAL",
-      "lat": -34.6166332,
-      "lng": -58.4286163,
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Sonrisas%20Caballito&query_place_id=ChIJfxoJzknLvJUR2uHc_MZL4C0",
-      "ownerReplies": null,
-      "lastReviewDays": null,
-      "_normName": "sonrisas caballito",
-      "passed": true,
-      "gateReasons": [],
-      "score": 63,
-      "breakdown": {
-        "web": 28,
-        "health": 20,
-        "photos": 15,
-        "ownerReplies": 0,
-        "hours": 0,
-        "recency": 0,
-        "unclaimed": 0
-      },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "services": [
+        {
+          "key": "web",
+          "label": "Sitio web",
+          "score": 90,
+          "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+        },
+        {
+          "key": "paid",
+          "label": "Pauta (paid)",
+          "score": 54,
+          "reason": "Tiene buena reputación (4.9★, 101 reseñas) pero depende de que lo encuentren solos; con pauta llega a más gente que ya busca lo suyo."
+        }
+      ],
+      "primaryService": {
+        "key": "web",
+        "label": "Sitio web",
+        "score": 90,
+        "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      }
     },
     {
       "placeId": "ChIJNZIwwSK3vJURlj-D-TZrqgU",
@@ -468,7 +614,7 @@
       "_normName": "consultorio odontologico dra monica amarilla",
       "passed": true,
       "gateReasons": [],
-      "score": 63,
+      "score": 90,
       "breakdown": {
         "web": 35,
         "health": 15,
@@ -478,7 +624,27 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "services": [
+        {
+          "key": "web",
+          "label": "Sitio web",
+          "score": 90,
+          "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+        },
+        {
+          "key": "paid",
+          "label": "Pauta (paid)",
+          "score": 42,
+          "reason": "Tiene buena reputación (5★, 25 reseñas) pero depende de que lo encuentren solos; con pauta llega a más gente que ya busca lo suyo."
+        }
+      ],
+      "primaryService": {
+        "key": "web",
+        "label": "Sitio web",
+        "score": 90,
+        "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      }
     },
     {
       "placeId": "ChIJ9yXia7W3vJURSRYZt2KvHHw",
@@ -504,7 +670,7 @@
       "_normName": "jota skin the skin clinic",
       "passed": true,
       "gateReasons": [],
-      "score": 63,
+      "score": 90,
       "breakdown": {
         "web": 35,
         "health": 20,
@@ -514,79 +680,27 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
-    },
-    {
-      "placeId": "ChIJA_Nl_Aq3vJURM5vboYoCjck",
-      "name": "Mercier Odontología Integral, Villa Urquiza. Dr. Delponte y Equipo.",
-      "rubro": "odontologo en Villa Urquiza, CABA, Argentina",
-      "category": "Clínica dental",
-      "address": "Mendoza 5110, C1431 Cdad. Autónoma de Buenos Aires, Argentina",
-      "borough": "Villa Urquiza, Comuna 12",
-      "phone": "+54 11 7029-0571",
-      "site": "https://www.instagram.com/mercierodonto.urquiza/",
-      "webState": "social",
-      "rating": 5,
-      "reviews": 30,
-      "photos": 5,
-      "verified": true,
-      "hasHours": true,
-      "businessStatus": "OPERATIONAL",
-      "lat": -34.5774307,
-      "lng": -58.4839135,
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Mercier%20Odontolog%C3%ADa%20Integral%2C%20Villa%20Urquiza.%20Dr.%20Delponte%20y%20Equipo.&query_place_id=ChIJA_Nl_Aq3vJURM5vboYoCjck",
-      "ownerReplies": null,
-      "lastReviewDays": null,
-      "_normName": "mercier odontologia integral villa urquiza dr delponte y equipo",
-      "passed": true,
-      "gateReasons": [],
-      "score": 58,
-      "breakdown": {
-        "web": 28,
-        "health": 15,
-        "photos": 15,
-        "ownerReplies": 0,
-        "hours": 0,
-        "recency": 0,
-        "unclaimed": 0
-      },
-      "webLabel": "Solo Instagram/Facebook"
-    },
-    {
-      "placeId": "ChIJnSkVOoS3vJUR7nbEDqjwm2U",
-      "name": "Consultorio odontologico especializado",
-      "rubro": "odontologo en Villa Urquiza, CABA, Argentina",
-      "category": "Dentista",
-      "address": "Echeverría 5131, C1431 Cdad. Autónoma de Buenos Aires, Argentina",
-      "borough": "Villa Urquiza, Comuna 12",
-      "phone": "+54 11 5655-0345",
-      "site": "http://instagram.com/odontologia_especializadacf",
-      "webState": "social",
-      "rating": 5,
-      "reviews": 26,
-      "photos": 3,
-      "verified": true,
-      "hasHours": true,
-      "businessStatus": "OPERATIONAL",
-      "lat": -34.5795327,
-      "lng": -58.4824285,
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Consultorio%20odontologico%20especializado&query_place_id=ChIJnSkVOoS3vJUR7nbEDqjwm2U",
-      "ownerReplies": null,
-      "lastReviewDays": null,
-      "_normName": "consultorio odontologico especializado",
-      "passed": true,
-      "gateReasons": [],
-      "score": 58,
-      "breakdown": {
-        "web": 28,
-        "health": 15,
-        "photos": 15,
-        "ownerReplies": 0,
-        "hours": 0,
-        "recency": 0,
-        "unclaimed": 0
-      },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "services": [
+        {
+          "key": "web",
+          "label": "Sitio web",
+          "score": 90,
+          "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+        },
+        {
+          "key": "paid",
+          "label": "Pauta (paid)",
+          "score": 54,
+          "reason": "Tiene buena reputación (4.8★, 231 reseñas) pero depende de que lo encuentren solos; con pauta llega a más gente que ya busca lo suyo."
+        }
+      ],
+      "primaryService": {
+        "key": "web",
+        "label": "Sitio web",
+        "score": 90,
+        "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      }
     },
     {
       "placeId": "ChIJtWEOzN63vJURhy4kXBZS3o4",
@@ -612,7 +726,7 @@
       "_normName": "creciendo sanos",
       "passed": true,
       "gateReasons": [],
-      "score": 58,
+      "score": 90,
       "breakdown": {
         "web": 35,
         "health": 15,
@@ -622,7 +736,27 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "services": [
+        {
+          "key": "web",
+          "label": "Sitio web",
+          "score": 90,
+          "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+        },
+        {
+          "key": "paid",
+          "label": "Pauta (paid)",
+          "score": 42,
+          "reason": "Tiene buena reputación (5★, 21 reseñas) pero depende de que lo encuentren solos; con pauta llega a más gente que ya busca lo suyo."
+        }
+      ],
+      "primaryService": {
+        "key": "web",
+        "label": "Sitio web",
+        "score": 90,
+        "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      }
     },
     {
       "placeId": "ChIJ56KMBkm3vJURWhiC-JhE_q0",
@@ -648,7 +782,7 @@
       "_normName": "odontologia",
       "passed": true,
       "gateReasons": [],
-      "score": 58,
+      "score": 90,
       "breakdown": {
         "web": 35,
         "health": 15,
@@ -658,43 +792,27 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
-    },
-    {
-      "placeId": "ChIJiYEkUla3vJURfZdi0Hju-e4",
-      "name": "NB Odontología",
-      "rubro": "odontologo en Villa Urquiza, CABA, Argentina",
-      "category": "Dentista",
-      "address": "Echeverría 5019, C1431 Cdad. Autónoma de Buenos Aires, Argentina",
-      "borough": "Villa Urquiza, Comuna 12",
-      "phone": "",
-      "site": "http://www.instagram.com/nb_odontologia",
-      "webState": "social",
-      "rating": 5,
-      "reviews": 21,
-      "photos": 5,
-      "verified": true,
-      "hasHours": true,
-      "businessStatus": "OPERATIONAL",
-      "lat": -34.578587,
-      "lng": -58.480662,
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=NB%20Odontolog%C3%ADa&query_place_id=ChIJiYEkUla3vJURfZdi0Hju-e4",
-      "ownerReplies": null,
-      "lastReviewDays": null,
-      "_normName": "nb odontologia",
-      "passed": true,
-      "gateReasons": [],
-      "score": 58,
-      "breakdown": {
-        "web": 28,
-        "health": 15,
-        "photos": 15,
-        "ownerReplies": 0,
-        "hours": 0,
-        "recency": 0,
-        "unclaimed": 0
-      },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "services": [
+        {
+          "key": "web",
+          "label": "Sitio web",
+          "score": 90,
+          "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+        },
+        {
+          "key": "paid",
+          "label": "Pauta (paid)",
+          "score": 42,
+          "reason": "Tiene buena reputación (4.4★, 143 reseñas) pero depende de que lo encuentren solos; con pauta llega a más gente que ya busca lo suyo."
+        }
+      ],
+      "primaryService": {
+        "key": "web",
+        "label": "Sitio web",
+        "score": 90,
+        "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      }
     },
     {
       "placeId": "ChIJuYdlx7O3vJURevvjrA3oFUI",
@@ -720,7 +838,7 @@
       "_normName": "dental pleno monroe 5677",
       "passed": true,
       "gateReasons": [],
-      "score": 55,
+      "score": 90,
       "breakdown": {
         "web": 35,
         "health": 20,
@@ -730,7 +848,27 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "services": [
+        {
+          "key": "web",
+          "label": "Sitio web",
+          "score": 90,
+          "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+        },
+        {
+          "key": "paid",
+          "label": "Pauta (paid)",
+          "score": 54,
+          "reason": "Tiene buena reputación (5★, 381 reseñas) pero depende de que lo encuentren solos; con pauta llega a más gente que ya busca lo suyo."
+        }
+      ],
+      "primaryService": {
+        "key": "web",
+        "label": "Sitio web",
+        "score": 90,
+        "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      }
     },
     {
       "placeId": "ChIJ-RI1E37LvJUR-rFEnz_ldyY",
@@ -756,7 +894,7 @@
       "_normName": "armonident odontologia atencion con turno",
       "passed": true,
       "gateReasons": [],
-      "score": 55,
+      "score": 90,
       "breakdown": {
         "web": 35,
         "health": 20,
@@ -766,7 +904,27 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "services": [
+        {
+          "key": "web",
+          "label": "Sitio web",
+          "score": 90,
+          "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+        },
+        {
+          "key": "paid",
+          "label": "Pauta (paid)",
+          "score": 54,
+          "reason": "Tiene buena reputación (5★, 91 reseñas) pero depende de que lo encuentren solos; con pauta llega a más gente que ya busca lo suyo."
+        }
+      ],
+      "primaryService": {
+        "key": "web",
+        "label": "Sitio web",
+        "score": 90,
+        "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      }
     },
     {
       "placeId": "ChIJoQWGOlGwvJUR90oFYip50J8",
@@ -792,7 +950,7 @@
       "_normName": "odontologia integral medina reynoso",
       "passed": true,
       "gateReasons": [],
-      "score": 55,
+      "score": 90,
       "breakdown": {
         "web": 35,
         "health": 15,
@@ -802,115 +960,27 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
-    },
-    {
-      "placeId": "ChIJT_hMxqXLvJURGdaLeE_jjaE",
-      "name": "Consultorio Odontológico Rosario",
-      "rubro": "odontologo en Caballito, CABA, Argentina",
-      "category": "Ortodoncista",
-      "address": "Rosario 627 PB A, C1424 Cdad. Autónoma de Buenos Aires, Argentina",
-      "borough": "Caballito, Comuna 6",
-      "phone": "+54 11 6790-7780",
-      "site": "https://www.instagram.com/dra.lourdessantillan",
-      "webState": "social",
-      "rating": 4.9,
-      "reviews": 34,
-      "photos": 13,
-      "verified": true,
-      "hasHours": true,
-      "businessStatus": "OPERATIONAL",
-      "lat": -34.6198354,
-      "lng": -58.4378709,
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Consultorio%20Odontol%C3%B3gico%20Rosario&query_place_id=ChIJT_hMxqXLvJURGdaLeE_jjaE",
-      "ownerReplies": null,
-      "lastReviewDays": null,
-      "_normName": "consultorio odontologico rosario",
-      "passed": true,
-      "gateReasons": [],
-      "score": 51,
-      "breakdown": {
-        "web": 28,
-        "health": 15,
-        "photos": 8,
-        "ownerReplies": 0,
-        "hours": 0,
-        "recency": 0,
-        "unclaimed": 0
-      },
-      "webLabel": "Solo Instagram/Facebook"
-    },
-    {
-      "placeId": "ChIJ5RJOg_rLvJURI-hX8WWK9LQ",
-      "name": "COE DENTAL",
-      "rubro": "odontologo en Caballito, CABA, Argentina",
-      "category": "Dentista",
-      "address": "San José de Calasanz 624, C1424 Cdad. Autónoma de Buenos Aires, Argentina",
-      "borough": "Caballito, Comuna 6",
-      "phone": "+54 11 6902-5493",
-      "site": "https://instagram.com/coe.dental?utm_medium=copy_link",
-      "webState": "social",
-      "rating": 4.9,
-      "reviews": 28,
-      "photos": 8,
-      "verified": true,
-      "hasHours": true,
-      "businessStatus": "OPERATIONAL",
-      "lat": -34.6265027,
-      "lng": -58.4375166,
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=COE%20DENTAL&query_place_id=ChIJ5RJOg_rLvJURI-hX8WWK9LQ",
-      "ownerReplies": null,
-      "lastReviewDays": null,
-      "_normName": "coe dental",
-      "passed": true,
-      "gateReasons": [],
-      "score": 51,
-      "breakdown": {
-        "web": 28,
-        "health": 15,
-        "photos": 8,
-        "ownerReplies": 0,
-        "hours": 0,
-        "recency": 0,
-        "unclaimed": 0
-      },
-      "webLabel": "Solo Instagram/Facebook"
-    },
-    {
-      "placeId": "ChIJr0ggtry3vJURWYZJIbkZEFc",
-      "name": "Manpai Odontología Integral",
-      "rubro": "odontologo en Villa Urquiza, CABA, Argentina",
-      "category": "Clínica dental",
-      "address": "Ceretti 2135 6A, C1419 Cdad. Autónoma de Buenos Aires, Argentina",
-      "borough": "Villa Urquiza, Comuna 12",
-      "phone": "+54 9 11 2500-4843",
-      "site": "https://www.instagram.com/manpai_odontologia",
-      "webState": "social",
-      "rating": 5,
-      "reviews": 47,
-      "photos": 6,
-      "verified": true,
-      "hasHours": true,
-      "businessStatus": "OPERATIONAL",
-      "lat": -34.5803828,
-      "lng": -58.4909602,
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Manpai%20Odontologi%CC%81a%20Integral&query_place_id=ChIJr0ggtry3vJURWYZJIbkZEFc",
-      "ownerReplies": null,
-      "lastReviewDays": null,
-      "_normName": "manpai odontologia integral",
-      "passed": true,
-      "gateReasons": [],
-      "score": 51,
-      "breakdown": {
-        "web": 28,
-        "health": 15,
-        "photos": 8,
-        "ownerReplies": 0,
-        "hours": 0,
-        "recency": 0,
-        "unclaimed": 0
-      },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "services": [
+        {
+          "key": "web",
+          "label": "Sitio web",
+          "score": 90,
+          "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+        },
+        {
+          "key": "paid",
+          "label": "Pauta (paid)",
+          "score": 42,
+          "reason": "Tiene buena reputación (4.6★, 22 reseñas) pero depende de que lo encuentren solos; con pauta llega a más gente que ya busca lo suyo."
+        }
+      ],
+      "primaryService": {
+        "key": "web",
+        "label": "Sitio web",
+        "score": 90,
+        "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      }
     },
     {
       "placeId": "ChIJ4VifWy63vJURolT8NJ46c8M",
@@ -936,7 +1006,7 @@
       "_normName": "odontourquiza odontologia general ortodoncia coronas limpiezas extracciones",
       "passed": true,
       "gateReasons": [],
-      "score": 50,
+      "score": 90,
       "breakdown": {
         "web": 35,
         "health": 15,
@@ -946,7 +1016,27 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "services": [
+        {
+          "key": "web",
+          "label": "Sitio web",
+          "score": 90,
+          "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+        },
+        {
+          "key": "paid",
+          "label": "Pauta (paid)",
+          "score": 42,
+          "reason": "Tiene buena reputación (5★, 42 reseñas) pero depende de que lo encuentren solos; con pauta llega a más gente que ya busca lo suyo."
+        }
+      ],
+      "primaryService": {
+        "key": "web",
+        "label": "Sitio web",
+        "score": 90,
+        "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      }
     },
     {
       "placeId": "ChIJDwsXoW-3vJUR2qIRHmvAMkw",
@@ -972,7 +1062,7 @@
       "_normName": "odontologia integral dra janick cavalieri y equipo",
       "passed": true,
       "gateReasons": [],
-      "score": 50,
+      "score": 90,
       "breakdown": {
         "web": 35,
         "health": 15,
@@ -982,7 +1072,529 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "services": [
+        {
+          "key": "web",
+          "label": "Sitio web",
+          "score": 90,
+          "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+        },
+        {
+          "key": "paid",
+          "label": "Pauta (paid)",
+          "score": 42,
+          "reason": "Tiene buena reputación (4.6★, 23 reseñas) pero depende de que lo encuentren solos; con pauta llega a más gente que ya busca lo suyo."
+        }
+      ],
+      "primaryService": {
+        "key": "web",
+        "label": "Sitio web",
+        "score": 90,
+        "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      }
+    },
+    {
+      "placeId": "ChIJyyYVWwC3vJURBiAP7kHY08g",
+      "name": "Lm Dentista",
+      "rubro": "odontologo en Villa Urquiza, CABA, Argentina",
+      "category": "Dentista",
+      "address": "Av. Álvarez Thomas 2751, C1431FOE C1431FOE, Cdad. Autónoma de Buenos Aires, Argentina",
+      "borough": "Villa Urquiza",
+      "phone": "",
+      "site": "https://www.instagram.com/lm_odont?igsh=cTYwNWtxb3NkbWQw",
+      "webState": "social",
+      "rating": 4.5,
+      "reviews": 24,
+      "photos": 1,
+      "verified": false,
+      "hasHours": false,
+      "businessStatus": "OPERATIONAL",
+      "lat": -34.5745465,
+      "lng": -58.4790126,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Lm%20Dentista&query_place_id=ChIJyyYVWwC3vJURBiAP7kHY08g",
+      "ownerReplies": null,
+      "lastReviewDays": null,
+      "_normName": "lm dentista",
+      "passed": true,
+      "gateReasons": [],
+      "score": 71,
+      "breakdown": {
+        "web": 28,
+        "health": 15,
+        "photos": 15,
+        "ownerReplies": 0,
+        "hours": 5,
+        "recency": 0,
+        "unclaimed": 5
+      },
+      "webLabel": "Solo Instagram/Facebook",
+      "services": [
+        {
+          "key": "gbp",
+          "label": "Ficha de Google (GBP)",
+          "score": 71,
+          "reason": "Su ficha de Google está incompleta (pocas fotos, sin horarios cargados, ficha sin reclamar): en 2026 la ficha es lo que te muestra en Maps y en las IA, más que la web."
+        },
+        {
+          "key": "web",
+          "label": "Sitio web",
+          "score": 68,
+          "reason": "Solo tiene redes; le falta un sitio propio que sea suyo y no dependa del algoritmo de Instagram."
+        },
+        {
+          "key": "social",
+          "label": "Gestión de redes",
+          "score": 48,
+          "reason": "Maneja sus redes solo; podríamos profesionalizar el contenido y la constancia."
+        },
+        {
+          "key": "paid",
+          "label": "Pauta (paid)",
+          "score": 42,
+          "reason": "Tiene buena reputación (4.5★, 24 reseñas) pero depende de que lo encuentren solos; con pauta llega a más gente que ya busca lo suyo."
+        }
+      ],
+      "primaryService": {
+        "key": "gbp",
+        "label": "Ficha de Google (GBP)",
+        "score": 71,
+        "reason": "Su ficha de Google está incompleta (pocas fotos, sin horarios cargados, ficha sin reclamar): en 2026 la ficha es lo que te muestra en Maps y en las IA, más que la web."
+      }
+    },
+    {
+      "placeId": "ChIJfxoJzknLvJUR2uHc_MZL4C0",
+      "name": "Sonrisas Caballito",
+      "rubro": "odontologo en Caballito, CABA, Argentina",
+      "category": "Dentista",
+      "address": "Av. La Plata 148 consultorio 8, C1184 Cdad. Autónoma de Buenos Aires, Argentina",
+      "borough": "Caballito, Comuna 5",
+      "phone": "+54 11 4179-7324",
+      "site": "https://wa.me/5491141797324?text=Hola%20vi%20tu%20perfil%20y%20quiero%20consultar%20por%20un%20turno",
+      "webState": "social",
+      "rating": 5,
+      "reviews": 81,
+      "photos": 0,
+      "verified": true,
+      "hasHours": true,
+      "businessStatus": "OPERATIONAL",
+      "lat": -34.6166332,
+      "lng": -58.4286163,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Sonrisas%20Caballito&query_place_id=ChIJfxoJzknLvJUR2uHc_MZL4C0",
+      "ownerReplies": null,
+      "lastReviewDays": null,
+      "_normName": "sonrisas caballito",
+      "passed": true,
+      "gateReasons": [],
+      "score": 68,
+      "breakdown": {
+        "web": 28,
+        "health": 20,
+        "photos": 15,
+        "ownerReplies": 0,
+        "hours": 0,
+        "recency": 0,
+        "unclaimed": 0
+      },
+      "webLabel": "Solo Instagram/Facebook",
+      "services": [
+        {
+          "key": "web",
+          "label": "Sitio web",
+          "score": 68,
+          "reason": "Solo tiene redes; le falta un sitio propio que sea suyo y no dependa del algoritmo de Instagram."
+        },
+        {
+          "key": "paid",
+          "label": "Pauta (paid)",
+          "score": 54,
+          "reason": "Tiene buena reputación (5★, 81 reseñas) pero depende de que lo encuentren solos; con pauta llega a más gente que ya busca lo suyo."
+        },
+        {
+          "key": "social",
+          "label": "Gestión de redes",
+          "score": 48,
+          "reason": "Maneja sus redes solo; podríamos profesionalizar el contenido y la constancia."
+        }
+      ],
+      "primaryService": {
+        "key": "web",
+        "label": "Sitio web",
+        "score": 68,
+        "reason": "Solo tiene redes; le falta un sitio propio que sea suyo y no dependa del algoritmo de Instagram."
+      }
+    },
+    {
+      "placeId": "ChIJA_Nl_Aq3vJURM5vboYoCjck",
+      "name": "Mercier Odontología Integral, Villa Urquiza. Dr. Delponte y Equipo.",
+      "rubro": "odontologo en Villa Urquiza, CABA, Argentina",
+      "category": "Clínica dental",
+      "address": "Mendoza 5110, C1431 Cdad. Autónoma de Buenos Aires, Argentina",
+      "borough": "Villa Urquiza, Comuna 12",
+      "phone": "+54 11 7029-0571",
+      "site": "https://www.instagram.com/mercierodonto.urquiza/",
+      "webState": "social",
+      "rating": 5,
+      "reviews": 30,
+      "photos": 5,
+      "verified": true,
+      "hasHours": true,
+      "businessStatus": "OPERATIONAL",
+      "lat": -34.5774307,
+      "lng": -58.4839135,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Mercier%20Odontolog%C3%ADa%20Integral%2C%20Villa%20Urquiza.%20Dr.%20Delponte%20y%20Equipo.&query_place_id=ChIJA_Nl_Aq3vJURM5vboYoCjck",
+      "ownerReplies": null,
+      "lastReviewDays": null,
+      "_normName": "mercier odontologia integral villa urquiza dr delponte y equipo",
+      "passed": true,
+      "gateReasons": [],
+      "score": 68,
+      "breakdown": {
+        "web": 28,
+        "health": 15,
+        "photos": 15,
+        "ownerReplies": 0,
+        "hours": 0,
+        "recency": 0,
+        "unclaimed": 0
+      },
+      "webLabel": "Solo Instagram/Facebook",
+      "services": [
+        {
+          "key": "web",
+          "label": "Sitio web",
+          "score": 68,
+          "reason": "Solo tiene redes; le falta un sitio propio que sea suyo y no dependa del algoritmo de Instagram."
+        },
+        {
+          "key": "social",
+          "label": "Gestión de redes",
+          "score": 48,
+          "reason": "Maneja sus redes solo; podríamos profesionalizar el contenido y la constancia."
+        },
+        {
+          "key": "paid",
+          "label": "Pauta (paid)",
+          "score": 42,
+          "reason": "Tiene buena reputación (5★, 30 reseñas) pero depende de que lo encuentren solos; con pauta llega a más gente que ya busca lo suyo."
+        }
+      ],
+      "primaryService": {
+        "key": "web",
+        "label": "Sitio web",
+        "score": 68,
+        "reason": "Solo tiene redes; le falta un sitio propio que sea suyo y no dependa del algoritmo de Instagram."
+      }
+    },
+    {
+      "placeId": "ChIJnSkVOoS3vJUR7nbEDqjwm2U",
+      "name": "Consultorio odontologico especializado",
+      "rubro": "odontologo en Villa Urquiza, CABA, Argentina",
+      "category": "Dentista",
+      "address": "Echeverría 5131, C1431 Cdad. Autónoma de Buenos Aires, Argentina",
+      "borough": "Villa Urquiza, Comuna 12",
+      "phone": "+54 11 5655-0345",
+      "site": "http://instagram.com/odontologia_especializadacf",
+      "webState": "social",
+      "rating": 5,
+      "reviews": 26,
+      "photos": 3,
+      "verified": true,
+      "hasHours": true,
+      "businessStatus": "OPERATIONAL",
+      "lat": -34.5795327,
+      "lng": -58.4824285,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Consultorio%20odontologico%20especializado&query_place_id=ChIJnSkVOoS3vJUR7nbEDqjwm2U",
+      "ownerReplies": null,
+      "lastReviewDays": null,
+      "_normName": "consultorio odontologico especializado",
+      "passed": true,
+      "gateReasons": [],
+      "score": 68,
+      "breakdown": {
+        "web": 28,
+        "health": 15,
+        "photos": 15,
+        "ownerReplies": 0,
+        "hours": 0,
+        "recency": 0,
+        "unclaimed": 0
+      },
+      "webLabel": "Solo Instagram/Facebook",
+      "services": [
+        {
+          "key": "web",
+          "label": "Sitio web",
+          "score": 68,
+          "reason": "Solo tiene redes; le falta un sitio propio que sea suyo y no dependa del algoritmo de Instagram."
+        },
+        {
+          "key": "social",
+          "label": "Gestión de redes",
+          "score": 48,
+          "reason": "Maneja sus redes solo; podríamos profesionalizar el contenido y la constancia."
+        },
+        {
+          "key": "paid",
+          "label": "Pauta (paid)",
+          "score": 42,
+          "reason": "Tiene buena reputación (5★, 26 reseñas) pero depende de que lo encuentren solos; con pauta llega a más gente que ya busca lo suyo."
+        }
+      ],
+      "primaryService": {
+        "key": "web",
+        "label": "Sitio web",
+        "score": 68,
+        "reason": "Solo tiene redes; le falta un sitio propio que sea suyo y no dependa del algoritmo de Instagram."
+      }
+    },
+    {
+      "placeId": "ChIJiYEkUla3vJURfZdi0Hju-e4",
+      "name": "NB Odontología",
+      "rubro": "odontologo en Villa Urquiza, CABA, Argentina",
+      "category": "Dentista",
+      "address": "Echeverría 5019, C1431 Cdad. Autónoma de Buenos Aires, Argentina",
+      "borough": "Villa Urquiza, Comuna 12",
+      "phone": "",
+      "site": "http://www.instagram.com/nb_odontologia",
+      "webState": "social",
+      "rating": 5,
+      "reviews": 21,
+      "photos": 5,
+      "verified": true,
+      "hasHours": true,
+      "businessStatus": "OPERATIONAL",
+      "lat": -34.578587,
+      "lng": -58.480662,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=NB%20Odontolog%C3%ADa&query_place_id=ChIJiYEkUla3vJURfZdi0Hju-e4",
+      "ownerReplies": null,
+      "lastReviewDays": null,
+      "_normName": "nb odontologia",
+      "passed": true,
+      "gateReasons": [],
+      "score": 68,
+      "breakdown": {
+        "web": 28,
+        "health": 15,
+        "photos": 15,
+        "ownerReplies": 0,
+        "hours": 0,
+        "recency": 0,
+        "unclaimed": 0
+      },
+      "webLabel": "Solo Instagram/Facebook",
+      "services": [
+        {
+          "key": "web",
+          "label": "Sitio web",
+          "score": 68,
+          "reason": "Solo tiene redes; le falta un sitio propio que sea suyo y no dependa del algoritmo de Instagram."
+        },
+        {
+          "key": "social",
+          "label": "Gestión de redes",
+          "score": 48,
+          "reason": "Maneja sus redes solo; podríamos profesionalizar el contenido y la constancia."
+        },
+        {
+          "key": "paid",
+          "label": "Pauta (paid)",
+          "score": 42,
+          "reason": "Tiene buena reputación (5★, 21 reseñas) pero depende de que lo encuentren solos; con pauta llega a más gente que ya busca lo suyo."
+        }
+      ],
+      "primaryService": {
+        "key": "web",
+        "label": "Sitio web",
+        "score": 68,
+        "reason": "Solo tiene redes; le falta un sitio propio que sea suyo y no dependa del algoritmo de Instagram."
+      }
+    },
+    {
+      "placeId": "ChIJT_hMxqXLvJURGdaLeE_jjaE",
+      "name": "Consultorio Odontológico Rosario",
+      "rubro": "odontologo en Caballito, CABA, Argentina",
+      "category": "Ortodoncista",
+      "address": "Rosario 627 PB A, C1424 Cdad. Autónoma de Buenos Aires, Argentina",
+      "borough": "Caballito, Comuna 6",
+      "phone": "+54 11 6790-7780",
+      "site": "https://www.instagram.com/dra.lourdessantillan",
+      "webState": "social",
+      "rating": 4.9,
+      "reviews": 34,
+      "photos": 13,
+      "verified": true,
+      "hasHours": true,
+      "businessStatus": "OPERATIONAL",
+      "lat": -34.6198354,
+      "lng": -58.4378709,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Consultorio%20Odontol%C3%B3gico%20Rosario&query_place_id=ChIJT_hMxqXLvJURGdaLeE_jjaE",
+      "ownerReplies": null,
+      "lastReviewDays": null,
+      "_normName": "consultorio odontologico rosario",
+      "passed": true,
+      "gateReasons": [],
+      "score": 68,
+      "breakdown": {
+        "web": 28,
+        "health": 15,
+        "photos": 8,
+        "ownerReplies": 0,
+        "hours": 0,
+        "recency": 0,
+        "unclaimed": 0
+      },
+      "webLabel": "Solo Instagram/Facebook",
+      "services": [
+        {
+          "key": "web",
+          "label": "Sitio web",
+          "score": 68,
+          "reason": "Solo tiene redes; le falta un sitio propio que sea suyo y no dependa del algoritmo de Instagram."
+        },
+        {
+          "key": "social",
+          "label": "Gestión de redes",
+          "score": 48,
+          "reason": "Maneja sus redes solo; podríamos profesionalizar el contenido y la constancia."
+        },
+        {
+          "key": "paid",
+          "label": "Pauta (paid)",
+          "score": 42,
+          "reason": "Tiene buena reputación (4.9★, 34 reseñas) pero depende de que lo encuentren solos; con pauta llega a más gente que ya busca lo suyo."
+        }
+      ],
+      "primaryService": {
+        "key": "web",
+        "label": "Sitio web",
+        "score": 68,
+        "reason": "Solo tiene redes; le falta un sitio propio que sea suyo y no dependa del algoritmo de Instagram."
+      }
+    },
+    {
+      "placeId": "ChIJ5RJOg_rLvJURI-hX8WWK9LQ",
+      "name": "COE DENTAL",
+      "rubro": "odontologo en Caballito, CABA, Argentina",
+      "category": "Dentista",
+      "address": "San José de Calasanz 624, C1424 Cdad. Autónoma de Buenos Aires, Argentina",
+      "borough": "Caballito, Comuna 6",
+      "phone": "+54 11 6902-5493",
+      "site": "https://instagram.com/coe.dental?utm_medium=copy_link",
+      "webState": "social",
+      "rating": 4.9,
+      "reviews": 28,
+      "photos": 8,
+      "verified": true,
+      "hasHours": true,
+      "businessStatus": "OPERATIONAL",
+      "lat": -34.6265027,
+      "lng": -58.4375166,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=COE%20DENTAL&query_place_id=ChIJ5RJOg_rLvJURI-hX8WWK9LQ",
+      "ownerReplies": null,
+      "lastReviewDays": null,
+      "_normName": "coe dental",
+      "passed": true,
+      "gateReasons": [],
+      "score": 68,
+      "breakdown": {
+        "web": 28,
+        "health": 15,
+        "photos": 8,
+        "ownerReplies": 0,
+        "hours": 0,
+        "recency": 0,
+        "unclaimed": 0
+      },
+      "webLabel": "Solo Instagram/Facebook",
+      "services": [
+        {
+          "key": "web",
+          "label": "Sitio web",
+          "score": 68,
+          "reason": "Solo tiene redes; le falta un sitio propio que sea suyo y no dependa del algoritmo de Instagram."
+        },
+        {
+          "key": "social",
+          "label": "Gestión de redes",
+          "score": 48,
+          "reason": "Maneja sus redes solo; podríamos profesionalizar el contenido y la constancia."
+        },
+        {
+          "key": "paid",
+          "label": "Pauta (paid)",
+          "score": 42,
+          "reason": "Tiene buena reputación (4.9★, 28 reseñas) pero depende de que lo encuentren solos; con pauta llega a más gente que ya busca lo suyo."
+        }
+      ],
+      "primaryService": {
+        "key": "web",
+        "label": "Sitio web",
+        "score": 68,
+        "reason": "Solo tiene redes; le falta un sitio propio que sea suyo y no dependa del algoritmo de Instagram."
+      }
+    },
+    {
+      "placeId": "ChIJr0ggtry3vJURWYZJIbkZEFc",
+      "name": "Manpai Odontología Integral",
+      "rubro": "odontologo en Villa Urquiza, CABA, Argentina",
+      "category": "Clínica dental",
+      "address": "Ceretti 2135 6A, C1419 Cdad. Autónoma de Buenos Aires, Argentina",
+      "borough": "Villa Urquiza, Comuna 12",
+      "phone": "+54 9 11 2500-4843",
+      "site": "https://www.instagram.com/manpai_odontologia",
+      "webState": "social",
+      "rating": 5,
+      "reviews": 47,
+      "photos": 6,
+      "verified": true,
+      "hasHours": true,
+      "businessStatus": "OPERATIONAL",
+      "lat": -34.5803828,
+      "lng": -58.4909602,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Manpai%20Odontologi%CC%81a%20Integral&query_place_id=ChIJr0ggtry3vJURWYZJIbkZEFc",
+      "ownerReplies": null,
+      "lastReviewDays": null,
+      "_normName": "manpai odontologia integral",
+      "passed": true,
+      "gateReasons": [],
+      "score": 68,
+      "breakdown": {
+        "web": 28,
+        "health": 15,
+        "photos": 8,
+        "ownerReplies": 0,
+        "hours": 0,
+        "recency": 0,
+        "unclaimed": 0
+      },
+      "webLabel": "Solo Instagram/Facebook",
+      "services": [
+        {
+          "key": "web",
+          "label": "Sitio web",
+          "score": 68,
+          "reason": "Solo tiene redes; le falta un sitio propio que sea suyo y no dependa del algoritmo de Instagram."
+        },
+        {
+          "key": "social",
+          "label": "Gestión de redes",
+          "score": 48,
+          "reason": "Maneja sus redes solo; podríamos profesionalizar el contenido y la constancia."
+        },
+        {
+          "key": "paid",
+          "label": "Pauta (paid)",
+          "score": 42,
+          "reason": "Tiene buena reputación (5★, 47 reseñas) pero depende de que lo encuentren solos; con pauta llega a más gente que ya busca lo suyo."
+        }
+      ],
+      "primaryService": {
+        "key": "web",
+        "label": "Sitio web",
+        "score": 68,
+        "reason": "Solo tiene redes; le falta un sitio propio que sea suyo y no dependa del algoritmo de Instagram."
+      }
     }
   ],
   "all": [
