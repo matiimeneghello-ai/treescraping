@@ -24,14 +24,12 @@ function loadTemplate(file) {
   return _cache[file];
 }
 
+// Inyecta SOLO las tarjetas (sin envolver en .svc-grid): los templates ya
+// ponen el contenedor <div class="svc-grid"> alrededor de {{SERVICES_HTML}}.
 function servicesHtml(content) {
-  return (
-    `<div class="svc-grid">` +
-    content.services
-      .map((s) => `<div class="svc-card"><h3 class="svc-title">${esc(s.title)}</h3><p class="svc-desc">${esc(s.desc)}</p></div>`)
-      .join("") +
-    `</div>`
-  );
+  return content.services
+    .map((s) => `<div class="svc-card"><h3 class="svc-title">${esc(s.title)}</h3><p class="svc-desc">${esc(s.desc)}</p></div>`)
+    .join("");
 }
 
 export function renderLanding(p) {
