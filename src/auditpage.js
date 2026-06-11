@@ -46,6 +46,7 @@ export const AUDIT_PAGE = `<!doctype html>
   .svc h3{font-size:1.1rem;font-weight:800;margin-bottom:5px}
   .svc p{color:var(--ink-soft);font-size:.96rem}
   .psi{display:grid;gap:13px}
+  .psi-loading{color:var(--mute)}
   .psi-row{display:flex;align-items:center;gap:12px}
   .psi-l{flex:0 0 120px;font-size:.92rem;color:var(--ink-soft)}
   .psi-bar{flex:1;height:9px;background:#edf1ee;border-radius:6px;overflow:hidden}
@@ -102,11 +103,8 @@ f.addEventListener('submit',async e=>{
   } else {
     html+='<section><h2>No pudimos cargar tu sitio</h2><p class="sec-sub">'+esc(d.url)+'</p><p>Tardó demasiado o no responde — eso ya es algo a revisar: si a nosotros nos costó, a tus clientes también.</p></section>';
   }
-  if(d.psi && !d.psi.error && (d.psi.perf!=null||d.psi.seo!=null)){
-    const bar=(l,v)=>{ if(v==null) return ''; const c=v>=90?'#16894a':v>=50?'#d98a2b':'#c0392b';
-      return '<div class="psi-row"><span class="psi-l">'+l+'</span><span class="psi-bar"><i style="width:'+v+'%;background:'+c+'"></i></span><b style="color:'+c+'">'+v+'</b></div>'; };
-    html+='<section><h2>Velocidad, según Google</h2><p class="sec-sub">Medido en celular con PageSpeed.</p><div class="psi">'+
-      bar('Velocidad',d.psi.perf)+bar('SEO',d.psi.seo)+bar('Accesibilidad',d.psi.a11y)+bar('Buenas prácticas',d.psi.bp)+'</div></section>';
+  if(d.psiPending){
+    html+='<section id="psi-sec"><h2>Velocidad, según Google</h2><p class="sec-sub">Medido en celular con PageSpeed.</p><div id="psi" class="psi"><span class="psi-loading">Midiendo… (Google tarda unos segundos)</span></div></section>';
   }
   const svcs=d.services||[];
   if(svcs.length){
@@ -116,6 +114,15 @@ f.addEventListener('submit',async e=>{
   html+='<section class="cta"><h2>¿Lo resolvemos juntos?</h2><p>En Tree Marketing armamos un plan concreto para tu negocio, sin compromiso.</p><a href="https://wa.me/" target="_blank">Hablemos por WhatsApp</a></section>';
   out.innerHTML=html;
   out.scrollIntoView({behavior:'smooth',block:'start'});
+  if(d.psiPending){
+    fetch('/api/audit-psi?url='+encodeURIComponent(d.url)).then(r=>r.json()).then(function(p){
+      var el=document.getElementById('psi'); if(!el) return;
+      if(!p || p.error || (p.perf==null && p.seo==null)){ var s=document.getElementById('psi-sec'); if(s) s.style.display='none'; return; }
+      function bar(l,v){ if(v==null) return ''; var c=v>=90?'#16894a':v>=50?'#d98a2b':'#c0392b';
+        return '<div class="psi-row"><span class="psi-l">'+l+'</span><span class="psi-bar"><i style="width:'+v+'%;background:'+c+'"></i></span><b style="color:'+c+'">'+v+'</b></div>'; }
+      el.innerHTML=bar('Velocidad',p.perf)+bar('SEO',p.seo)+bar('Accesibilidad',p.a11y)+bar('Buenas prácticas',p.bp);
+    }).catch(function(){ var s=document.getElementById('psi-sec'); if(s) s.style.display='none'; });
+  }
 });
 </script>
 </body></html>`;

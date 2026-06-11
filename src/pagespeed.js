@@ -22,7 +22,7 @@ export async function pageSpeed(url) {
 
   try {
     const ctrl = new AbortController();
-    const t = setTimeout(() => ctrl.abort(), 32000);
+    const t = setTimeout(() => ctrl.abort(), 55000);
     const res = await fetch(api, { signal: ctrl.signal });
     clearTimeout(t);
     if (!res.ok) {

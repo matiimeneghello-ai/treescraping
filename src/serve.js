@@ -178,12 +178,20 @@ const server = createServer(async (req, res) => {
       const audit = await auditSite(u);
       const cand = { webState: "own", site: u, name: hostName(u), rating: "", reviews: 0, photos: 0, verified: true, hasHours: true, audit };
       const rec = recommendServices(cand, audit);
-      let psi = null;
-      if (process.env.PSI_KEY && audit.reachable) psi = await pageSpeed(u);
-      return json(res, 200, { url: u, audit, services: rec.services, primary: rec.primary, psi });
+      // PSI NO va acá (es lento): el cliente lo pide aparte a /api/audit-psi.
+      return json(res, 200, { url: u, audit, services: rec.services, primary: rec.primary, psiPending: !!(process.env.PSI_KEY && audit.reachable) });
     } catch (e) {
       return json(res, 500, { error: "No pudimos analizar el sitio." });
     }
+  }
+
+  // PageSpeed para una URL arbitraria (lo usa el widget inbound, async).
+  if (path === "/api/audit-psi") {
+    let u = (url.searchParams.get("url") || "").trim();
+    if (!u) return json(res, 200, { error: "sin url" });
+    if (!/^https?:\/\//i.test(u)) u = "https://" + u;
+    try { return json(res, 200, await pageSpeed(u)); }
+    catch (e) { return json(res, 200, { error: e.message }); }
   }
 
   // PageSpeed Insights on-demand para el sitio de un candidato (cacheado).
