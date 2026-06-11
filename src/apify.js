@@ -22,10 +22,12 @@ function token() {
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function startRun(input) {
-  // Más memoria = más concurrencia en el actor (Crawlee) = scan más rápido.
-  // El actor cobra por resultado, así que subir RAM no encarece. Override: APIFY_MEMORY.
-  const memory = Number(process.env.APIFY_MEMORY) || 4096;
-  const res = await fetch(`${BASE}/acts/${ACTOR}/runs?token=${token()}&memory=${memory}`, {
+  // Por defecto usamos la memoria del actor (probada y estable). Forzar RAM alta
+  // (ej 4096) hace abortar el run en el plan free de Apify. Si querés acelerar y
+  // tu plan lo permite, seteá APIFY_MEMORY (ej 2048/4096) como override explícito.
+  const mem = Number(process.env.APIFY_MEMORY);
+  const memParam = mem ? `&memory=${mem}` : "";
+  const res = await fetch(`${BASE}/acts/${ACTOR}/runs?token=${token()}${memParam}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(input),
