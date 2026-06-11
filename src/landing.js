@@ -7,10 +7,22 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { ROOT } from "./pipeline.js";
+import { existsSync } from "node:fs";
 import { fill, esc, waLink } from "./fill.js";
 import { resolveRubro } from "./content.js";
 
-const TEMPLATE = readFileSync(join(ROOT, "src", "landing-template.html"), "utf8");
+// Un template por rubro (cacheado). Fallback al genérico, y a un
+// template viejo si los nuevos no estuvieran presentes.
+const _cache = {};
+function loadTemplate(file) {
+  if (_cache[file] !== undefined) return _cache[file];
+  const path = join(ROOT, "src", file);
+  const fallback = join(ROOT, "src", "landing-generico.html");
+  const legacy = join(ROOT, "src", "landing-template.html");
+  const use = existsSync(path) ? path : existsSync(fallback) ? fallback : legacy;
+  _cache[file] = readFileSync(use, "utf8");
+  return _cache[file];
+}
 
 function servicesHtml(content) {
   return (
@@ -24,6 +36,7 @@ function servicesHtml(content) {
 
 export function renderLanding(p) {
   const content = resolveRubro(p);
+  const TEMPLATE = loadTemplate(content.template || "landing-generico.html");
   const wa = waLink(p.phone);
   const phoneRaw = String(p.phone || "").replace(/[^0-9]/g, "");
   const tokens = {
