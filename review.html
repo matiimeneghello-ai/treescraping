@@ -105,6 +105,9 @@
     padding:7px 13px;font-size:12.5px;cursor:pointer;font-family:inherit;transition:.15s;white-space:nowrap}
   .chip:hover{color:var(--text)}
   .chip.on{background:rgba(184,255,87,.12);color:var(--acid);font-weight:600}
+  .chip i{font-style:normal;font-size:10px;opacity:.6;margin-left:3px;font-variant-numeric:tabular-nums}
+  .chip.on i{opacity:.9}
+  .toolbar .seg{flex-wrap:wrap}
   .count-note{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint)}
 
   /* ---------- candidate cards ---------- */
@@ -231,13 +234,8 @@
   <section class="kpis" id="kpis"></section>
 
   <div class="toolbar">
-    <div class="seg">
-      <button class="chip on" data-f="all">Todos</button>
-      <button class="chip" data-f="pending">Sin revisar</button>
-      <button class="chip" data-f="approved">Aprobados</button>
-      <button class="chip" data-f="none">Sin web</button>
-      <button class="chip" data-f="social">Solo redes</button>
-    </div>
+    <div class="seg" id="filterState"></div>
+    <div class="seg" id="filterOpp"></div>
     <span class="count-note" id="countNote"></span>
   </div>
 
@@ -317,17 +315,40 @@ function whyChips(bd){
   return map.filter(([k])=>bd[k]).map(([k,lbl])=>`<span class="why">${lbl} +${bd[k]}</span>`).join("");
 }
 
+const FILTERS_STATE = [
+  {k:"all", l:"Todos"}, {k:"pending", l:"Sin revisar"}, {k:"approved", l:"Aprobados"},
+];
+const FILTERS_OPP = [
+  {k:"noweb", l:"Sin sitio (vender web)"}, {k:"hasweb", l:"Ya con sitio (mejorar)"},
+  {k:"svc:seo", l:"SEO"}, {k:"svc:redesign", l:"Rehacer"}, {k:"svc:social", l:"Redes"},
+  {k:"svc:paid", l:"Pauta"}, {k:"svc:reviews", l:"Reseñas"}, {k:"svc:gbp", l:"Ficha Google"},
+];
+function matchFilter(p, f){
+  const st = review[p.placeId];
+  if(f==="approved") return st==="ok";
+  if(f==="pending")  return !st;
+  if(f==="noweb")    return p.webState!=="own";
+  if(f==="hasweb")   return p.webState==="own";
+  if(f && f.indexOf("svc:")===0) return (p.primaryService&&p.primaryService.key)===f.slice(4);
+  return true; // all
+}
+function renderFilters(){
+  const build=(arr,host)=>{
+    document.getElementById(host).innerHTML = arr.map(f=>{
+      const n = DATA.filter(p=>matchFilter(p,f.k)).length;
+      if(f.k.indexOf("svc:")===0 && n===0) return ""; // ocultá servicios sin candidatos
+      return `<button class="chip ${FILTER===f.k?"on":""}" data-f="${f.k}">${f.l} <i>${n}</i></button>`;
+    }).join("");
+  };
+  build(FILTERS_STATE,"filterState");
+  build(FILTERS_OPP,"filterOpp");
+}
+
 function render(){
   kpiCards();
+  renderFilters();
   const c = document.getElementById("content");
-  let rows = DATA.filter(p=>{
-    const st = review[p.placeId];
-    if(FILTER==="approved") return st==="ok";
-    if(FILTER==="pending")  return !st;
-    if(FILTER==="none")     return p.webState==="none";
-    if(FILTER==="social")   return p.webState==="social";
-    return true;
-  });
+  let rows = DATA.filter(p=>matchFilter(p,FILTER));
   document.getElementById("countNote").textContent = `${rows.length} de ${DATA.length}`;
 
   if(!DATA.length){ c.innerHTML = `<div class="empty">Todavía no hay datos. Configurá rubros y zonas arriba y tocá <b>Correr scan</b>.</div>`; return; }
@@ -429,9 +450,9 @@ document.addEventListener("click", async (e)=>{
   setTimeout(()=>b.textContent=t,1400);
 });
 
-document.querySelectorAll(".chip").forEach(ch=>ch.onclick=()=>{
-  document.querySelectorAll(".chip").forEach(x=>x.classList.remove("on"));
-  ch.classList.add("on"); FILTER = ch.dataset.f; render();
+document.querySelector(".toolbar").addEventListener("click", e=>{
+  const ch = e.target.closest(".chip"); if(!ch) return;
+  FILTER = ch.dataset.f; render();
 });
 
 function loadData(){
