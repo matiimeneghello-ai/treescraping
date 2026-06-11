@@ -7,19 +7,10 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { ROOT } from "./pipeline.js";
-import { fill, esc, norm, waLink } from "./fill.js";
-import { RUBROS_CONTENT } from "./content.js";
+import { fill, esc, waLink } from "./fill.js";
+import { resolveRubro } from "./content.js";
 
 const TEMPLATE = readFileSync(join(ROOT, "src", "landing-template.html"), "utf8");
-
-function rubroContent(candidate) {
-  const hay = norm(`${candidate.rubro || ""} ${candidate.category || ""}`);
-  return (
-    RUBROS_CONTENT.find((r) => r.slug !== "generico" && hay.includes(norm(r.slug))) ||
-    RUBROS_CONTENT.find((r) => r.slug === "generico") ||
-    RUBROS_CONTENT[0]
-  );
-}
 
 function servicesHtml(content) {
   return (
@@ -32,13 +23,13 @@ function servicesHtml(content) {
 }
 
 export function renderLanding(p) {
-  const content = rubroContent(p);
+  const content = resolveRubro(p);
   const wa = waLink(p.phone);
   const phoneRaw = String(p.phone || "").replace(/[^0-9]/g, "");
   const tokens = {
     NAME: esc(p.name),
     TAGLINE: esc(content.tagline),
-    RUBRO: esc((p.rubro || content.slug).split(" en ")[0]),
+    RUBRO: esc(content.label || content.slug),
     NEIGHBORHOOD: esc(p.borough || ""),
     CITY: "CABA",
     PHONE: esc(p.phone || ""),

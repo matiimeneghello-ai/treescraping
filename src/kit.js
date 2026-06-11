@@ -6,7 +6,7 @@
 // ============================================================
 
 import { fill } from "./fill.js";
-import { COPY } from "./content.js";
+import { COPY, resolveRubro } from "./content.js";
 
 export function buildKit(p, demoUrl) {
   const tokens = {
@@ -14,7 +14,7 @@ export function buildKit(p, demoUrl) {
     NEIGHBORHOOD: p.borough || "tu zona",
     RATING: p.rating ?? "",
     REVIEWS: p.reviews ?? "",
-    RUBRO: (p.rubro || p.category || "tu rubro").split(" en ")[0],
+    RUBRO: resolveRubro(p).label || "tu rubro",
     DEMO_URL: demoUrl,
   };
 

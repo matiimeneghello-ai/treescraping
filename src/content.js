@@ -4,6 +4,18 @@
 // Editable a mano. Los tokens {{...}} los llena el server.
 // ============================================================
 
+import { norm } from "./fill.js";
+
+// Resuelve el contenido del rubro a partir de un candidato (rubro/category).
+export function resolveRubro(candidate) {
+  const hay = norm(`${candidate.rubro || ""} ${candidate.category || ""}`);
+  return (
+    RUBROS_CONTENT.find((r) => r.slug !== "generico" && hay.includes(norm(r.slug))) ||
+    RUBROS_CONTENT.find((r) => r.slug === "generico") ||
+    RUBROS_CONTENT[0]
+  );
+}
+
 export const COPY = {
   emailSubject: "{{NAME}}, te armé el sitio y quiero que lo veas",
   emailBody:
@@ -41,6 +53,7 @@ No es una plantilla genérica, es para su {{RUBRO}}. Si les gusta, la dejamos an
 export const RUBROS_CONTENT = [
   {
     slug: "odontologo",
+    label: "odontología",
     tagline: "Tu sonrisa en manos de un equipo que te explica todo antes de empezar",
     about: "Somos un consultorio odontológico con años atendiendo a la zona. Trabajamos con turnos puntuales, presupuestos claros y sin sorpresas. Lo más importante para nosotros es que entiendas tu tratamiento y te sientas cómodo en cada visita.",
     services: [
@@ -54,6 +67,7 @@ export const RUBROS_CONTENT = [
   },
   {
     slug: "estudio contable",
+    label: "estudio contable",
     tagline: "Tus números al día y en regla, sin que tengas que entender de impuestos",
     about: "Somos un estudio contable que acompaña a monotributistas, autónomos y pymes. Te sacamos el tema impositivo de la cabeza para que te dediques a tu negocio. Respondemos rápido y hablamos en criollo, no en jerga.",
     services: [
@@ -67,6 +81,7 @@ export const RUBROS_CONTENT = [
   },
   {
     slug: "generico",
+    label: "negocio",
     tagline: "El servicio que buscás, hecho bien y por gente de la zona",
     about: "Hace años que trabajamos en el barrio y la mayoría de nuestros clientes llega por recomendación. Cumplimos con lo que prometemos, damos presupuesto antes de arrancar y respondemos cuando nos escribís. Así de simple.",
     services: [
