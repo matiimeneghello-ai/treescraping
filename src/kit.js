@@ -33,5 +33,8 @@ export function buildKit(p, demoUrl) {
     whatsapp: fill(COPY.whatsapp, tokens),
     analysis: analysis.filter(Boolean).map((s) => fill(s, tokens)),
     valueProps: COPY.valueProps || [],
+    // para abrir WhatsApp con el mensaje pre-cargado (fallback al teléfono crudo,
+    // que ya trae el código de país, para datos viejos sin phoneIntl)
+    waPhone: p.phoneIntl || String(p.phone || "").replace(/[^0-9]/g, ""),
   };
 }

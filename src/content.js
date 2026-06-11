@@ -6,14 +6,16 @@
 
 import { norm } from "./fill.js";
 
-// Resuelve el contenido del rubro a partir de un candidato (rubro/category).
+// Resuelve el contenido del rubro a partir de un candidato (rubro/category),
+// matcheando por las keywords de cada rubro (r.match) o por el slug.
 export function resolveRubro(candidate) {
   const hay = norm(`${candidate.rubro || ""} ${candidate.category || ""}`);
-  return (
-    RUBROS_CONTENT.find((r) => r.slug !== "generico" && hay.includes(norm(r.slug))) ||
-    RUBROS_CONTENT.find((r) => r.slug === "generico") ||
-    RUBROS_CONTENT[0]
-  );
+  const hit = RUBROS_CONTENT.find((r) => {
+    if (r.slug === "generico") return false;
+    const kws = r.match && r.match.length ? r.match : [r.slug];
+    return kws.some((k) => hay.includes(norm(k)));
+  });
+  return hit || RUBROS_CONTENT.find((r) => r.slug === "generico") || RUBROS_CONTENT[0];
 }
 
 // Palabras que ya indican "marca de negocio" (si están, no se toca el nombre).
@@ -73,6 +75,7 @@ export const RUBROS_CONTENT = [
     label: "odontología",
     template: "landing-odontologo.html",
     brandPrefix: "Consultorio",
+    match: ["odontolog", "dentista", "dental", "dentist"],
     tagline: "Tu sonrisa en manos de un equipo que te explica todo antes de empezar",
     about: "Somos un consultorio odontológico con años atendiendo a la zona. Trabajamos con turnos puntuales, presupuestos claros y sin sorpresas. Lo más importante para nosotros es que entiendas tu tratamiento y te sientas cómodo en cada visita.",
     services: [
@@ -89,6 +92,7 @@ export const RUBROS_CONTENT = [
     label: "estudio contable",
     template: "landing-contable.html",
     brandPrefix: "Estudio",
+    match: ["contable", "contador", "contadur", "accountant", "accounting"],
     tagline: "Tus números al día y en regla, sin que tengas que entender de impuestos",
     about: "Somos un estudio contable que acompaña a monotributistas, autónomos y pymes. Te sacamos el tema impositivo de la cabeza para que te dediques a tu negocio. Respondemos rápido y hablamos en criollo, no en jerga.",
     services: [
@@ -98,6 +102,54 @@ export const RUBROS_CONTENT = [
       { title: "Balances y estados contables", desc: "Armamos tu balance anual listo para presentar ante AFIP, bancos o socios." },
       { title: "Asesoramiento impositivo", desc: "Te decimos cómo conviene facturar y armar tu negocio para pagar lo justo." },
       { title: "Inscripciones y trámites", desc: "Gestionamos altas en AFIP, ARCA, ingresos brutos y los trámites que necesites." },
+    ],
+  },
+  {
+    slug: "gastronomia",
+    label: "gastronomía",
+    template: "landing-gastronomia.html",
+    match: ["restaurant", "resto", "parrilla", "pizzer", "cafe", "café", "cervec", "bar ", "bodeg", "comida", "gastronom", "cocina", "helader", "panaderia", "pasta"],
+    tagline: "Cocina de verdad, en un lugar para quedarte sin apuro",
+    about: "Cocinamos lo que nos gusta comer: ingredientes frescos, recetas de siempre y un lugar donde sentarte tranquilo. Atendemos como nos gusta que nos atiendan a nosotros.",
+    services: [
+      { title: "Cocina casera", desc: "Platos hechos al momento, con ingredientes frescos y de la zona." },
+      { title: "Parrilla y achuras", desc: "Carnes a la parrilla en su punto justo, como tiene que ser." },
+      { title: "Pastas caseras", desc: "Pastas amasadas en casa con salsas de verdad." },
+      { title: "Para llevar y delivery", desc: "Pedí y retirá, o te lo llevamos a casa caliente." },
+      { title: "Reservas", desc: "Coordinás tu mesa por WhatsApp y te esperamos." },
+      { title: "Eventos y grupos", desc: "Cumpleaños, after office y mesas largas, sin drama." },
+    ],
+  },
+  {
+    slug: "estetica",
+    label: "estética",
+    template: "landing-estetica.html",
+    match: ["peluquer", "estetica", "estética", "belleza", "spa", "barber", "manicur", "uñas", "depilac", "cosmetolog", "salon de belleza", "nails", "makeup", "maquillaje"],
+    tagline: "Salí sintiéndote bien, en manos de gente que sabe lo que hace",
+    about: "Hace años cuidamos a la gente del barrio. Trabajamos con productos de calidad, turnos puntuales y la atención personalizada que se merece cada persona que entra.",
+    services: [
+      { title: "Corte y peinado", desc: "El corte que te queda bien, asesorado según tu estilo." },
+      { title: "Color y mechas", desc: "Coloración, mechas y matices con productos que cuidan el pelo." },
+      { title: "Manicura y pedicura", desc: "Uñas prolijas y duraderas, tradicional o esmaltado semipermanente." },
+      { title: "Tratamientos faciales", desc: "Limpieza e hidratación para que tu piel se sienta bien." },
+      { title: "Depilación", desc: "Rápida, prolija y con la mayor comodidad posible." },
+      { title: "Maquillaje y eventos", desc: "Te dejamos lista para tu día especial o el evento que sea." },
+    ],
+  },
+  {
+    slug: "inmobiliaria",
+    label: "inmobiliaria",
+    template: "landing-inmobiliaria.html",
+    match: ["inmobiliar", "propiedad", "bienes raices", "bienes raíces", "corredor", "real estate", "loteo", "alquiler"],
+    tagline: "La propiedad que buscás, con gente que conoce el barrio",
+    about: "Conocemos la zona como nadie. Te acompañamos en cada paso de la operación con transparencia, sin letra chica, y nos ocupamos de que todo salga bien de principio a fin.",
+    services: [
+      { title: "Venta de propiedades", desc: "Publicamos, mostramos y vendemos tu propiedad al mejor precio posible." },
+      { title: "Alquileres", desc: "Encontramos inquilinos serios y nos ocupamos del contrato." },
+      { title: "Tasaciones", desc: "Te decimos cuánto vale realmente tu propiedad, sin humo." },
+      { title: "Administración de alquileres", desc: "Cobramos, controlamos y te depositamos sin que muevas un dedo." },
+      { title: "Asesoramiento legal", desc: "Contratos y escrituras revisados para que estés tranquilo." },
+      { title: "Búsqueda personalizada", desc: "Nos decís qué buscás y te traemos opciones que encajan." },
     ],
   },
   {

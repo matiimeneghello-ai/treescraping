@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{NAME}} — {{RUBRO}} en {{NEIGHBORHOOD}}, {{CITY}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f8f1f2; --surface:#ffffff; --ink:#2c1f2a; --ink-soft:#54414f; --mute:#6c5a68; --border:#ece0e4;
+  --accent:#9c5a78; --accent-deep:#7c4460; --accent-wash:#f4e6ec; --nude:#c79b86;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Manrope",system-ui,sans-serif;
+  --shadow:0 18px 50px -24px rgba(44,31,42,.45);
+  --shadow-soft:0 10px 30px -18px rgba(44,31,42,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--sans);background:var(--bg);color:var(--ink);
+  line-height:1.6;overflow-x:hidden;font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.05;letter-spacing:-.01em}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 24px}
+.eyebrow{
+  font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--accent);
+}
+
+/* ----- ribbon ----- */
+.ribbon{
+  background:var(--accent-deep);color:#fdf6f9;font-size:.72rem;
+  letter-spacing:.04em;text-align:center;padding:9px 24px;font-weight:500;
+}
+.ribbon span{opacity:.85}
+
+/* ----- hero ----- */
+.hero{position:relative;padding:0 0 8px}
+.hero-grid{
+  display:grid;grid-template-columns:1fr;gap:0;
+}
+.hero-media{
+  position:relative;order:-1;
+}
+.hero-img{
+  width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;
+  border-bottom-left-radius:20px;border-bottom-right-radius:20px;
+}
+.hero-media::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(44,31,42,.04) 0%,rgba(44,31,42,.32) 100%);
+  border-bottom-left-radius:20px;border-bottom-right-radius:20px;pointer-events:none;
+}
+.hero-badge{
+  position:absolute;left:20px;bottom:20px;z-index:2;
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.94);backdrop-filter:blur(4px);
+  padding:9px 14px;border-radius:999px;box-shadow:var(--shadow-soft);
+  font-size:.82rem;font-weight:600;color:var(--ink);
+}
+.hero-badge .stars{color:var(--accent);letter-spacing:.05em;font-size:.86rem}
+.hero-badge .rev{color:var(--mute);font-weight:500}
+.hero-body{padding:32px 0 8px}
+.hero h1{
+  font-size:clamp(2.6rem,11vw,4.4rem);margin:14px 0 0;overflow-wrap:break-word;
+}
+.hero h1 em{font-style:italic;color:var(--accent-deep);display:block}
+.hero .tagline{
+  font-family:var(--serif);font-style:italic;font-size:clamp(1.25rem,5.5vw,1.7rem);
+  color:var(--ink-soft);margin-top:14px;line-height:1.3;max-width:34ch;
+}
+.hero .loc{
+  display:flex;align-items:center;gap:8px;margin-top:20px;
+  color:var(--mute);font-size:.95rem;font-weight:500;
+}
+.hero .loc svg{flex:0 0 auto;color:var(--accent)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  min-height:52px;padding:0 24px;border-radius:14px;font-family:var(--sans);
+  font-weight:600;font-size:1rem;cursor:pointer;border:1px solid transparent;
+  transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
+}
+.btn svg{flex:0 0 auto}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:var(--shadow-soft)}
+.btn-primary:hover{transform:translateY(-2px);background:var(--accent-deep);box-shadow:var(--shadow)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--border)}
+.btn-ghost:hover{transform:translateY(-2px);border-color:var(--accent);color:var(--accent-deep)}
+.btn-full{width:100%}
+
+/* signature divider */
+.flourish{
+  display:flex;align-items:center;gap:14px;margin:8px 0;color:var(--nude);
+}
+.flourish::before,.flourish::after{content:"";height:1px;flex:1;background:var(--border)}
+.flourish svg{flex:0 0 auto}
+
+/* ----- section base ----- */
+section{padding:64px 0}
+.sec-head{max-width:38ch}
+.sec-head h2{font-size:clamp(2rem,8vw,3rem);margin-top:12px}
+.sec-head p{color:var(--ink-soft);margin-top:14px;font-size:1.02rem;line-height:1.7}
+
+/* ----- services ----- */
+.services{background:var(--surface)}
+.svc-grid{
+  display:grid;grid-template-columns:1fr;gap:14px;margin-top:36px;
+}
+.svc-card{
+  position:relative;background:var(--bg);border:1px solid var(--border);
+  border-radius:18px;padding:26px 24px 28px;overflow:hidden;
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
+}
+.svc-card::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:linear-gradient(180deg,var(--accent),var(--nude));
+  transform:scaleY(0);transform-origin:top;transition:transform .25s ease;
+}
+.svc-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-soft);border-color:var(--accent-wash)}
+.svc-card:hover::before{transform:scaleY(1)}
+.svc-title{
+  font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--ink);
+  line-height:1.15;
+}
+.svc-desc{margin-top:10px;color:var(--ink-soft);font-size:.96rem;line-height:1.6}
+
+/* ----- trust ----- */
+.trust .t-grid{display:grid;grid-template-columns:1fr;gap:32px;align-items:center}
+.trust-media{position:relative;order:-1}
+.trust-img{
+  width:100%;height:auto;aspect-ratio:5/4;object-fit:cover;border-radius:20px;box-shadow:var(--shadow);
+}
+.trust-rating{
+  position:absolute;right:-6px;bottom:-18px;background:var(--surface);
+  border:1px solid var(--border);border-radius:18px;padding:18px 22px;
+  box-shadow:var(--shadow);text-align:center;min-width:128px;
+}
+.trust-rating .num{font-family:var(--serif);font-size:2.6rem;line-height:1;color:var(--accent-deep)}
+.trust-rating .stars{color:var(--accent);letter-spacing:.08em;font-size:.95rem;margin-top:6px}
+.trust-rating .lbl{font-size:.74rem;color:var(--mute);margin-top:6px;font-weight:600;letter-spacing:.04em}
+.trust-body{margin-top:30px}
+.trust-list{list-style:none;margin-top:24px;display:grid;gap:16px}
+.trust-list li{display:flex;gap:14px;align-items:flex-start}
+.trust-list .ic{
+  flex:0 0 auto;width:40px;height:40px;border-radius:12px;background:var(--accent-wash);
+  color:var(--accent-deep);display:flex;align-items:center;justify-content:center;
+}
+.trust-list h3{font-family:var(--sans);font-size:1.02rem;font-weight:700;color:var(--ink)}
+.trust-list p{color:var(--ink-soft);font-size:.93rem;margin-top:3px;line-height:1.55}
+
+/* ----- location / contact ----- */
+.contact{background:var(--accent-deep);color:#fbeef3}
+.contact .eyebrow{color:#f0d9c8}
+.contact h2{color:#fff}
+.contact .c-grid{display:grid;grid-template-columns:1fr;gap:36px;margin-top:36px}
+.c-card{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+  border-radius:18px;padding:26px 24px;
+}
+.c-card h3{font-family:var(--sans);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;
+  font-weight:700;color:#f0d9c8}
+.c-card .addr{font-family:var(--serif);font-size:1.5rem;line-height:1.25;margin-top:10px;color:#fff}
+.c-card .note{color:#e6cfd9;font-size:.94rem;margin-top:14px;line-height:1.6}
+.c-actions{display:grid;gap:12px;margin-top:22px}
+.btn-light{background:#fff;color:var(--accent-deep)}
+.btn-light:hover{transform:translateY(-2px);background:var(--accent-wash);box-shadow:var(--shadow)}
+.btn-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.btn-outline:hover{transform:translateY(-2px);border-color:#fff;background:rgba(255,255,255,.08)}
+
+/* ----- footer ----- */
+footer{background:var(--ink);color:#cdbcc8;padding:40px 0;text-align:center}
+footer .fname{font-family:var(--serif);font-size:1.7rem;color:#fff}
+footer .meta{font-size:.82rem;margin-top:10px;color:#9d8a98;letter-spacing:.02em}
+footer .demo{
+  display:inline-block;margin-top:16px;font-size:.72rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--nude);border:1px solid rgba(255,255,255,.14);
+  border-radius:999px;padding:7px 16px;
+}
+
+/* ----- desktop ----- */
+@media(min-width:760px){
+  .svc-grid{grid-template-columns:repeat(2,1fr);gap:18px}
+}
+@media(min-width:920px){
+  .wrap{padding:0 40px}
+  section{padding:96px 0}
+  .hero{padding-top:0}
+  .hero-grid{grid-template-columns:1.05fr 1fr;gap:56px;align-items:center;padding-top:56px}
+  .hero-media{order:0}
+  .hero-img{aspect-ratio:4/5;border-radius:24px;max-height:640px}
+  .hero-media::after{border-radius:24px}
+  .hero-body{padding:0}
+  .hero-badge{left:auto;right:20px;bottom:24px}
+  .svc-grid{grid-template-columns:repeat(3,1fr)}
+  .trust .t-grid{grid-template-columns:1fr 1fr;gap:64px}
+  .trust-media{order:0}
+  .trust-body{margin-top:0}
+  .contact .c-grid{grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+  .c-actions{grid-template-columns:1fr 1fr}
+  footer{padding:56px 0}
+}
+@media(min-width:920px){
+  .cta-row .btn{min-width:auto}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<div class="ribbon">Vista previa preparada por Tree Marketing para <span>{{NAME}}</span></div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-media">
+        <img class="hero-img" src="/img/estetica-hero.jpg" alt="Interior de un salón de belleza" width="800" height="1000" fetchpriority="high" decoding="async">
+        <div class="hero-badge">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <span>{{RATING}}</span>
+          <span class="rev">· {{REVIEWS}} reseñas</span>
+        </div>
+      </div>
+      <div class="hero-body">
+        <span class="eyebrow">{{RUBRO}} · {{NEIGHBORHOOD}}</span>
+        <h1>{{NAME}}<em>tu momento</em></h1>
+        <p class="tagline">{{TAGLINE}}</p>
+        <p class="loc">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          {{NEIGHBORHOOD}}, {{CITY}}
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="{{WHATSAPP_LINK}}" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.03h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.37c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.69 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>
+            Reservar por WhatsApp
+          </a>
+          <a class="btn btn-ghost" href="tel:{{PHONE_RAW}}">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            Llamar {{PHONE}}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- SERVICES -->
+<section class="services" id="servicios">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Lo que hacemos por vos</span>
+      <h2>Cuidado pensado para que salgas renovada</h2>
+      <p>Cada servicio es un rato para vos. Manos expertas, productos que cuidan y un espacio tranquilo donde relajarte de verdad.</p>
+    </div>
+    <div class="svc-grid">{{SERVICES_HTML}}</div>
+    <div class="flourish" aria-hidden="true" style="margin-top:40px">
+      <svg width="34" height="14" viewBox="0 0 34 14" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M1 7c6 0 6-5 9-5s3 10 6 10 3-5 9-5"/><path d="M2 7h30" opacity=".0"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust" id="nosotros">
+  <div class="wrap">
+    <div class="t-grid">
+      <div class="trust-media">
+        <img class="trust-img" src="/img/estetica-2.jpg" alt="Tratamiento de belleza" width="700" height="560" loading="lazy" decoding="async">
+        <div class="trust-rating">
+          <div class="num">{{RATING}}</div>
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <div class="lbl">{{REVIEWS}} reseñas en Google</div>
+        </div>
+      </div>
+      <div class="trust-body">
+        <span class="eyebrow">Por qué nos eligen</span>
+        <h2 style="font-size:clamp(2rem,8vw,2.9rem);margin-top:12px">Un lugar de confianza en {{NEIGHBORHOOD}}</h2>
+        <p style="color:var(--ink-soft);margin-top:14px;line-height:1.7">Vecinas y vecinos del barrio nos eligen una y otra vez. No es casualidad: cuidamos cada detalle para que tu visita se sienta como un mimo.</p>
+        <ul class="trust-list">
+          <li>
+            <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 2.4 5.2L20 8l-4 4 1 5.8L12 15l-5 2.8L8 12 4 8l5.6-.8L12 2Z"/></svg></span>
+            <div><h3>{{RATING}}★ en Google</h3><p>El promedio de {{REVIEWS}} clientas que ya vivieron la experiencia.</p></div>
+          </li>
+          <li>
+            <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <div><h3>Atención personalizada</h3><p>Te escuchamos primero y armamos el cuidado a tu medida, sin apuro.</p></div>
+          </li>
+          <li>
+            <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></span>
+            <div><h3>Higiene impecable</h3><p>Espacio prolijo y materiales cuidados en cada turno. Tu tranquilidad primero.</p></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION / CONTACT -->
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Visitanos</span>
+      <h2>Coordiná tu turno y date el gusto</h2>
+    </div>
+    <div class="c-grid">
+      <div class="c-card">
+        <h3>Dónde estamos</h3>
+        <p class="addr">{{ADDRESS}}</p>
+        <p class="note">{{NEIGHBORHOOD}}, {{CITY}}. Escribinos por WhatsApp y coordinamos el día y horario que mejor te quede; no trabajamos con horarios fijos para poder dedicarte el tiempo que merecés.</p>
+        <div class="c-actions">
+          <a class="btn btn-light btn-full" href="{{MAPS_URL}}" target="_blank" rel="noopener">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Cómo llegar
+          </a>
+          <a class="btn btn-outline btn-full" href="tel:{{PHONE_RAW}}">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            {{PHONE}}
+          </a>
+        </div>
+      </div>
+      <div class="c-card" style="text-align:center">
+        <h3>Reservá ahora</h3>
+        <p class="addr" style="margin-top:14px">La forma más rápida de agendar</p>
+        <p class="note">Mandanos un mensaje contándonos qué te gustaría hacerte y te respondemos con la disponibilidad más cercana.</p>
+        <div class="c-actions" style="grid-template-columns:1fr;margin-top:24px">
+          <a class="btn btn-light btn-full" href="{{WHATSAPP_LINK}}" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.03h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.37c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.69 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>
+            Escribir por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="fname">{{NAME}}</div>
+    <div class="meta">{{RUBRO}} · {{NEIGHBORHOOD}}, {{CITY}} · © {{YEAR}}</div>
+    <span class="demo">Sitio de demostración · Tree Marketing</span>
+  </div>
+</footer>
+
+</body>
+</html>

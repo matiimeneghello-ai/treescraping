@@ -168,6 +168,12 @@
   .copy-mini{background:transparent;border:1px solid var(--soft);color:var(--muted);border-radius:6px;
     padding:3px 9px;font-size:10px;cursor:pointer;font-family:inherit;text-transform:none;letter-spacing:0}
   .copy-mini:hover{border-color:var(--acid);color:var(--acid)}
+  .send-btn{margin-left:auto;font-family:inherit;font-size:10.5px;font-weight:700;letter-spacing:0;text-transform:none;
+    border-radius:7px;padding:5px 11px;cursor:pointer;border:1px solid transparent;transition:.15s;display:inline-flex;align-items:center;gap:5px}
+  .send-btn.wa{background:#1faa52;color:#fff} .send-btn.wa:hover{background:#178a43}
+  .send-btn.gmail{background:rgba(255,255,255,.05);color:var(--text);border-color:var(--soft)}
+  .send-btn.gmail:hover{border-color:var(--acid);color:var(--acid)}
+  .send-btn.off{opacity:.4;pointer-events:none}
   .kit-analysis{margin:0;padding-left:18px;color:var(--text);font-size:13.5px;line-height:1.65}
   .kit-analysis li{margin-bottom:5px}
   .kit-input,.kit-ta{width:100%;box-sizing:border-box;background:var(--bg);color:var(--text);
@@ -245,12 +251,14 @@
         <ul id="kitAnalysis" class="kit-analysis"></ul>
       </div>
       <div class="kit-sec">
-        <div class="kit-label">Mail <button class="copy-mini" data-copy="kitEmailFull">copiar</button></div>
+        <div class="kit-label">Mail <button class="copy-mini" data-copy="kitEmailFull">copiar</button>
+          <a class="send-btn gmail" id="btnGmail" target="_blank" rel="noopener">Abrir en Gmail ↗</a></div>
         <input id="kitSubject" class="kit-input" />
         <textarea id="kitEmail" class="kit-ta"></textarea>
       </div>
       <div class="kit-sec">
-        <div class="kit-label">WhatsApp <button class="copy-mini" data-copy="kitWa">copiar</button></div>
+        <div class="kit-label">WhatsApp <button class="copy-mini" data-copy="kitWa">copiar</button>
+          <a class="send-btn wa" id="btnWa" target="_blank" rel="noopener">Enviar por WhatsApp ↗</a></div>
         <textarea id="kitWa" class="kit-ta" style="min-height:96px"></textarea>
       </div>
     </div>
@@ -378,9 +386,27 @@ async function openKit(id){
   document.getElementById("kitSubject").value = k.emailSubject || "";
   document.getElementById("kitEmail").value = k.emailBody || "";
   document.getElementById("kitWa").value = k.whatsapp || "";
+  WA_PHONE = k.waPhone || "";
+  updateSendLinks();
   document.getElementById("dlgLoading").hidden = true;
   document.getElementById("dlgKit").hidden = false;
 }
+
+let WA_PHONE = "";
+function updateSendLinks(){
+  const wa = document.getElementById("btnWa");
+  const gm = document.getElementById("btnGmail");
+  const waText = encodeURIComponent(document.getElementById("kitWa").value || "");
+  if(WA_PHONE){ wa.href = `https://wa.me/${WA_PHONE}?text=${waText}`; wa.classList.remove("off"); wa.title=""; }
+  else { wa.removeAttribute("href"); wa.classList.add("off"); wa.title="Sin teléfono en la ficha"; }
+  const su = encodeURIComponent(document.getElementById("kitSubject").value || "");
+  const body = encodeURIComponent(document.getElementById("kitEmail").value || "");
+  gm.href = `https://mail.google.com/mail/?view=cm&fs=1&tf=1&su=${su}&body=${body}`;
+}
+["kitWa","kitSubject","kitEmail"].forEach(id=>{
+  const el = document.getElementById(id);
+  if(el) el.addEventListener("input", updateSendLinks);
+});
 
 document.addEventListener("click", async (e)=>{
   const b = e.target.closest(".copy-mini"); if(!b) return;
