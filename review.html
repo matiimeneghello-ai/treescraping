@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tree Prospect · revisión de candidatos</title>
+<style>
+  :root{
+    --bg:#03050f; --panel:#0a0e1c; --panel2:#0d1224;
+    --border:rgba(184,255,87,0.14); --soft:rgba(255,255,255,0.07);
+    --acid:#b8ff57; --aciddim:rgba(184,255,87,0.55);
+    --text:#e8ecf4; --muted:#8a93a6; --danger:#ff6b6b; --warn:#ffcc66;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font-family:'Bricolage Grotesque',system-ui,sans-serif;}
+  .mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+  a{color:var(--acid);text-decoration:none}
+  header{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;
+    padding:22px 20px;border-bottom:1px solid var(--soft);max-width:1280px;margin:0 auto}
+  h1{font-size:26px;font-weight:800;letter-spacing:-.03em;margin:0}
+  h1 span{color:var(--acid)}
+  .sub{font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+  .wrap{max-width:1280px;margin:0 auto;padding:18px 20px 80px}
+  .bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+  .stat{background:var(--panel);border:1px solid var(--soft);border-radius:8px;
+    padding:8px 14px;font-size:13px}
+  .stat b{color:var(--acid);font-size:16px}
+  .filters{display:flex;gap:8px;flex-wrap:wrap;margin-left:auto}
+  .chip{background:transparent;border:1px solid var(--soft);color:var(--muted);
+    border-radius:20px;padding:6px 13px;font-size:12px;cursor:pointer;font-family:inherit}
+  .chip.on{border-color:var(--acid);color:var(--acid);background:rgba(184,255,87,.07)}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  thead th{text-align:left;color:var(--muted);font-size:10.5px;letter-spacing:.1em;
+    text-transform:uppercase;padding:10px 10px;border-bottom:1px solid var(--soft);position:sticky;top:0;background:var(--bg)}
+  tbody td{padding:12px 10px;border-bottom:1px solid var(--soft);vertical-align:top}
+  tbody tr:hover{background:var(--panel)}
+  tr.discarded{opacity:.32}
+  tr.approved{background:rgba(184,255,87,.05)}
+  .score{font-weight:800;font-size:17px;color:var(--acid)}
+  .score.mid{color:var(--warn)} .score.low{color:var(--muted)}
+  .name{font-weight:700;font-size:14.5px}
+  .meta{color:var(--muted);font-size:12px;margin-top:3px}
+  .badge{display:inline-block;font-size:10px;padding:2px 7px;border-radius:4px;
+    border:1px solid var(--soft);color:var(--muted);white-space:nowrap}
+  .badge.none{border-color:var(--acid);color:var(--acid);background:rgba(184,255,87,.08)}
+  .badge.social{border-color:var(--warn);color:var(--warn)}
+  .badge.own{color:var(--muted)}
+  .badge.unclaimed{border-color:var(--aciddim);color:var(--aciddim);margin-left:4px}
+  .bd{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--muted);margin-top:5px;line-height:1.5}
+  .act{display:flex;gap:6px;flex-wrap:wrap}
+  .btn{border:1px solid var(--soft);background:transparent;color:var(--text);
+    border-radius:6px;padding:6px 10px;font-size:12px;cursor:pointer;font-family:inherit}
+  .btn:hover{border-color:var(--acid)}
+  .btn.ok.on{background:var(--acid);color:var(--bg);border-color:var(--acid);font-weight:700}
+  .btn.no.on{background:var(--danger);color:#fff;border-color:var(--danger)}
+  .empty{padding:60px 20px;text-align:center;color:var(--muted)}
+  .empty code{color:var(--acid)}
+  dialog{background:var(--panel);color:var(--text);border:1px solid var(--border);
+    border-radius:12px;max-width:520px;width:92vw;padding:0}
+  dialog::backdrop{background:rgba(0,0,0,.6)}
+  .dlg-h{padding:16px 18px;border-bottom:1px solid var(--soft);font-weight:700}
+  .dlg-b{padding:18px}
+  textarea{width:100%;min-height:150px;background:var(--bg);color:var(--text);
+    border:1px solid var(--border);border-radius:8px;padding:12px;font-family:inherit;
+    font-size:14px;line-height:1.6;resize:vertical}
+  .dlg-f{padding:14px 18px;border-top:1px solid var(--soft);display:flex;gap:10px;justify-content:flex-end}
+  .btn.primary{background:var(--acid);color:var(--bg);border-color:var(--acid);font-weight:700}
+  @media(max-width:720px){
+    thead{display:none}
+    table,tbody,tr,td{display:block;width:100%}
+    tbody tr{border:1px solid var(--soft);border-radius:10px;margin-bottom:10px;padding:6px 10px}
+    tbody td{border:none;padding:6px 4px}
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>tree<span>_</span>prospect</h1>
+  <span class="sub" id="genat">cargando…</span>
+</header>
+
+<div class="wrap">
+  <div class="bar">
+    <div class="stat" id="s1"><b>0</b> candidatos</div>
+    <div class="stat" id="s2"><b>0</b> aprobados</div>
+    <div class="stat" id="s3"><b>0</b> descartados</div>
+    <div class="filters">
+      <button class="chip on" data-f="all">Todos</button>
+      <button class="chip" data-f="pending">Sin revisar</button>
+      <button class="chip" data-f="approved">Aprobados</button>
+      <button class="chip" data-f="none">Sin web</button>
+      <button class="chip" data-f="social">Solo redes</button>
+    </div>
+  </div>
+  <div id="content"></div>
+</div>
+
+<dialog id="dlg">
+  <div class="dlg-h" id="dlgName"></div>
+  <div class="dlg-b">
+    <p class="meta" style="margin-top:0">Mensaje de apertura para WhatsApp Business (editá lo que quieras antes de copiar):</p>
+    <textarea id="dlgMsg"></textarea>
+  </div>
+  <div class="dlg-f">
+    <button class="btn" onclick="document.getElementById('dlg').close()">Cerrar</button>
+    <button class="btn primary" id="dlgCopy">Copiar mensaje</button>
+  </div>
+</dialog>
+
+<script>
+const LS = "treeprospect_review";
+let DATA = [], FILTER = "all";
+const review = JSON.parse(localStorage.getItem(LS) || "{}"); // placeId -> 'ok'|'no'
+
+function save(){ localStorage.setItem(LS, JSON.stringify(review)); }
+function scoreClass(s){ return s>=70?"":s>=55?"mid":"low"; }
+
+function waMessage(p){
+  const zona = p.borough ? ` en ${p.borough}` : "";
+  const hook = p.webState === "social"
+    ? `vi que tienen Instagram pero no aparecen con una web propia cuando los buscan en Google`
+    : `vi que ${p.name} todavía no tiene una web propia y los buscan bastante en la zona`;
+  return `Hola! Les escribo de Tree Marketing. Encontré a ${p.name}${zona} en Google `
+    + `(${p.rating}★ con ${p.reviews} reseñas, muy buen laburo) y ${hook}. `
+    + `Les armé una demo de cómo se vería su sitio, sin compromiso. ¿Les paso el link para que la vean?`;
+}
+
+function render(){
+  const c = document.getElementById("content");
+  let rows = DATA.filter(p=>{
+    const st = review[p.placeId];
+    if(FILTER==="approved") return st==="ok";
+    if(FILTER==="pending")  return !st;
+    if(FILTER==="none")     return p.webState==="none";
+    if(FILTER==="social")   return p.webState==="social";
+    return true;
+  });
+  const appr = DATA.filter(p=>review[p.placeId]==="ok").length;
+  const disc = DATA.filter(p=>review[p.placeId]==="no").length;
+  document.querySelector("#s1 b").textContent = DATA.length;
+  document.querySelector("#s2 b").textContent = appr;
+  document.querySelector("#s3 b").textContent = disc;
+
+  if(!rows.length){ c.innerHTML = `<div class="empty">Sin filas para este filtro.</div>`; return; }
+
+  c.innerHTML = `<table><thead><tr>
+    <th>#</th><th>Negocio</th><th>Presencia</th><th>Salud</th><th>Por qué</th><th>Acción</th>
+  </tr></thead><tbody>${rows.map((p,i)=>{
+    const st = review[p.placeId];
+    const bd = p.breakdown || {};
+    const parts = [];
+    if(bd.web) parts.push(`web+${bd.web}`);
+    if(bd.health) parts.push(`salud+${bd.health}`);
+    if(bd.photos) parts.push(`fotos+${bd.photos}`);
+    if(bd.unclaimed) parts.push(`sin reclamar+${bd.unclaimed}`);
+    if(bd.ownerReplies) parts.push(`sin responder+${bd.ownerReplies}`);
+    if(bd.recency) parts.push(`activa+${bd.recency}`);
+    if(bd.hours) parts.push(`sin horarios+${bd.hours}`);
+    return `<tr class="${st==='ok'?'approved':st==='no'?'discarded':''}">
+      <td><span class="score ${scoreClass(p.score)}">${p.score}</span></td>
+      <td>
+        <div class="name">${esc(p.name)}</div>
+        <div class="meta">${esc(p.category||"")} ${p.phone?"· "+esc(p.phone):""}</div>
+        <div class="meta">${esc(p.address||"")}</div>
+        ${p.mapsUrl?`<a class="mono" style="font-size:11px" href="${p.mapsUrl}" target="_blank">ver en Maps ↗</a>`:""}
+      </td>
+      <td>
+        <span class="badge ${p.webState}">${esc(p.webLabel||p.webState)}</span>
+        ${!p.verified?`<span class="badge unclaimed">sin reclamar</span>`:""}
+        ${p.site?`<div class="meta" style="margin-top:5px;word-break:break-all">${esc(p.site)}</div>`:""}
+      </td>
+      <td>
+        <div>${p.rating}★ <span class="meta">(${p.reviews})</span></div>
+        <div class="meta">${p.photos} fotos</div>
+        ${p.lastReviewDays!=null?`<div class="meta">últ. review ${p.lastReviewDays}d</div>`:""}
+      </td>
+      <td><div class="bd">${parts.join(" · ")||"—"}</div></td>
+      <td>
+        <div class="act">
+          <button class="btn ok ${st==='ok'?'on':''}" onclick="mark('${p.placeId}','ok')">✓</button>
+          <button class="btn no ${st==='no'?'on':''}" onclick="mark('${p.placeId}','no')">✕</button>
+          <button class="btn" onclick="openMsg('${p.placeId}')">WhatsApp</button>
+        </div>
+      </td>
+    </tr>`;
+  }).join("")}</tbody></table>`;
+}
+
+function mark(id, val){
+  review[id] = review[id]===val ? undefined : val;
+  if(review[id]===undefined) delete review[id];
+  save(); render();
+}
+
+function openMsg(id){
+  const p = DATA.find(x=>x.placeId===id);
+  document.getElementById("dlgName").textContent = p.name;
+  document.getElementById("dlgMsg").value = waMessage(p);
+  document.getElementById("dlg").showModal();
+  document.getElementById("dlgCopy").onclick = async ()=>{
+    await navigator.clipboard.writeText(document.getElementById("dlgMsg").value);
+    document.getElementById("dlgCopy").textContent = "Copiado ✓";
+    setTimeout(()=>document.getElementById("dlgCopy").textContent="Copiar mensaje",1500);
+  };
+}
+
+function esc(s){ return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+
+document.querySelectorAll(".chip").forEach(ch=>ch.onclick=()=>{
+  document.querySelectorAll(".chip").forEach(x=>x.classList.remove("on"));
+  ch.classList.add("on"); FILTER = ch.dataset.f; render();
+});
+
+fetch("/candidates.json").then(r=>r.json()).then(j=>{
+  if(j.error){ document.getElementById("content").innerHTML =
+    `<div class="empty">Todavía no hay datos. Corré <code>npm run scan</code> y recargá.</div>`;
+    document.getElementById("genat").textContent = "sin datos"; return; }
+  DATA = j.candidates || [];
+  const d = new Date(j.generatedAt);
+  document.getElementById("genat").textContent =
+    `${j.counts.candidates} candidatos de ${j.counts.unique} negocios · ${d.toLocaleString("es-AR")}`;
+  render();
+}).catch(()=>{
+  document.getElementById("content").innerHTML =
+    `<div class="empty">No pude cargar los datos. ¿Está corriendo <code>npm run serve</code>?</div>`;
+});
+</script>
+</body>
+</html>

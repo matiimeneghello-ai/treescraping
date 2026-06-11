@@ -1,0 +1,14 @@
+{
+  "name": "tree-prospect",
+  "version": "0.1.0",
+  "description": "Pipeline de prospeccion de negocios locales (Google Maps via Outscraper) para Tree Marketing",
+  "type": "module",
+  "scripts": {
+    "scan": "node src/run.js",
+    "enrich": "node src/enrich.js",
+    "serve": "node src/serve.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
