@@ -78,6 +78,22 @@
     font-size:14px;line-height:1.6;resize:vertical}
   .dlg-f{padding:14px 18px;border-top:1px solid var(--soft);display:flex;gap:10px;justify-content:flex-end}
   .btn.primary{background:var(--acid);color:var(--bg);border-color:var(--acid);font-weight:700}
+  dialog{max-width:600px}
+  .dlg-h{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .demolink{font-size:12px;font-weight:500;color:var(--acid)}
+  .kit-sec{margin-bottom:16px}
+  .kit-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:7px;display:flex;align-items:center;gap:10px}
+  .copy-mini{background:transparent;border:1px solid var(--soft);color:var(--muted);border-radius:4px;
+    padding:2px 8px;font-size:10px;cursor:pointer;font-family:inherit;text-transform:none;letter-spacing:0}
+  .copy-mini:hover{border-color:var(--acid);color:var(--acid)}
+  .kit-analysis{margin:0;padding-left:18px;color:var(--text);font-size:13px;line-height:1.6}
+  .kit-analysis li{margin-bottom:4px}
+  .kit-input{width:100%;box-sizing:border-box;background:var(--bg);color:var(--text);border:1px solid var(--soft);
+    border-radius:6px;padding:9px 11px;font-family:inherit;font-size:13px;margin-bottom:8px}
+  .kit-ta{width:100%;box-sizing:border-box;min-height:150px;background:var(--bg);color:var(--text);
+    border:1px solid var(--soft);border-radius:6px;padding:11px;font-family:inherit;font-size:13.5px;line-height:1.6;resize:vertical}
+  .kit-input:focus,.kit-ta:focus{outline:1px solid var(--acid);border-color:var(--acid)}
   @media(max-width:720px){
     thead{display:none}
     table,tbody,tr,td{display:block;width:100%}
@@ -118,14 +134,28 @@
 </div>
 
 <dialog id="dlg">
-  <div class="dlg-h" id="dlgName"></div>
-  <div class="dlg-b">
-    <p class="meta" style="margin-top:0">Mensaje de apertura para WhatsApp Business (editá lo que quieras antes de copiar):</p>
-    <textarea id="dlgMsg"></textarea>
+  <div class="dlg-h"><span id="dlgName"></span> <a id="dlgDemo" href="#" target="_blank" class="demolink">Ver web demo ↗</a></div>
+  <div class="dlg-b" id="dlgBody">
+    <div id="dlgLoading" class="meta">Armando kit…</div>
+    <div id="dlgKit" hidden>
+      <div class="kit-sec">
+        <div class="kit-label">Análisis · qué le falta</div>
+        <ul id="kitAnalysis" class="kit-analysis"></ul>
+      </div>
+      <div class="kit-sec">
+        <div class="kit-label">Mail <button class="copy-mini" data-copy="kitEmailFull">copiar</button></div>
+        <input id="kitSubject" class="kit-input" />
+        <textarea id="kitEmail" class="kit-ta"></textarea>
+      </div>
+      <div class="kit-sec">
+        <div class="kit-label">WhatsApp <button class="copy-mini" data-copy="kitWa">copiar</button></div>
+        <textarea id="kitWa" class="kit-ta" style="min-height:90px"></textarea>
+      </div>
+    </div>
   </div>
   <div class="dlg-f">
     <button class="btn" onclick="document.getElementById('dlg').close()">Cerrar</button>
-    <button class="btn primary" id="dlgCopy">Copiar mensaje</button>
+    <a id="dlgDemo2" href="#" target="_blank" class="btn">Abrir web demo ↗</a>
   </div>
 </dialog>
 
@@ -136,16 +166,6 @@ const review = JSON.parse(localStorage.getItem(LS) || "{}"); // placeId -> 'ok'|
 
 function save(){ localStorage.setItem(LS, JSON.stringify(review)); }
 function scoreClass(s){ return s>=70?"":s>=55?"mid":"low"; }
-
-function waMessage(p){
-  const zona = p.borough ? ` en ${p.borough}` : "";
-  const hook = p.webState === "social"
-    ? `vi que tienen Instagram pero no aparecen con una web propia cuando los buscan en Google`
-    : `vi que ${p.name} todavía no tiene una web propia y los buscan bastante en la zona`;
-  return `Hola! Les escribo de Tree Marketing. Encontré a ${p.name}${zona} en Google `
-    + `(${p.rating}★ con ${p.reviews} reseñas, muy buen laburo) y ${hook}. `
-    + `Les armé una demo de cómo se vería su sitio, sin compromiso. ¿Les paso el link para que la vean?`;
-}
 
 function render(){
   const c = document.getElementById("content");
@@ -201,7 +221,7 @@ function render(){
         <div class="act">
           <button class="btn ok ${st==='ok'?'on':''}" onclick="mark('${p.placeId}','ok')">✓</button>
           <button class="btn no ${st==='no'?'on':''}" onclick="mark('${p.placeId}','no')">✕</button>
-          <button class="btn" onclick="openMsg('${p.placeId}')">WhatsApp</button>
+          <button class="btn primary" onclick="openKit('${p.placeId}')">Demo + kit</button>
         </div>
       </td>
     </tr>`;
@@ -214,17 +234,38 @@ function mark(id, val){
   save(); render();
 }
 
-function openMsg(id){
+async function openKit(id){
   const p = DATA.find(x=>x.placeId===id);
+  const demo = `/demo/${encodeURIComponent(id)}`;
   document.getElementById("dlgName").textContent = p.name;
-  document.getElementById("dlgMsg").value = waMessage(p);
+  document.getElementById("dlgDemo").href = demo;
+  document.getElementById("dlgDemo2").href = demo;
+  document.getElementById("dlgKit").hidden = true;
+  document.getElementById("dlgLoading").hidden = false;
   document.getElementById("dlg").showModal();
-  document.getElementById("dlgCopy").onclick = async ()=>{
-    await navigator.clipboard.writeText(document.getElementById("dlgMsg").value);
-    document.getElementById("dlgCopy").textContent = "Copiado ✓";
-    setTimeout(()=>document.getElementById("dlgCopy").textContent="Copiar mensaje",1500);
-  };
+  let k;
+  try { k = await fetch(`/api/kit?placeId=${encodeURIComponent(id)}`).then(r=>r.json()); }
+  catch { document.getElementById("dlgLoading").textContent = "No pude armar el kit."; return; }
+  if(k.error){ document.getElementById("dlgLoading").textContent = k.error; return; }
+  document.getElementById("kitAnalysis").innerHTML = (k.analysis||[]).map(a=>`<li>${esc(a)}</li>`).join("") || "<li>—</li>";
+  document.getElementById("kitSubject").value = k.emailSubject || "";
+  document.getElementById("kitEmail").value = k.emailBody || "";
+  document.getElementById("kitWa").value = k.whatsapp || "";
+  document.getElementById("dlgLoading").hidden = true;
+  document.getElementById("dlgKit").hidden = false;
 }
+
+// copiar (mail completo = asunto + cuerpo; whatsapp = textarea)
+document.addEventListener("click", async (e)=>{
+  const b = e.target.closest(".copy-mini"); if(!b) return;
+  let text;
+  if(b.dataset.copy==="kitEmailFull"){
+    text = `Asunto: ${document.getElementById("kitSubject").value}\n\n${document.getElementById("kitEmail").value}`;
+  } else { text = document.getElementById(b.dataset.copy).value; }
+  await navigator.clipboard.writeText(text);
+  const t = b.textContent; b.textContent = "copiado ✓";
+  setTimeout(()=>b.textContent=t,1400);
+});
 
 function esc(s){ return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
 

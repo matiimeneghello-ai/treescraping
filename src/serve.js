@@ -15,6 +15,16 @@ import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { loadEnv, runScan, ROOT, OUT } from "./pipeline.js";
 import { RUBROS, ZONAS } from "./config.js";
+import { renderLanding } from "./landing.js";
+import { buildKit } from "./kit.js";
+
+function findCandidate(placeId) {
+  const f = join(OUT, "candidates.json");
+  if (!existsSync(f)) return null;
+  const data = JSON.parse(readFileSync(f, "utf8"));
+  const pool = [...(data.candidates || []), ...(data.all || [])];
+  return pool.find((p) => p.placeId === placeId) || null;
+}
 
 loadEnv();
 const PORT = process.env.PORT || 4477;
@@ -84,6 +94,32 @@ const server = createServer(async (req, res) => {
     const started = startScan({ rubros: clean(body.rubros), zonas: clean(body.zonas) });
     if (!started) return json(res, 409, { error: "ya hay un scan corriendo" });
     return json(res, 202, { status: "running" });
+  }
+
+  // Demo: la web del negocio, generada con sus datos reales.
+  if (path.startsWith("/demo/")) {
+    const placeId = decodeURIComponent(path.slice("/demo/".length));
+    const c = findCandidate(placeId);
+    if (!c) return send(res, 404, "text/html; charset=utf-8", "<h1>Demo no encontrada</h1><p>Corré un scan primero.</p>");
+    try {
+      return send(res, 200, "text/html; charset=utf-8", renderLanding(c));
+    } catch (e) {
+      return send(res, 500, "text/plain; charset=utf-8", "Error renderizando la demo: " + e.message);
+    }
+  }
+
+  // Kit de outreach (mail + whatsapp + análisis) para un candidato.
+  if (path === "/api/kit") {
+    const placeId = url.searchParams.get("placeId") || "";
+    const c = findCandidate(placeId);
+    if (!c) return json(res, 404, { error: "candidato no encontrado" });
+    const origin = `${req.headers["x-forwarded-proto"] || "http"}://${req.headers.host}`;
+    const demoUrl = `${origin}/demo/${encodeURIComponent(placeId)}`;
+    try {
+      return json(res, 200, { demoUrl, ...buildKit(c, demoUrl) });
+    } catch (e) {
+      return json(res, 500, { error: e.message });
+    }
   }
 
   send(res, 404, "text/plain", "not found");
