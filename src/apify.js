@@ -22,7 +22,10 @@ function token() {
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function startRun(input) {
-  const res = await fetch(`${BASE}/acts/${ACTOR}/runs?token=${token()}`, {
+  // Más memoria = más concurrencia en el actor (Crawlee) = scan más rápido.
+  // El actor cobra por resultado, así que subir RAM no encarece. Override: APIFY_MEMORY.
+  const memory = Number(process.env.APIFY_MEMORY) || 4096;
+  const res = await fetch(`${BASE}/acts/${ACTOR}/runs?token=${token()}&memory=${memory}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(input),

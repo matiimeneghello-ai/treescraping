@@ -16,6 +16,23 @@ export function resolveRubro(candidate) {
   );
 }
 
+// Palabras que ya indican "marca de negocio" (si están, no se toca el nombre).
+const BUSINESS_KW = /consultorio|consultor|cl[ií]nica|cl[ií]nico|estudio|centro|odontolog|dental|contable|contador|asociados|sociedad|grupo|instituto|sal[oó]n|peluquer|barber|taller|veterinar|inmobiliar|sa\b|srl|s\.?a\.?|s\.?r\.?l\.?|clinic|studio|center|office|group|&/i;
+
+// Nombre de marca para la demo: si el nombre parece de persona/genérico, le
+// antepone un descriptor del rubro para que se lea como un negocio real.
+// Si ya parece marca, lo deja igual.
+export function brandName(candidate) {
+  const name = (candidate.name || "").trim();
+  if (!name || name === "(sin nombre)") return "Tu Negocio";
+  if (BUSINESS_KW.test(name)) return name;
+  const c = resolveRubro(candidate);
+  const words = name.split(/\s+/);
+  const looksPlain = words.length >= 1 && words.length <= 3 && !/\d/.test(name);
+  if (c.brandPrefix && looksPlain) return `${c.brandPrefix} ${name}`;
+  return name;
+}
+
 export const COPY = {
   emailSubject: "{{NAME}}, te armé el sitio y quiero que lo veas",
   emailBody:
@@ -55,6 +72,7 @@ export const RUBROS_CONTENT = [
     slug: "odontologo",
     label: "odontología",
     template: "landing-odontologo.html",
+    brandPrefix: "Consultorio",
     tagline: "Tu sonrisa en manos de un equipo que te explica todo antes de empezar",
     about: "Somos un consultorio odontológico con años atendiendo a la zona. Trabajamos con turnos puntuales, presupuestos claros y sin sorpresas. Lo más importante para nosotros es que entiendas tu tratamiento y te sientas cómodo en cada visita.",
     services: [
@@ -70,6 +88,7 @@ export const RUBROS_CONTENT = [
     slug: "estudio contable",
     label: "estudio contable",
     template: "landing-contable.html",
+    brandPrefix: "Estudio",
     tagline: "Tus números al día y en regla, sin que tengas que entender de impuestos",
     about: "Somos un estudio contable que acompaña a monotributistas, autónomos y pymes. Te sacamos el tema impositivo de la cabeza para que te dediques a tu negocio. Respondemos rápido y hablamos en criollo, no en jerga.",
     services: [

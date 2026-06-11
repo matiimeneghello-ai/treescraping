@@ -7,352 +7,517 @@
 <meta name="description" content="{{NAME}}, {{RUBRO}} en {{NEIGHBORHOOD}}. {{TAGLINE}} Escribinos por WhatsApp y coordinamos.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#f5efe6; --surface:#fffdfa; --border:#e7ddcf;
     --ink:#211c18; --ink-soft:#4a4239; --mute:#6d6356;
     --accent:#c8512a; --accent-deep:#a23d1c; --accent-wash:#f6e6dd;
-    --r:14px; --r-lg:18px;
-    --maxw:1100px;
-    --shadow:0 1px 2px rgba(33,28,24,.06), 0 12px 28px -18px rgba(33,28,24,.28);
+    --shadow-sm:0 1px 2px rgba(33,28,24,.06), 0 2px 8px rgba(33,28,24,.05);
+    --shadow-md:0 8px 24px rgba(33,28,24,.10), 0 2px 8px rgba(33,28,24,.06);
+    --shadow-lg:0 24px 60px rgba(33,28,24,.18), 0 8px 20px rgba(33,28,24,.10);
+    --r-sm:12px; --r-md:16px; --r-lg:22px;
+    --maxw:1140px;
   }
+
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{
-    margin:0; overflow-x:hidden;
-    background:var(--bg); color:var(--ink);
-    font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
-    font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+    margin:0;
+    overflow-x:hidden;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Inter",system-ui,-apple-system,sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
   }
-  h1,h2,h3{font-family:"Bricolage Grotesque","Inter",sans-serif; line-height:1.08; margin:0; letter-spacing:-.01em; overflow-wrap:break-word;}
-  p{margin:0}
-  a{color:inherit}
-  img{max-width:100%;display:block}
-  .wrap{width:100%; max-width:var(--maxw); margin:0 auto; padding-left:20px; padding-right:20px;}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{
+    font-family:"Bricolage Grotesque","Inter",sans-serif;
+    line-height:1.04;
+    letter-spacing:-.02em;
+    margin:0;
+    overflow-wrap:break-word;
+    word-break:break-word;
+  }
 
-  /* ---- ribbon ---- */
-  .ribbon{
-    background:var(--ink); color:#f3ece2;
-    font-size:13px; letter-spacing:.01em; text-align:center;
-    padding:9px 16px;
-  }
-  .ribbon strong{color:#fff; font-weight:600}
-
-  /* ---- buttons ---- */
-  .btn{
-    display:inline-flex; align-items:center; justify-content:center; gap:9px;
-    min-height:52px; padding:0 24px; border-radius:var(--r);
-    font-weight:600; font-size:16px; text-decoration:none; cursor:pointer;
-    border:1.5px solid transparent; transition:transform .18s ease, background-color .18s ease, box-shadow .18s ease;
-  }
-  .btn svg{flex:0 0 auto}
-  .btn-primary{background:var(--accent-deep); color:#fff; box-shadow:0 10px 22px -12px rgba(162,61,28,.85);}
-  .btn-primary:hover{background:#8a3214; transform:translateY(-1px)}
-  .btn-ghost{background:var(--surface); color:var(--ink); border-color:var(--border);}
-  .btn-ghost:hover{border-color:var(--accent); color:var(--accent-deep); transform:translateY(-1px)}
-
-  /* ---- hero ---- */
-  .hero{position:relative; padding:54px 0 64px;}
-  .hero::before{
-    content:""; position:absolute; inset:0; z-index:0;
-    background:
-      radial-gradient(120% 80% at 88% -10%, var(--accent-wash) 0%, rgba(246,230,221,0) 55%),
-      radial-gradient(90% 70% at -8% 8%, #efe6d8 0%, rgba(239,230,216,0) 60%);
-  }
-  .hero .wrap{position:relative; z-index:1}
+  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 20px}
   .eyebrow{
-    display:inline-flex; align-items:center; gap:8px;
-    background:var(--surface); border:1px solid var(--border); color:var(--ink-soft);
-    padding:7px 14px; border-radius:999px; font-size:13.5px; font-weight:500;
-  }
-  .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex:0 0 auto}
-  .hero h1{
-    font-size:clamp(2.2rem, 8.4vw, 4.1rem); font-weight:700; margin:18px 0 0;
-    max-width:14ch;
-  }
-  .hero .lede{
-    margin-top:18px; font-size:clamp(1.05rem,4.2vw,1.28rem); color:var(--ink-soft);
-    max-width:34ch;
-  }
-  .loc{
-    margin-top:20px; display:flex; flex-wrap:wrap; gap:9px 18px; align-items:center;
-    color:var(--ink-soft); font-size:15px;
-  }
-  .loc span{display:inline-flex; align-items:center; gap:7px}
-  .loc svg{color:var(--accent)}
-  .cta-row{margin-top:30px; display:flex; flex-wrap:wrap; gap:12px}
-  .cta-row .btn{flex:1 1 auto; min-width:0}
-
-  /* social proof card */
-  .proof{
-    margin-top:30px; display:inline-flex; align-items:center; gap:16px;
-    background:var(--surface); border:1px solid var(--border); border-radius:var(--r-lg);
-    padding:14px 20px; box-shadow:var(--shadow);
-  }
-  .proof .score{font-family:"Bricolage Grotesque",sans-serif; font-weight:700; font-size:30px; line-height:1; color:var(--ink)}
-  .stars{display:flex; gap:2px; margin-bottom:4px}
-  .stars svg{color:#d98a2b}
-  .proof .meta{font-size:13.5px; color:var(--mute); line-height:1.35}
-  .proof .meta b{color:var(--ink-soft); font-weight:600}
-  .vline{width:1px; align-self:stretch; background:var(--border)}
-
-  /* ---- section frame ---- */
-  section{padding:64px 0}
-  .sec-head{max-width:58ch}
-  .kicker{
-    font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase;
+    font-family:"Inter",sans-serif;
+    font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
     color:var(--accent-deep);
+    display:inline-flex;align-items:center;gap:8px;
   }
-  .sec-head h2{font-size:clamp(1.7rem,6vw,2.5rem); font-weight:600; margin-top:12px}
-  .sec-head p{margin-top:14px; color:var(--ink-soft); font-size:17px; max-width:50ch}
+  .eyebrow::before{content:"";width:22px;height:2px;background:var(--accent);border-radius:2px;display:inline-block}
 
-  /* ---- services grid (server injects .svc-card) ---- */
+  /* Botones */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    min-height:52px;padding:0 24px;
+    border-radius:999px;
+    font-family:"Inter",sans-serif;font-weight:600;font-size:1rem;letter-spacing:.005em;
+    cursor:pointer;border:1.5px solid transparent;
+    transition:transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+    will-change:transform;
+  }
+  .btn svg{width:20px;height:20px;flex:none}
+  .btn-primary{background:var(--accent-deep);color:#fff;box-shadow:var(--shadow-md)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);background:#92350f}
+  .btn-ghost{background:var(--surface);color:var(--ink);border-color:var(--border);box-shadow:var(--shadow-sm)}
+  .btn-ghost:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);border-color:#d8cbb8}
+
+  /* Cinta preview */
+  .ribbon{
+    background:var(--ink);color:#f0e7da;
+    font-size:.82rem;font-weight:500;letter-spacing:.01em;
+    text-align:center;padding:9px 16px;
+  }
+  .ribbon b{color:#fff;font-weight:700}
+
+  /* HERO */
+  .hero{position:relative;padding:48px 0 56px;overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;z-index:0;
+    width:520px;height:520px;border-radius:50%;
+    background:radial-gradient(circle at 30% 30%, var(--accent-wash), transparent 70%);
+    top:-180px;right:-160px;opacity:.85;pointer-events:none;
+  }
+  .hero-grid{position:relative;z-index:1;display:grid;gap:36px;align-items:center}
+  .hero-copy{max-width:560px}
+  .loc{
+    display:inline-flex;align-items:center;gap:7px;
+    font-size:.9rem;font-weight:600;color:var(--ink-soft);
+    background:var(--surface);border:1px solid var(--border);
+    padding:7px 14px;border-radius:999px;box-shadow:var(--shadow-sm);
+  }
+  .loc svg{width:16px;height:16px;color:var(--accent)}
+  h1.hero-title{
+    font-size:clamp(2.5rem,7vw,4.4rem);
+    font-weight:800;
+    margin:20px 0 16px;
+  }
+  .hero-tag{
+    font-size:clamp(1.05rem,2.4vw,1.3rem);
+    color:var(--ink-soft);
+    line-height:1.5;
+    max-width:30ch;
+    margin:0 0 28px;
+  }
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
+
+  .proof{
+    display:inline-flex;align-items:center;gap:14px;
+    background:var(--surface);border:1px solid var(--border);
+    padding:12px 18px;border-radius:var(--r-md);box-shadow:var(--shadow-sm);
+  }
+  .stars{display:inline-flex;gap:2px;color:var(--accent)}
+  .stars svg{width:17px;height:17px}
+  .proof-txt{font-size:.92rem;line-height:1.3;color:var(--ink-soft)}
+  .proof-txt b{color:var(--ink);font-weight:700}
+  .proof-rating{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.35rem;color:var(--ink);line-height:1}
+
+  /* Imagen hero enmarcada flotante */
+  .hero-media{position:relative}
+  .hero-frame{
+    position:relative;z-index:1;
+    border-radius:var(--r-lg);overflow:hidden;
+    border:1px solid var(--border);
+    box-shadow:var(--shadow-lg);
+    aspect-ratio:4/5;
+    transform:rotate(1.4deg);
+  }
+  .hero-frame img{width:100%;height:100%;object-fit:cover}
+  .hero-media::after{
+    content:"";position:absolute;inset:auto 0 0 0;height:34%;
+    background:linear-gradient(to top, rgba(33,28,24,.28), transparent);
+    border-radius:var(--r-lg);z-index:1;pointer-events:none;
+  }
+  .float-card{
+    position:absolute;z-index:3;left:-8px;bottom:18px;
+    background:var(--surface);border:1px solid var(--border);
+    border-radius:var(--r-md);box-shadow:var(--shadow-lg);
+    padding:13px 16px;display:flex;align-items:center;gap:12px;
+    max-width:240px;
+  }
+  .float-ic{
+    width:42px;height:42px;flex:none;border-radius:12px;
+    background:var(--accent-wash);color:var(--accent-deep);
+    display:grid;place-items:center;
+  }
+  .float-ic svg{width:22px;height:22px}
+  .float-card .ft{font-size:.82rem;line-height:1.3;color:var(--mute)}
+  .float-card .ft b{display:block;color:var(--ink);font-size:.95rem;font-weight:700;margin-bottom:1px}
+
+  /* SECTIONS */
+  section{position:relative}
+  .sec-head{max-width:620px;margin-bottom:36px}
+  h2.sec-title{
+    font-size:clamp(1.9rem,5vw,2.9rem);
+    font-weight:700;
+    margin:14px 0 12px;
+  }
+  .sec-sub{color:var(--ink-soft);font-size:1.05rem;line-height:1.6;margin:0}
+
+  /* SERVICIOS */
+  .services{padding:64px 0}
   .svc-grid{
-    margin-top:38px; display:grid; gap:16px;
-    grid-template-columns:repeat(auto-fit, minmax(min(100%,260px), 1fr));
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(248px,1fr));
+    gap:16px;
   }
   .svc-card{
-    position:relative; background:var(--surface); border:1px solid var(--border);
-    border-radius:var(--r-lg); padding:24px 22px 24px; overflow:hidden;
-    transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--r-md);
+    padding:26px 24px;
+    box-shadow:var(--shadow-sm);
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    position:relative;
+    overflow:hidden;
   }
   .svc-card::before{
-    content:""; position:absolute; left:0; top:22px; bottom:22px; width:3px;
-    background:var(--accent); border-radius:0 3px 3px 0; transform:scaleY(.4);
-    transform-origin:top; transition:transform .25s ease; opacity:.85;
+    content:"";position:absolute;top:0;left:0;width:100%;height:3px;
+    background:linear-gradient(90deg,var(--accent),var(--accent-deep));
+    transform:scaleX(0);transform-origin:left;transition:transform .25s ease;
   }
-  .svc-card:hover{transform:translateY(-3px); border-color:#dcceba; box-shadow:var(--shadow)}
-  .svc-card:hover::before{transform:scaleY(1)}
-  .svc-title{font-size:1.18rem; font-weight:600; color:var(--ink); padding-left:4px}
-  .svc-desc{margin-top:9px; color:var(--ink-soft); font-size:15.5px; line-height:1.6; padding-left:4px}
+  .svc-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:#d8cbb8}
+  .svc-card:hover::before{transform:scaleX(1)}
+  .svc-card::after{
+    content:"";position:absolute;top:22px;right:22px;
+    width:40px;height:40px;border-radius:11px;
+    background:var(--accent-wash);
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23a23d1c' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><path d='M5 12h14M13 6l6 6-6 6'/></svg>");
+    background-repeat:no-repeat;background-position:center;
+  }
+  .svc-title{
+    font-family:"Bricolage Grotesque",sans-serif;
+    font-size:1.22rem;font-weight:700;letter-spacing:-.01em;
+    color:var(--ink);margin:0 56px 8px 0;line-height:1.15;
+  }
+  .svc-desc{
+    font-size:.97rem;line-height:1.55;color:var(--ink-soft);margin:0;
+  }
 
-  /* ---- trust band ---- */
-  .trust{background:var(--accent-wash); border-top:1px solid var(--border); border-bottom:1px solid var(--border)}
-  .trust-grid{
-    display:grid; gap:18px;
-    grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));
+  /* CONFIANZA */
+  .trust{padding:64px 0}
+  .trust-grid{display:grid;gap:34px;align-items:center}
+  .trust-media{position:relative}
+  .trust-frame{
+    border-radius:var(--r-lg);overflow:hidden;
+    border:1px solid var(--border);box-shadow:var(--shadow-md);
+    aspect-ratio:5/4;
   }
-  .trust-card{
-    background:var(--surface); border:1px solid var(--border); border-radius:var(--r-lg);
-    padding:26px 24px;
+  .trust-frame img{width:100%;height:100%;object-fit:cover}
+  .trust-badge{
+    position:absolute;z-index:2;right:-6px;top:-16px;
+    background:var(--accent-deep);color:#fff;
+    border-radius:var(--r-md);box-shadow:var(--shadow-lg);
+    padding:14px 18px;text-align:center;line-height:1.05;
   }
-  .trust-card .big{
-    font-family:"Bricolage Grotesque",sans-serif; font-weight:700;
-    font-size:2.4rem; line-height:1; color:var(--accent-deep);
-    display:flex; align-items:center; gap:8px;
+  .trust-badge .big{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.7rem;display:block}
+  .trust-badge .sm{font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;opacity:.92}
+  .trust-list{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:14px}
+  .trust-list li{display:flex;gap:13px;align-items:flex-start}
+  .trust-tick{
+    flex:none;width:28px;height:28px;border-radius:9px;
+    background:var(--accent-wash);color:var(--accent-deep);
+    display:grid;place-items:center;margin-top:2px;
   }
-  .trust-card .big svg{color:#d98a2b}
-  .trust-card h3{font-size:1.05rem; font-weight:600; margin-top:14px}
-  .trust-card p{margin-top:7px; color:var(--ink-soft); font-size:15px}
+  .trust-tick svg{width:16px;height:16px}
+  .trust-list b{display:block;color:var(--ink);font-weight:700;font-size:1rem;margin-bottom:1px}
+  .trust-list span{color:var(--ink-soft);font-size:.95rem;line-height:1.5}
 
-  /* ---- contact ---- */
-  .contact-grid{display:grid; gap:22px; grid-template-columns:1fr}
-  .panel{
-    background:var(--surface); border:1px solid var(--border); border-radius:var(--r-lg);
-    padding:28px 24px; box-shadow:var(--shadow);
+  .trust-proof{
+    display:inline-flex;align-items:center;gap:12px;flex-wrap:wrap;
+    margin-top:6px;
+    background:var(--surface);border:1px solid var(--border);
+    border-radius:var(--r-md);padding:12px 18px;box-shadow:var(--shadow-sm);
   }
-  .info-row{display:flex; gap:14px; align-items:flex-start; padding:14px 0; border-top:1px solid var(--border)}
-  .info-row:first-of-type{border-top:0; padding-top:4px}
-  .info-ic{
-    flex:0 0 auto; width:42px; height:42px; border-radius:11px;
-    background:var(--accent-wash); color:var(--accent-deep);
-    display:flex; align-items:center; justify-content:center;
+  .trust-proof .stars{color:var(--accent)}
+  .trust-proof .rt{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.25rem;color:var(--ink)}
+  .trust-proof .rv{font-size:.9rem;color:var(--mute)}
+
+  /* CONTACTO */
+  .contact{padding:64px 0 72px}
+  .contact-card{
+    background:var(--ink);
+    color:#f3ece1;
+    border-radius:var(--r-lg);
+    padding:clamp(28px,5vw,52px);
+    position:relative;overflow:hidden;
+    box-shadow:var(--shadow-lg);
   }
-  .info-row .lbl{font-size:12.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--mute); font-weight:600}
-  .info-row .val{font-size:16px; color:var(--ink); margin-top:3px; font-weight:500}
-  .info-row a.val{text-decoration:none}
-  .info-row a.val:hover{color:var(--accent-deep)}
-  .panel .btn{width:100%; margin-top:8px}
-  .panel .hint{margin-top:14px; font-size:14px; color:var(--mute)}
+  .contact-card::before{
+    content:"";position:absolute;width:360px;height:360px;border-radius:50%;
+    background:radial-gradient(circle at 40% 40%, rgba(200,81,42,.42), transparent 68%);
+    top:-140px;right:-110px;pointer-events:none;
+  }
+  .contact-inner{position:relative;z-index:1;display:grid;gap:34px}
+  .contact h2{color:#fff;font-size:clamp(1.8rem,4.5vw,2.6rem)}
+  .contact .eyebrow{color:#f0a583}
+  .contact .eyebrow::before{background:var(--accent)}
+  .contact-sub{color:#cdbfae;font-size:1.05rem;line-height:1.6;margin:14px 0 26px;max-width:46ch}
+  .ci-list{display:grid;gap:16px;margin-bottom:28px}
+  .ci-row{display:flex;gap:14px;align-items:flex-start}
+  .ci-ic{
+    flex:none;width:44px;height:44px;border-radius:12px;
+    background:rgba(255,255,255,.08);color:#f0a583;
+    display:grid;place-items:center;border:1px solid rgba(255,255,255,.10);
+  }
+  .ci-ic svg{width:21px;height:21px}
+  .ci-row .lbl{font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#a8998a;margin-bottom:3px}
+  .ci-row .val{color:#fff;font-size:1.04rem;font-weight:600;line-height:1.35}
+  .ci-row a.val:hover{color:#f0a583}
+  .contact-cta{display:flex;flex-wrap:wrap;gap:12px}
+  .contact-cta .btn-ghost{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.16);color:#fff}
+  .contact-cta .btn-ghost:hover{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.28)}
+
+  .map-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:var(--r-md);
+    padding:22px;
+  }
+  .map-card .mc-top{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+  .map-card .mc-top svg{width:20px;height:20px;color:#f0a583}
+  .map-card .mc-top span{font-weight:700;color:#fff;font-size:1.05rem}
+  .map-card .mc-addr{color:#cdbfae;font-size:.98rem;line-height:1.5;margin:0 0 18px}
   .map-link{
-    display:inline-flex; align-items:center; gap:8px; margin-top:14px;
-    color:var(--accent-deep); font-weight:600; font-size:15px; text-decoration:none;
-    min-height:44px;
+    display:inline-flex;align-items:center;gap:8px;
+    color:#f0a583;font-weight:600;font-size:.96rem;
+    border-bottom:1.5px solid rgba(240,165,131,.4);padding-bottom:2px;
+    transition:color .18s ease,border-color .18s ease;
   }
-  .map-link:hover{text-decoration:underline}
+  .map-link:hover{color:#fff;border-color:#fff}
+  .map-link svg{width:16px;height:16px}
 
-  /* ---- footer ---- */
-  footer{padding:40px 0; border-top:1px solid var(--border); background:var(--surface)}
-  .foot{display:flex; flex-wrap:wrap; gap:8px 18px; align-items:center; justify-content:space-between}
-  .foot .name{font-family:"Bricolage Grotesque",sans-serif; font-weight:700; font-size:1.25rem}
-  .foot .meta{color:var(--mute); font-size:14px}
-  .foot .demo{
-    font-size:13px; color:var(--ink-soft); background:var(--bg);
-    border:1px solid var(--border); border-radius:999px; padding:6px 14px;
+  /* FOOTER */
+  footer{padding:36px 0 44px;border-top:1px solid var(--border)}
+  .foot-grid{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between}
+  .foot-name{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.2rem;color:var(--ink)}
+  .foot-meta{font-size:.86rem;color:var(--mute);line-height:1.5}
+  .foot-demo{
+    display:inline-flex;align-items:center;gap:7px;
+    font-size:.82rem;font-weight:600;color:var(--ink-soft);
+    background:var(--accent-wash);border:1px solid var(--border);
+    padding:7px 14px;border-radius:999px;
+  }
+  .foot-demo svg{width:14px;height:14px;color:var(--accent-deep)}
+
+  /* DESKTOP */
+  @media(min-width:860px){
+    .hero{padding:64px 0 80px}
+    .hero-grid{grid-template-columns:1.05fr .95fr;gap:48px}
+    .hero-frame{aspect-ratio:4/5}
+    .trust-grid{grid-template-columns:.95fr 1.05fr;gap:48px}
+    .contact-inner{grid-template-columns:1.1fr .9fr;align-items:start}
+    .services{padding:84px 0}
+    .trust{padding:84px 0}
+  }
+  @media(min-width:520px) and (max-width:859px){
+    .hero-frame{aspect-ratio:16/10}
   }
 
-  @media (min-width:720px){
-    .hero{padding:70px 0 84px}
-    .contact-grid{grid-template-columns:1.05fr .95fr}
-    .cta-row .btn{flex:0 0 auto}
-    .wrap{padding-left:32px; padding-right:32px}
-  }
-  @media (prefers-reduced-motion:reduce){
-    *{transition:none !important; scroll-behavior:auto !important}
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{transition:none!important}
+    .hero-frame{transform:none}
   }
 </style>
 </head>
 <body>
 
-  <!-- (1) ribbon -->
-  <div class="ribbon">Vista previa preparada por <strong>Tree Marketing</strong> para {{NAME}}</div>
+  <!-- 1. CINTA PREVIEW -->
+  <div class="ribbon">
+    Vista previa preparada por <b>Tree Marketing</b> para {{NAME}}
+  </div>
 
-  <!-- (2) hero -->
+  <!-- 2. HERO -->
   <header class="hero">
-    <div class="wrap">
-      <span class="eyebrow"><span class="dot" aria-hidden="true"></span>{{RUBRO}} en {{NEIGHBORHOOD}}</span>
-      <h1>{{NAME}}</h1>
-      <p class="lede">{{TAGLINE}}</p>
-
-      <div class="loc">
-        <span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="loc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
           {{NEIGHBORHOOD}}, {{CITY}}
         </span>
-        <span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
-          {{PHONE}}
-        </span>
-      </div>
+        <h1 class="hero-title">{{NAME}}</h1>
+        <p class="hero-tag">{{TAGLINE}}</p>
 
-      <div class="proof">
-        <div>
-          <div class="stars" aria-hidden="true">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2Z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2Z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2Z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2Z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2Z"/></svg>
-          </div>
-          <div class="score">{{RATING}}</div>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="{{WHATSAPP_LINK}}" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp a {{NAME}}">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.513 5.26l-.999 3.648 3.836-1.043zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            Escribinos por WhatsApp
+          </a>
+          <a class="btn btn-ghost" href="tel:{{PHONE_RAW}}" aria-label="Llamar al {{PHONE}}">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            Llamar al {{PHONE}}
+          </a>
         </div>
-        <div class="vline" aria-hidden="true"></div>
-        <div class="meta"><b>{{REVIEWS}} reseñas</b><br>de clientes en Google</div>
+
+        <div class="proof">
+          <span class="proof-rating">{{RATING}}</span>
+          <span class="stars" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </span>
+          <span class="proof-txt"><b>{{RATING}} en Google</b><br>{{REVIEWS}} reseñas de vecinos</span>
+        </div>
       </div>
 
-      <div class="cta-row">
-        <a class="btn btn-primary" href="{{WHATSAPP_LINK}}" target="_blank" rel="noopener" aria-label="Escribir a {{NAME}} por WhatsApp">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.84 9.84 0 0 0 12.04 2Zm0 18.02h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42l-.48-.01c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>
-          Escribir por WhatsApp
-        </a>
-        <a class="btn btn-ghost" href="tel:{{PHONE_RAW}}" aria-label="Llamar a {{NAME}} al {{PHONE}}">
-          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
-          Llamar {{PHONE}}
-        </a>
+      <div class="hero-media">
+        <div class="hero-frame">
+          <img src="/img/generico-hero.jpg" alt="Interior de un local de barrio" width="800" height="1000" fetchpriority="high" decoding="async">
+        </div>
+        <div class="float-card">
+          <span class="float-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </span>
+          <span class="ft"><b>Atención de barrio</b>Te conocemos por tu nombre</span>
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- (3) services -->
-  <section id="servicios">
+  <!-- 3. SERVICIOS -->
+  <section class="services" id="servicios">
     <div class="wrap">
       <div class="sec-head">
-        <span class="kicker">Lo que hacemos</span>
-        <h2>Servicios pensados para tu día a día</h2>
-        <p>Cada trabajo lo encaramos con la misma dedicación. Contanos qué necesitás y lo resolvemos juntos.</p>
+        <span class="eyebrow">Lo que hacemos</span>
+        <h2 class="sec-title">Todo resuelto, sin vueltas</h2>
+        <p class="sec-sub">Cada trabajo lo encaramos con tiempo y prolijidad. Mirá lo que podemos hacer por vos.</p>
       </div>
-      {{SERVICES_HTML}}
-    </div>
-  </section>
-
-  <!-- (4) trust -->
-  <section class="trust">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="kicker">Confianza del barrio</span>
-        <h2>Vecinos de {{NEIGHBORHOOD}} ya nos eligen</h2>
-      </div>
-      <div class="trust-grid" style="margin-top:34px">
-        <div class="trust-card">
-          <div class="big">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2Z"/></svg>
-            {{RATING}}
-          </div>
-          <h3>Puntaje en Google</h3>
-          <p>El promedio que dejan quienes ya pasaron por acá.</p>
-        </div>
-        <div class="trust-card">
-          <div class="big">{{REVIEWS}}</div>
-          <h3>Reseñas reales</h3>
-          <p>Opiniones de clientes verificadas en Google.</p>
-        </div>
-        <div class="trust-card">
-          <div class="big">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <h3>Acá, en {{NEIGHBORHOOD}}</h3>
-          <p>Cerca tuyo, en {{CITY}}. Pasá cuando quieras o coordinamos.</p>
-        </div>
+      <div class="svc-grid">
+        {{SERVICES_HTML}}
       </div>
     </div>
   </section>
 
-  <!-- (5) location + contact -->
-  <section id="contacto">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="kicker">Cómo llegar y escribirnos</span>
-        <h2>Estamos para ayudarte</h2>
-        <p>La forma más rápida es por WhatsApp: nos contás qué necesitás y coordinamos un horario que te quede bien.</p>
+  <!-- 4. CONFIANZA -->
+  <section class="trust" id="nosotros">
+    <div class="wrap trust-grid">
+      <div class="trust-media">
+        <div class="trust-frame">
+          <img src="/img/generico-2.jpg" alt="Atención personalizada en el local" width="700" height="560" loading="lazy" decoding="async">
+        </div>
+        <div class="trust-badge">
+          <span class="big">{{RATING}}</span>
+          <span class="sm">En Google</span>
+        </div>
       </div>
+      <div class="trust-copy">
+        <span class="eyebrow">Por qué nos eligen</span>
+        <h2 class="sec-title">Gente de {{NEIGHBORHOOD}} que ya nos conoce</h2>
+        <p class="sec-sub">No somos una cadena ni un número de ticket. Somos del barrio, atendemos como nos gusta que nos atiendan y nos hacemos cargo de cada trabajo que sale por la puerta.</p>
 
-      <div class="contact-grid" style="margin-top:34px">
-        <div class="panel">
-          <div class="info-row">
-            <span class="info-ic" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            </span>
-            <div>
-              <div class="lbl">Dirección</div>
-              <div class="val">{{ADDRESS}}</div>
-              <a class="map-link" href="{{MAPS_URL}}" target="_blank" rel="noopener">
-                Ver en Google Maps
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        <ul class="trust-list">
+          <li>
+            <span class="trust-tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <div><b>Trato cercano y honesto</b><span>Te explicamos todo de frente, sin sorpresas ni letra chica.</span></div>
+          </li>
+          <li>
+            <span class="trust-tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <div><b>Trabajo prolijo, bien hecho</b><span>Cuidamos los detalles para que te vayas conforme.</span></div>
+          </li>
+          <li>
+            <span class="trust-tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <div><b>Acá nomás, en el barrio</b><span>Nos encontrás fácil en {{NEIGHBORHOOD}}, {{CITY}}.</span></div>
+          </li>
+        </ul>
+
+        <div class="trust-proof" style="margin-top:24px">
+          <span class="stars" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </span>
+          <span class="rt">{{RATING}}</span>
+          <span class="rv">· {{REVIEWS}} reseñas en Google</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. UBICACIÓN + CONTACTO -->
+  <section class="contact" id="contacto">
+    <div class="wrap">
+      <div class="contact-card">
+        <div class="contact-inner">
+          <div class="contact-main">
+            <span class="eyebrow">Estamos para ayudarte</span>
+            <h2>Pasá, llamá o escribinos</h2>
+            <p class="contact-sub">Contanos qué necesitás y coordinamos un día y horario que te quede cómodo. Te respondemos por WhatsApp lo antes posible.</p>
+
+            <div class="ci-list">
+              <div class="ci-row">
+                <span class="ci-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.513 5.26l-.999 3.648 3.836-1.043zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></span>
+                <div>
+                  <div class="lbl">WhatsApp</div>
+                  <a class="val" href="{{WHATSAPP_LINK}}" target="_blank" rel="noopener">{{PHONE}}</a>
+                </div>
+              </div>
+              <div class="ci-row">
+                <span class="ci-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span>
+                <div>
+                  <div class="lbl">Teléfono</div>
+                  <a class="val" href="tel:{{PHONE_RAW}}">{{PHONE}}</a>
+                </div>
+              </div>
+              <div class="ci-row">
+                <span class="ci-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <div>
+                  <div class="lbl">Dónde estamos</div>
+                  <div class="val">{{ADDRESS}}</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-cta">
+              <a class="btn btn-primary" href="{{WHATSAPP_LINK}}" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.513 5.26l-.999 3.648 3.836-1.043zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                Escribinos por WhatsApp
+              </a>
+              <a class="btn btn-ghost" href="tel:{{PHONE_RAW}}">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+                Llamar al {{PHONE}}
               </a>
             </div>
           </div>
-          <div class="info-row">
-            <span class="info-ic" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
-            </span>
-            <div>
-              <div class="lbl">Teléfono</div>
-              <a class="val" href="tel:{{PHONE_RAW}}">{{PHONE}}</a>
-            </div>
-          </div>
-          <div class="info-row">
-            <span class="info-ic" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.84 9.84 0 0 0 12.04 2Zm5.85 13.32c-.25.7-1.45 1.34-2.01 1.42-.51.08-1.16.11-1.87-.12-.43-.13-.98-.31-1.69-.62-2.97-1.28-4.91-4.27-5.06-4.47-.15-.2-1.21-1.61-1.21-3.07 0-1.46.77-2.18 1.04-2.48.27-.3.59-.37.79-.37l.57.01c.18.01.43-.07.67.51.25.6.85 2.06.92 2.21.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.18-.31.39-.44.53-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12.99 2.06 1.3 2.36 1.45.3.15.47.12.65-.07.18-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.71.81 2.01.96.3.15.5.22.57.34.07.13.07.73-.18 1.43Z"/></svg>
-            </span>
-            <div>
-              <div class="lbl">WhatsApp</div>
-              <a class="val" href="{{WHATSAPP_LINK}}" target="_blank" rel="noopener">Coordiná por mensaje</a>
-            </div>
-          </div>
-        </div>
 
-        <div class="panel" style="display:flex; flex-direction:column; justify-content:center">
-          <h3 style="font-size:1.4rem; font-weight:600">Escribinos y coordinamos</h3>
-          <p style="margin-top:10px; color:var(--ink-soft)">Contanos qué necesitás y vemos juntos el mejor horario para atenderte. Te respondemos por WhatsApp.</p>
-          <a class="btn btn-primary" href="{{WHATSAPP_LINK}}" target="_blank" rel="noopener" aria-label="Escribir a {{NAME}} por WhatsApp">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.84 9.84 0 0 0 12.04 2Zm0 18.02h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42l-.48-.01c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>
-            Abrir WhatsApp
-          </a>
-          <a class="btn btn-ghost" href="tel:{{PHONE_RAW}}" style="margin-top:12px" aria-label="Llamar a {{NAME}}">Prefiero llamar</a>
+          <div class="map-card">
+            <div class="mc-top">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Cómo llegar</span>
+            </div>
+            <p class="mc-addr">{{ADDRESS}}<br>{{NEIGHBORHOOD}}, {{CITY}}</p>
+            <a class="map-link" href="{{MAPS_URL}}" target="_blank" rel="noopener">
+              Abrir en Google Maps
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- (6) footer -->
+  <!-- 6. FOOTER -->
   <footer>
-    <div class="wrap foot">
+    <div class="wrap foot-grid">
       <div>
-        <div class="name">{{NAME}}</div>
-        <div class="meta">{{RUBRO}} · {{NEIGHBORHOOD}}, {{CITY}} · &copy; {{YEAR}}</div>
+        <div class="foot-name">{{NAME}}</div>
+        <div class="foot-meta">{{RUBRO}} en {{NEIGHBORHOOD}}, {{CITY}} · © {{YEAR}}</div>
       </div>
-      <span class="demo">Sitio de demostración · Tree Marketing</span>
+      <span class="foot-demo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        Sitio de demostración · Tree Marketing
+      </span>
     </div>
   </footer>
 

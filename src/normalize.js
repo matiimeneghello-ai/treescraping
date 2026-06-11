@@ -55,7 +55,10 @@ export function normalizePlace(raw, now = Date.now()) {
     category: raw.categoryName || (Array.isArray(raw.categories) ? raw.categories[0] : ""),
     address: raw.address || "",
     borough: raw.neighborhood || raw.city || "",
+    city: raw.city || raw.state || "",
     phone: raw.phone || raw.phoneUnformatted || "",
+    // Teléfono internacional (con código de país) para wa.me/tel: en cualquier país.
+    phoneIntl: String(raw.phoneUnformatted || raw.phone || "").replace(/[^0-9]/g, ""),
     site,
     webState: classifyWebsite(site),
     rating,

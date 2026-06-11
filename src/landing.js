@@ -9,7 +9,7 @@ import { join } from "node:path";
 import { ROOT } from "./pipeline.js";
 import { existsSync } from "node:fs";
 import { fill, esc, waLink } from "./fill.js";
-import { resolveRubro } from "./content.js";
+import { resolveRubro, brandName } from "./content.js";
 
 // Un template por rubro (cacheado). Fallback al genérico, y a un
 // template viejo si los nuevos no estuvieran presentes.
@@ -37,14 +37,16 @@ function servicesHtml(content) {
 export function renderLanding(p) {
   const content = resolveRubro(p);
   const TEMPLATE = loadTemplate(content.template || "landing-generico.html");
-  const wa = waLink(p.phone);
-  const phoneRaw = String(p.phone || "").replace(/[^0-9]/g, "");
+  const phoneRaw = p.phoneIntl || String(p.phone || "").replace(/[^0-9]/g, "");
+  const wa = waLink(phoneRaw);
+  const brand = brandName(p);
   const tokens = {
-    NAME: esc(p.name),
+    NAME: esc(brand),
+    INITIAL: esc((brand.trim()[0] || "•").toUpperCase()),
     TAGLINE: esc(content.tagline),
     RUBRO: esc(content.label || content.slug),
-    NEIGHBORHOOD: esc(p.borough || ""),
-    CITY: "CABA",
+    NEIGHBORHOOD: esc(p.borough || p.city || ""),
+    CITY: esc(p.city || p.borough || ""),
     PHONE: esc(p.phone || ""),
     PHONE_RAW: phoneRaw,
     WHATSAPP_LINK: wa || (p.mapsUrl || "#"),

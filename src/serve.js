@@ -14,7 +14,7 @@ import { createServer } from "node:http";
 import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { loadEnv, runScan, ROOT, OUT } from "./pipeline.js";
-import { RUBROS, ZONAS } from "./config.js";
+import { RUBROS, ZONAS, QUERY } from "./config.js";
 import { renderLanding } from "./landing.js";
 import { buildKit } from "./kit.js";
 
@@ -43,13 +43,20 @@ import { copyFileSync, mkdirSync } from "node:fs";
 // Estado del job en memoria (un scan a la vez).
 let job = { status: "idle", startedAt: null, finishedAt: null, log: [], error: null, counts: null };
 
-function startScan({ rubros, zonas }) {
+function startScan({ rubros, zonas, countryCode, language }) {
   if (job.status === "running") return false;
   job = { status: "running", startedAt: new Date().toISOString(), finishedAt: null, log: [], error: null, counts: null };
   const onLog = (m) => { job.log.push(`${new Date().toISOString().slice(11, 19)} ${m}`); if (job.log.length > 200) job.log.shift(); };
+  // País e idioma configurables por scan (modo mundial). "" = sin sesgo de país.
+  const query = {
+    ...QUERY,
+    countryCode: countryCode !== undefined ? String(countryCode).toLowerCase().trim() : QUERY.countryCode,
+    language: language ? String(language).toLowerCase().trim() : QUERY.language,
+  };
   runScan({
     rubros: rubros?.length ? rubros : RUBROS,
     zonas: zonas?.length ? zonas : ZONAS,
+    query,
     onLog,
   })
     .then((payload) => { job.status = "done"; job.finishedAt = new Date().toISOString(); job.counts = payload.counts; })
@@ -85,7 +92,7 @@ const server = createServer(async (req, res) => {
 
   // Config por defecto para prellenar el formulario del dashboard.
   if (path === "/api/defaults") {
-    return json(res, 200, { rubros: RUBROS, zonas: ZONAS, hasToken: !!(process.env.APIFY_TOKEN || process.env.APIFY_API_TOKEN), needsKey: !!process.env.DASHBOARD_KEY });
+    return json(res, 200, { rubros: RUBROS, zonas: ZONAS, countryCode: QUERY.countryCode, language: QUERY.language, hasToken: !!(process.env.APIFY_TOKEN || process.env.APIFY_API_TOKEN), needsKey: !!process.env.DASHBOARD_KEY });
   }
 
   if (path === "/api/status") {
@@ -102,9 +109,24 @@ const server = createServer(async (req, res) => {
     let body = {};
     try { body = JSON.parse((await readBody(req)) || "{}"); } catch {}
     const clean = (s) => String(s || "").split(/\n|,/).map((x) => x.trim()).filter(Boolean);
-    const started = startScan({ rubros: clean(body.rubros), zonas: clean(body.zonas) });
+    const started = startScan({
+      rubros: clean(body.rubros),
+      zonas: clean(body.zonas),
+      countryCode: body.countryCode,
+      language: body.language,
+    });
     if (!started) return json(res, 409, { error: "ya hay un scan corriendo" });
     return json(res, 202, { status: "running" });
+  }
+
+  // Imágenes de rubro (servidas desde el repo, sin depender de CDNs externos).
+  if (path.startsWith("/img/")) {
+    const name = path.slice("/img/".length).replace(/[^a-z0-9._-]/gi, "");
+    const f = join(ROOT, "src", "img", name);
+    if (!name || !existsSync(f)) return send(res, 404, "text/plain", "img not found");
+    const type = name.endsWith(".png") ? "image/png" : name.endsWith(".webp") ? "image/webp" : "image/jpeg";
+    res.writeHead(200, { "Content-Type": type, "Cache-Control": "public, max-age=86400" });
+    return res.end(readFileSync(f));
   }
 
   // Demo: la web del negocio, generada con sus datos reales.

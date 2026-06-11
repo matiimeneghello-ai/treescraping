@@ -18,12 +18,10 @@ export function norm(s) {
   return (s || "").toLowerCase().normalize("NFD").replace(/[^a-z0-9 ]/g, "").trim();
 }
 
-// Arma un wa.me a partir de un teléfono argentino. Best-effort: Mati revisa
-// antes de mandar. Devuelve "" si no hay teléfono usable.
-export function waLink(phone) {
-  let d = String(phone || "").replace(/[^0-9]/g, "");
-  if (!d) return "";
-  if (d.startsWith("0")) d = d.slice(1);
-  if (!d.startsWith("54")) d = "54" + d;
-  return `https://wa.me/${d}`;
+// Arma un wa.me a partir de un teléfono en formato internacional (con código
+// de país, como lo devuelve Apify en phoneUnformatted). Funciona en cualquier
+// país. Best-effort: Mati revisa antes de mandar.
+export function waLink(phoneIntl) {
+  const d = String(phoneIntl || "").replace(/[^0-9]/g, "");
+  return d ? `https://wa.me/${d}` : "";
 }

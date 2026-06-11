@@ -58,6 +58,7 @@
   .empty code{color:var(--acid)}
   .scanbox{background:var(--panel);border:1px solid var(--soft);border-radius:10px;padding:14px 16px;margin-bottom:16px}
   .scan-row{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap}
+  .scan-row label.sm{flex:0 0 96px;min-width:96px}
   .scan-row label{display:flex;flex-direction:column;gap:5px;font-size:11px;color:var(--muted);
     text-transform:uppercase;letter-spacing:.08em;flex:1;min-width:200px}
   .scan-row label span{text-transform:none;letter-spacing:0;opacity:.6}
@@ -112,7 +113,9 @@
   <section class="scanbox">
     <div class="scan-row">
       <label>Rubros <span>(coma)</span><input id="inRubros" placeholder="estudio contable, odontologo" /></label>
-      <label>Zonas <span>(coma)</span><input id="inZonas" placeholder="Caballito CABA, Villa Urquiza CABA" /></label>
+      <label>Zonas <span>(coma, con país)</span><input id="inZonas" placeholder="Caballito CABA, Miami FL USA" /></label>
+      <label class="sm">País <span>(opc.)</span><input id="inCountry" placeholder="ar / us / mx…" /></label>
+      <label class="sm">Idioma<input id="inLang" placeholder="es / en…" /></label>
       <button class="btn primary" id="btnScan">Correr scan</button>
     </div>
     <div class="scan-log" id="scanLog" hidden></div>
@@ -299,6 +302,8 @@ const btn = document.getElementById("btnScan");
 fetch("/api/defaults").then(r=>r.json()).then(d=>{
   document.getElementById("inRubros").value = (d.rubros||[]).join(", ");
   document.getElementById("inZonas").value  = (d.zonas||[]).join(", ");
+  document.getElementById("inCountry").value = d.countryCode || "";
+  document.getElementById("inLang").value = d.language || "es";
   NEEDS_KEY = d.needsKey;
   if(!d.hasToken){ btn.disabled = true; btn.textContent = "falta APIFY_TOKEN"; }
 }).catch(()=>{});
@@ -315,6 +320,8 @@ btn.onclick = async ()=>{
   const body = JSON.stringify({
     rubros: document.getElementById("inRubros").value,
     zonas: document.getElementById("inZonas").value,
+    countryCode: document.getElementById("inCountry").value,
+    language: document.getElementById("inLang").value,
   });
   btn.disabled = true; btn.textContent = "Corriendo…"; setLog(["Iniciando scan…"]);
   const res = await fetch("/api/scan",{method:"POST",headers,body});
