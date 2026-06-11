@@ -10,8 +10,23 @@ import { fileURLToPath } from "node:url";
 
 import { RUBROS, ZONAS, QUERY, SCORE_THRESHOLD } from "./config.js";
 import { searchPlaces } from "./apify.js";
-import { normalizePlace, normName, isWebsiteAlive } from "./normalize.js";
+import { normalizePlace, normName } from "./normalize.js";
 import { applyGates, scorePlace, webLabel } from "./score.js";
+import { auditSite } from "./audit.js";
+import { recommendServices } from "./services.js";
+
+// Corre tareas async con concurrencia acotada.
+async function mapLimit(items, limit, fn) {
+  const out = new Array(items.length);
+  let i = 0;
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, async () => {
+    while (i < items.length) {
+      const idx = i++;
+      out[idx] = await fn(items[idx], idx);
+    }
+  }));
+  return out;
+}
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 export const ROOT = join(__dirname, "..");
@@ -72,20 +87,27 @@ export async function runScan({ rubros = RUBROS, zonas = ZONAS, query = QUERY, o
   const chainCounts = new Map();
   for (const p of places) chainCounts.set(p._normName, (chainCounts.get(p._normName) || 0) + 1);
 
-  // Chequear webs propias (HEAD, en paralelo)
+  // Auditar las webs propias (GET + análisis SEO/mobile/redes), concurrencia acotada.
   const ownSites = places.filter((p) => p.webState === "own");
-  onLog(`Chequeando ${ownSites.length} webs propias...`);
-  await Promise.all(ownSites.map(async (p) => { p.webAlive = await isWebsiteAlive(p.site); }));
+  onLog(`Auditando ${ownSites.length} sitios web...`);
+  await mapLimit(ownSites, 8, async (p) => {
+    p.audit = await auditSite(p.site);
+    p.webAlive = p.audit.reachable;
+  });
 
-  // Gates + score
+  // Gates + score de presencia + recomendación de servicios (oportunidad)
   for (const p of places) {
     const g = applyGates(p, chainCounts);
     p.passed = g.passed;
     p.gateReasons = g.reasons;
     const s = scorePlace(p);
-    p.score = s.score;
+    p.presenceScore = s.score;
     p.breakdown = s.breakdown;
     p.webLabel = webLabel(p.webState);
+    const rec = recommendServices(p, p.audit);
+    p.services = rec.services;
+    p.primaryService = rec.primary;
+    p.score = rec.opportunityScore;   // headline = oportunidad
     delete p._normName;
   }
 

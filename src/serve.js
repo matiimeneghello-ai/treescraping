@@ -16,6 +16,7 @@ import { join } from "node:path";
 import { loadEnv, runScan, ROOT, OUT } from "./pipeline.js";
 import { RUBROS, ZONAS, QUERY } from "./config.js";
 import { renderLanding } from "./landing.js";
+import { renderReport } from "./report.js";
 import { buildKit } from "./kit.js";
 
 function findCandidate(placeId) {
@@ -141,15 +142,33 @@ const server = createServer(async (req, res) => {
     }
   }
 
+  // Report: diagnóstico/propuesta de Tree (para SEO/redes/paid).
+  if (path.startsWith("/report/")) {
+    const placeId = decodeURIComponent(path.slice("/report/".length));
+    const c = findCandidate(placeId);
+    if (!c) return send(res, 404, "text/html; charset=utf-8", "<h1>Diagnóstico no encontrado</h1>");
+    try {
+      return send(res, 200, "text/html; charset=utf-8", renderReport(c));
+    } catch (e) {
+      return send(res, 500, "text/plain; charset=utf-8", "Error renderizando el diagnóstico: " + e.message);
+    }
+  }
+
   // Kit de outreach (mail + whatsapp + análisis) para un candidato.
   if (path === "/api/kit") {
     const placeId = url.searchParams.get("placeId") || "";
     const c = findCandidate(placeId);
     if (!c) return json(res, 404, { error: "candidato no encontrado" });
     const origin = `${req.headers["x-forwarded-proto"] || "http"}://${req.headers.host}`;
-    const demoUrl = `${origin}/demo/${encodeURIComponent(placeId)}`;
+    const id = encodeURIComponent(placeId);
+    const demoUrl = `${origin}/demo/${id}`;
+    const reportUrl = `${origin}/report/${id}`;
+    // El deliverable depende del servicio: demo de sitio para web/redesign,
+    // diagnóstico para seo/redes/paid.
+    const svc = (c.primaryService && c.primaryService.key) || "web";
+    const dealUrl = (svc === "web" || svc === "redesign") ? demoUrl : reportUrl;
     try {
-      return json(res, 200, { demoUrl, ...buildKit(c, demoUrl) });
+      return json(res, 200, { demoUrl, reportUrl, dealUrl, dealType: (svc === "web" || svc === "redesign") ? "demo" : "report", ...buildKit(c, dealUrl) });
     } catch (e) {
       return json(res, 500, { error: e.message });
     }

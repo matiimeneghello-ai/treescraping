@@ -1,40 +1,50 @@
 // ============================================================
-// buildKit(candidate, demoUrl) -> { emailSubject, emailBody, whatsapp,
-//   analysis[], valueProps[] }  para el outreach, listo para copy-paste.
-// El análisis se arma según lo que realmente le falta al negocio
-// (sale del scoring), no es genérico.
+// buildKit(candidate, dealUrl) -> kit de outreach consciente del servicio
+// recomendado: mail + whatsapp adaptados (web/redesign/seo/redes/paid),
+// análisis con los hallazgos reales, y el link al deliverable correcto.
 // ============================================================
 
 import { fill } from "./fill.js";
-import { COPY, resolveRubro } from "./content.js";
+import { COPY, SERVICE_COPY, resolveRubro, brandName } from "./content.js";
 
-export function buildKit(p, demoUrl) {
+export function buildKit(p, dealUrl) {
   const tokens = {
-    NAME: p.name,
-    NEIGHBORHOOD: p.borough || "tu zona",
+    NAME: brandName(p),
+    NEIGHBORHOOD: p.borough || p.city || "tu zona",
     RATING: p.rating ?? "",
     REVIEWS: p.reviews ?? "",
     RUBRO: resolveRubro(p).label || "tu rubro",
-    DEMO_URL: demoUrl,
+    DEAL_URL: dealUrl,
+    DEMO_URL: dealUrl, // compat
   };
 
-  // Selección de diagnóstico según el perfil real del candidato.
-  const ps = COPY.painSentences;
-  const analysis = [];
-  if (p.webState === "none") analysis.push(ps.noWeb);
-  else if (p.webState === "social") analysis.push(ps.socialOnly);
-  if (Number(p.photos) <= 5) analysis.push(ps.fewPhotos);
-  if (p.verified === false) analysis.push(ps.unclaimed);
-  if (Number(p.rating) >= 4.5 && Number(p.reviews) >= 50) analysis.push(ps.strongDemand);
+  const svcKey = (p.primaryService && p.primaryService.key) || "web";
+  const copy = SERVICE_COPY[svcKey] || SERVICE_COPY.web;
+
+  // Análisis: los hallazgos concretos del motor de servicios. Fallback a las
+  // frases de presencia para datos viejos sin p.services.
+  let analysis;
+  if (p.services && p.services.length) {
+    analysis = p.services.slice(0, 3).map((s) => s.reason);
+  } else {
+    const ps = COPY.painSentences;
+    const list = [];
+    if (p.webState === "none") list.push(ps.noWeb);
+    else if (p.webState === "social") list.push(ps.socialOnly);
+    if (Number(p.photos) <= 5) list.push(ps.fewPhotos);
+    if (p.verified === false) list.push(ps.unclaimed);
+    if (Number(p.rating) >= 4.5 && Number(p.reviews) >= 50) list.push(ps.strongDemand);
+    analysis = list.filter(Boolean).map((s) => fill(s, tokens));
+  }
 
   return {
-    emailSubject: fill(COPY.emailSubject, tokens),
-    emailBody: fill(COPY.emailBody, tokens),
-    whatsapp: fill(COPY.whatsapp, tokens),
-    analysis: analysis.filter(Boolean).map((s) => fill(s, tokens)),
+    service: svcKey,
+    serviceLabel: (p.primaryService && p.primaryService.label) || "Sitio web",
+    emailSubject: fill(copy.emailSubject, tokens),
+    emailBody: fill(copy.emailBody, tokens),
+    whatsapp: fill(copy.whatsapp, tokens),
+    analysis,
     valueProps: COPY.valueProps || [],
-    // para abrir WhatsApp con el mensaje pre-cargado (fallback al teléfono crudo,
-    // que ya trae el código de país, para datos viejos sin phoneIntl)
     waPhone: p.phoneIntl || String(p.phone || "").replace(/[^0-9]/g, ""),
   };
 }

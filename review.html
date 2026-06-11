@@ -137,6 +137,8 @@
   .badge.social{border-color:rgba(255,194,77,.4);color:var(--warn);background:rgba(255,194,77,.06)}
   .badge.own{color:var(--muted)}
   .badge.unclaimed{border-color:rgba(94,194,255,.35);color:var(--info)}
+  .badge.svc{background:var(--acid);color:#06210a;border-color:var(--acid);font-weight:800}
+  .svc-reason{margin-top:8px;font-size:12.5px;color:var(--muted);line-height:1.5;max-width:62ch}
   .badge .d{width:5px;height:5px;border-radius:50%;background:currentColor}
   .chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}
   .why{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--faint);
@@ -341,10 +343,12 @@ function render(){
         </div>
         ${p.address?`<div class="c-sub">${esc(p.address)}</div>`:""}
         <div class="row-badges">
+          ${p.primaryService?`<span class="badge svc">→ ${esc(p.primaryService.label)}</span>`:""}
           <span class="badge ${p.webState}"><span class="d"></span>${esc(p.webLabel||p.webState)}</span>
           ${!p.verified?`<span class="badge unclaimed">sin reclamar</span>`:""}
-          ${p.site?`<span class="badge own" style="max-width:240px;overflow:hidden;text-overflow:ellipsis">${esc(p.site)}</span>`:""}
+          ${p.site?`<span class="badge own" style="max-width:220px;overflow:hidden;text-overflow:ellipsis">${esc(p.site)}</span>`:""}
         </div>
+        ${p.primaryService?`<div class="svc-reason">${esc(p.primaryService.reason)}</div>`:""}
         <div class="health">
           <span><b class="star">★ ${p.rating}</b> <span style="color:var(--faint)">(${p.reviews})</span></span>
           <span class="dot"></span><span>${p.photos} fotos</span>
@@ -371,10 +375,7 @@ function mark(id, val){
 
 async function openKit(id){
   const p = DATA.find(x=>x.placeId===id);
-  const demo = `/demo/${encodeURIComponent(id)}`;
   document.getElementById("dlgName").textContent = p.name;
-  document.getElementById("dlgDemo").href = demo;
-  document.getElementById("dlgDemo2").href = demo;
   document.getElementById("dlgKit").hidden = true;
   document.getElementById("dlgLoading").hidden = false;
   document.getElementById("dlg").showModal();
@@ -382,6 +383,12 @@ async function openKit(id){
   try { k = await fetch(`/api/kit?placeId=${encodeURIComponent(id)}`).then(r=>r.json()); }
   catch { document.getElementById("dlgLoading").textContent = "No pude armar el kit."; return; }
   if(k.error){ document.getElementById("dlgLoading").textContent = k.error; return; }
+  const deal = k.dealUrl || `/demo/${encodeURIComponent(id)}`;
+  const label = k.dealType==="report" ? "Ver diagnóstico ↗" : "Ver web demo ↗";
+  const label2 = k.dealType==="report" ? "Abrir diagnóstico ↗" : "Abrir web demo ↗";
+  document.getElementById("dlgName").textContent = p.name + (k.serviceLabel?`  ·  ${k.serviceLabel}`:"");
+  document.getElementById("dlgDemo").href = deal; document.getElementById("dlgDemo").textContent = label;
+  document.getElementById("dlgDemo2").href = deal; document.getElementById("dlgDemo2").textContent = label2;
   document.getElementById("kitAnalysis").innerHTML = (k.analysis||[]).map(a=>`<li>${esc(a)}</li>`).join("") || "<li>—</li>";
   document.getElementById("kitSubject").value = k.emailSubject || "";
   document.getElementById("kitEmail").value = k.emailBody || "";

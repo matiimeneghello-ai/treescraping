@@ -69,6 +69,88 @@ No es una plantilla genérica, es para su {{RUBRO}}. Si les gusta, la dejamos an
   ],
 };
 
+// Copy de outreach por servicio recomendado. {{DEAL_URL}} = link al deliverable
+// (demo de sitio para web/redesign, diagnóstico /report para seo/social/paid).
+export const SERVICE_COPY = {
+  web: {
+    emailSubject: "{{NAME}}, te armé el sitio y quiero que lo veas",
+    emailBody:
+`Hola, soy de Tree Marketing. Encontramos {{NAME}} en {{NEIGHBORHOOD}} y vimos que tienen {{RATING}} estrellas con {{REVIEWS}} reseñas en Google. Eso habla muy bien del laburo que hacen.
+
+Lo que notamos es que, cuando alguien los busca, no aparece un sitio propio para conocerlos ni contactarlos directo. Esa gente que ya los busca muchas veces termina en otro lado.
+
+Así que lo armamos: te dejamos una demo de tu propio sitio, lista, con la info de {{NAME}}. Miralo acá: {{DEAL_URL}}
+
+Si te cierra, respondé este mail y lo dejamos andando. Un saludo.`,
+    whatsapp:
+`Hola {{NAME}}, soy de Tree Marketing. Vimos su ficha en {{NEIGHBORHOOD}} con {{RATING}}★ y {{REVIEWS}} reseñas, muy buena.
+
+Notamos que no tienen sitio web propio, así que les armamos una demo con su info: {{DEAL_URL}}
+
+Si les gusta, la dejamos andando. ¿La miran y me cuentan?`,
+  },
+  redesign: {
+    emailSubject: "{{NAME}}, tu sitio puede verse mucho mejor",
+    emailBody:
+`Hola, soy de Tree Marketing. Vimos {{NAME}} en {{NEIGHBORHOOD}} ({{RATING}}★, {{REVIEWS}} reseñas, muy buen laburo). Entramos a su sitio actual y notamos que se queda corto frente a lo que ofrecen, sobre todo desde el celular, que es donde la mayoría lo abre.
+
+Les armamos una versión nueva para que vean cómo se vería: más rápida, clara y pensada para el teléfono. Miralo acá: {{DEAL_URL}}
+
+Si te gusta, lo dejamos andando. Un saludo.`,
+    whatsapp:
+`Hola {{NAME}}, soy de Tree Marketing. Vi su sitio y su laburo ({{RATING}}★) y creo que la web puede acompañar mucho mejor.
+
+Les armé una versión nueva para que la vean: {{DEAL_URL}}
+
+¿La miran y me dicen?`,
+  },
+  seo: {
+    emailSubject: "Por qué {{NAME}} no aparece primero cuando te buscan",
+    emailBody:
+`Hola, soy de Tree Marketing. {{NAME}} tiene muy buena reputación ({{RATING}}★ con {{REVIEWS}} reseñas), pero cuando alguien busca su rubro en {{NEIGHBORHOOD}}, no aparecen como deberían. Hay detalles concretos en el sitio que lo están frenando.
+
+Les armamos un diagnóstico rápido de qué encontramos y qué se puede mejorar, sin vueltas: {{DEAL_URL}}
+
+Son cosas solucionables. ¿Lo miramos juntos?`,
+    whatsapp:
+`Hola {{NAME}}, soy de Tree Marketing. Tienen muy buena reputación ({{RATING}}★) pero no aparecen bien en Google cuando los buscan.
+
+Les armé un diagnóstico de qué lo frena y cómo mejorarlo: {{DEAL_URL}}
+
+¿Lo vemos?`,
+  },
+  social: {
+    emailSubject: "{{NAME}}, tu presencia en redes tiene margen",
+    emailBody:
+`Hola, soy de Tree Marketing. Encontramos {{NAME}} en {{NEIGHBORHOOD}} y nos gustó el laburo ({{RATING}}★, {{REVIEWS}} reseñas). Vimos que hay margen para aprovechar mucho mejor las redes, que es donde tu público pasa el día.
+
+Te dejamos un diagnóstico de tu presencia digital y dónde está la oportunidad: {{DEAL_URL}}
+
+¿Te interesa que lo charlemos?`,
+    whatsapp:
+`Hola {{NAME}}, soy de Tree Marketing. Buen laburo el de ustedes ({{RATING}}★). Vimos que en redes hay bastante para aprovechar.
+
+Les armé un diagnóstico de su presencia: {{DEAL_URL}}
+
+¿Lo charlamos?`,
+  },
+  paid: {
+    emailSubject: "{{NAME}}, llegar a más gente que ya te busca",
+    emailBody:
+`Hola, soy de Tree Marketing. {{NAME}} tiene una reputación muy buena ({{RATING}}★, {{REVIEWS}} reseñas) — el tema no es la calidad, es que te encuentre más gente de la que ya te busca.
+
+Te armamos un diagnóstico de tu presencia y dónde está la oportunidad de crecer con pauta bien hecha: {{DEAL_URL}}
+
+¿Lo vemos sin compromiso?`,
+    whatsapp:
+`Hola {{NAME}}, soy de Tree Marketing. Tienen una reputación bárbara ({{RATING}}★). El laburo está; falta que los encuentre más gente.
+
+Les armé un diagnóstico con la oportunidad: {{DEAL_URL}}
+
+¿Lo charlamos?`,
+  },
+};
+
 export const RUBROS_CONTENT = [
   {
     slug: "odontologo",
