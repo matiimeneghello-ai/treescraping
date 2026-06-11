@@ -29,6 +29,17 @@ function findCandidate(placeId) {
 loadEnv();
 const PORT = process.env.PORT || 4477;
 
+// Seed: si no hay datos de scan (deploy fresco / filesystem efímero),
+// arrancamos con el último dataset conocido para que demos y kit funcionen.
+import { copyFileSync, mkdirSync } from "node:fs";
+(() => {
+  const seed = join(ROOT, "src", "seed-candidates.json");
+  const live = join(OUT, "candidates.json");
+  if (!existsSync(live) && existsSync(seed)) {
+    try { mkdirSync(OUT, { recursive: true }); copyFileSync(seed, live); } catch {}
+  }
+})();
+
 // Estado del job en memoria (un scan a la vez).
 let job = { status: "idle", startedAt: null, finishedAt: null, log: [], error: null, counts: null };
 
