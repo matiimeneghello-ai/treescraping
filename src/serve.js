@@ -18,6 +18,14 @@ import { RUBROS, ZONAS, QUERY } from "./config.js";
 import { renderLanding } from "./landing.js";
 import { renderReport } from "./report.js";
 import { buildKit } from "./kit.js";
+import { pageSpeed } from "./pagespeed.js";
+import { AUDIT_PAGE } from "./auditpage.js";
+import { auditSite } from "./audit.js";
+import { recommendServices } from "./services.js";
+
+function hostName(u) {
+  try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return u; }
+}
 
 function findCandidate(placeId) {
   const f = join(OUT, "candidates.json");
@@ -151,6 +159,42 @@ const server = createServer(async (req, res) => {
       return send(res, 200, "text/html; charset=utf-8", renderReport(c));
     } catch (e) {
       return send(res, 500, "text/plain; charset=utf-8", "Error renderizando el diagnóstico: " + e.message);
+    }
+  }
+
+  // Página pública de auditoría (lead magnet).
+  if (path === "/audit" || path === "/audit/") {
+    return send(res, 200, "text/html; charset=utf-8", AUDIT_PAGE);
+  }
+
+  // Audita una URL arbitraria (inbound) y devuelve hallazgos + servicios.
+  if (path === "/api/audit-url" && req.method === "POST") {
+    let body = {};
+    try { body = JSON.parse((await readBody(req)) || "{}"); } catch {}
+    let u = String(body.url || "").trim();
+    if (!u) return json(res, 400, { error: "Poné la dirección de tu sitio." });
+    if (!/^https?:\/\//i.test(u)) u = "https://" + u;
+    try {
+      const audit = await auditSite(u);
+      const cand = { webState: "own", site: u, name: hostName(u), rating: "", reviews: 0, photos: 0, verified: true, hasHours: true, audit };
+      const rec = recommendServices(cand, audit);
+      let psi = null;
+      if (process.env.PSI_KEY && audit.reachable) psi = await pageSpeed(u);
+      return json(res, 200, { url: u, audit, services: rec.services, primary: rec.primary, psi });
+    } catch (e) {
+      return json(res, 500, { error: "No pudimos analizar el sitio." });
+    }
+  }
+
+  // PageSpeed Insights on-demand para el sitio de un candidato (cacheado).
+  if (path === "/api/pagespeed") {
+    const placeId = url.searchParams.get("placeId") || "";
+    const c = findCandidate(placeId);
+    if (!c || c.webState !== "own" || !c.site) return json(res, 200, { error: "sin sitio" });
+    try {
+      return json(res, 200, await pageSpeed(c.site));
+    } catch (e) {
+      return json(res, 200, { error: e.message });
     }
   }
 

@@ -95,6 +95,13 @@ export function renderReport(p) {
   .btn svg{width:20px;height:20px}
   footer{text-align:center;color:var(--mute);font-size:12.5px;padding:24px 0 48px}
   footer b{color:var(--ink-soft)}
+  .psi{display:grid;gap:14px;margin-top:6px}
+  .psi-loading{color:var(--mute)}
+  .psi-row{display:flex;align-items:center;gap:14px}
+  .psi-l{flex:0 0 130px;font-size:.95rem;color:var(--ink-soft)}
+  .psi-bar{flex:1;height:9px;background:#edf1ee;border-radius:6px;overflow:hidden}
+  .psi-bar i{display:block;height:100%;border-radius:6px;transition:width .6s ease}
+  .psi-row b{flex:0 0 34px;text-align:right;font-variant-numeric:tabular-nums}
   @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style></head>
 <body>
@@ -113,6 +120,12 @@ export function renderReport(p) {
       ${findings}
     </section>
 
+    ${p.webState === "own" ? `<section id="psi-sec">
+      <h2>Velocidad de tu sitio, según Google</h2>
+      <p class="sec-sub">Medido en celular con PageSpeed, la herramienta oficial de Google.</p>
+      <div id="psi" class="psi"><span class="psi-loading">Midiendo… (tarda unos segundos)</span></div>
+    </section>` : ""}
+
     <section>
       <h2>Lo que conviene mejorar</h2>
       <p class="sec-sub">No es todo urgente. Esto es lo que más mueve la aguja para vos, en orden.</p>
@@ -129,5 +142,18 @@ export function renderReport(p) {
 
     <footer>Diagnóstico de demostración · <b>Tree Marketing</b> · ${new Date().getFullYear()}</footer>
   </div>
+  ${p.webState === "own" ? `<script>
+  (function(){
+    var el=document.getElementById('psi'); if(!el) return;
+    fetch('/api/pagespeed?placeId=${encodeURIComponent(p.placeId || "")}').then(function(r){return r.json()}).then(function(d){
+      if(!d || d.error || (d.perf==null && d.seo==null)){ var s=document.getElementById('psi-sec'); if(s) s.style.display='none'; return; }
+      function bar(label,v){ if(v==null) return '';
+        var c = v>=90?'#16894a':v>=50?'#d98a2b':'#c0392b';
+        return '<div class="psi-row"><span class="psi-l">'+label+'</span><span class="psi-bar"><i style="width:'+v+'%;background:'+c+'"></i></span><b style="color:'+c+'">'+v+'</b></div>';
+      }
+      el.innerHTML = bar('Velocidad',d.perf)+bar('SEO',d.seo)+bar('Accesibilidad',d.a11y)+bar('Buenas prácticas',d.bp);
+    }).catch(function(){ var s=document.getElementById('psi-sec'); if(s) s.style.display='none'; });
+  })();
+  </script>` : ""}
 </body></html>`;
 }
