@@ -33,6 +33,7 @@ export function renderReport(p) {
       ${checkRow(a.hasH1, "Encabezado principal definido")}
       ${checkRow(a.social.length > 0, "Redes sociales enlazadas desde el sitio")}
       ${checkRow((a.words || 0) >= 200, "Contenido suficiente en la página")}
+      ${checkRow(a.hasPixel, "Pixel de Meta para medir y hacer publicidad")}
     </ul>`;
   } else {
     const presence = p.webState === "none"

@@ -22,6 +22,8 @@ import { pageSpeed } from "./pagespeed.js";
 import { AUDIT_PAGE } from "./auditpage.js";
 import { auditSite } from "./audit.js";
 import { recommendServices } from "./services.js";
+import { getLeads, setLead, getViews, logView, LEAD_STATES } from "./store.js";
+import { metaAds, adSignal } from "./ads.js";
 
 function hostName(u) {
   try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return u; }
@@ -108,6 +110,37 @@ const server = createServer(async (req, res) => {
     return json(res, 200, { status: job.status, startedAt: job.startedAt, finishedAt: job.finishedAt, error: job.error, counts: job.counts, log: job.log.slice(-12) });
   }
 
+  // CRM: estado de leads (persistido en el volumen).
+  if (path === "/api/leads") {
+    return json(res, 200, { leads: getLeads(), states: LEAD_STATES, views: getViews() });
+  }
+  if (path === "/api/lead" && req.method === "POST") {
+    let body = {};
+    try { body = JSON.parse((await readBody(req)) || "{}"); } catch {}
+    if (!body.placeId) return json(res, 400, { error: "falta placeId" });
+    const patch = {};
+    if (body.status !== undefined) patch.status = body.status;
+    if (body.note !== undefined) patch.note = body.note;
+    if (body.name !== undefined) patch.name = body.name;
+    return json(res, 200, { lead: setLead(body.placeId, patch) });
+  }
+  if (path === "/api/views") {
+    return json(res, 200, getViews());
+  }
+
+  // Señal de anuncios (pixel del audit + Meta Ad Library si hay token).
+  if (path === "/api/ads") {
+    const placeId = url.searchParams.get("placeId") || "";
+    const c = findCandidate(placeId);
+    if (!c) return json(res, 404, { error: "candidato no encontrado" });
+    try {
+      const ads = await metaAds(c.name);
+      return json(res, 200, { ...adSignal(c, ads), metaChecked: !!ads.checked, metaError: ads.error || null });
+    } catch (e) {
+      return json(res, 200, adSignal(c, null));
+    }
+  }
+
   if (path === "/api/scan" && req.method === "POST") {
     if (process.env.DASHBOARD_KEY && req.headers["x-key"] !== process.env.DASHBOARD_KEY) {
       return json(res, 401, { error: "clave inválida" });
@@ -143,6 +176,7 @@ const server = createServer(async (req, res) => {
     const placeId = decodeURIComponent(path.slice("/demo/".length));
     const c = findCandidate(placeId);
     if (!c) return send(res, 404, "text/html; charset=utf-8", "<h1>Demo no encontrada</h1><p>Corré un scan primero.</p>");
+    logView(placeId, "demo");
     try {
       return send(res, 200, "text/html; charset=utf-8", renderLanding(c));
     } catch (e) {
@@ -155,6 +189,7 @@ const server = createServer(async (req, res) => {
     const placeId = decodeURIComponent(path.slice("/report/".length));
     const c = findCandidate(placeId);
     if (!c) return send(res, 404, "text/html; charset=utf-8", "<h1>Diagnóstico no encontrado</h1>");
+    logView(placeId, "report");
     try {
       return send(res, 200, "text/html; charset=utf-8", renderReport(c));
     } catch (e) {
