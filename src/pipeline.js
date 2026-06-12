@@ -130,6 +130,7 @@ export async function runScan({ rubros = RUBROS, zonas = ZONAS, query = QUERY, r
   await mapLimit(ownSites, 8, async (p) => {
     p.audit = await auditSite(p.site);
     p.webAlive = p.audit.reachable;
+    if (p.audit.emails && p.audit.emails.length) p.email = p.audit.emails[0];
   });
 
   // Gates + score de presencia + recomendación de servicios (oportunidad)

@@ -259,7 +259,7 @@ const server = createServer(async (req, res) => {
     const svc = (c.primaryService && c.primaryService.key) || "web";
     const dealUrl = (svc === "web" || svc === "redesign") ? demoUrl : reportUrl;
     try {
-      return json(res, 200, { demoUrl, reportUrl, dealUrl, dealType: (svc === "web" || svc === "redesign") ? "demo" : "report", ...buildKit(c, dealUrl) });
+      return json(res, 200, { demoUrl, reportUrl, dealUrl, dealType: (svc === "web" || svc === "redesign") ? "demo" : "report", emailTo: c.email || "", ...buildKit(c, dealUrl) });
     } catch (e) {
       return json(res, 500, { error: e.message });
     }

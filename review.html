@@ -200,6 +200,8 @@
   .kit-analysis li{margin-bottom:5px}
   .kit-input,.kit-ta{width:100%;box-sizing:border-box;background:var(--bg);color:var(--text);
     border:1px solid var(--soft);border-radius:9px;padding:11px 13px;font-family:inherit;font-size:13.5px;line-height:1.6}
+  .kit-to{font-size:12px;color:var(--muted);margin-bottom:9px}
+  .kit-to b{color:var(--info)}
   .kit-input{margin-bottom:9px}
   .kit-ta{min-height:150px;resize:vertical}
   .kit-input:focus,.kit-ta:focus{outline:none;border-color:var(--acid);box-shadow:0 0 0 3px rgba(184,255,87,.1)}
@@ -271,6 +273,7 @@
       <div class="kit-sec">
         <div class="kit-label">Mail <button class="copy-mini" data-copy="kitEmailFull">copiar</button>
           <a class="send-btn gmail" id="btnGmail" target="_blank" rel="noopener">Abrir en Gmail ↗</a></div>
+        <div id="kitTo" class="kit-to"></div>
         <input id="kitSubject" class="kit-input" />
         <textarea id="kitEmail" class="kit-ta"></textarea>
       </div>
@@ -385,6 +388,7 @@ function render(){
         <div class="c-meta">
           ${p.category?`<span>${esc(p.category)}</span>`:""}
           ${p.phone?`<span class="dot"></span><span>${esc(p.phone)}</span>`:""}
+          ${p.email?`<span class="dot"></span><span style="color:var(--info)">${esc(p.email)}</span>`:""}
           ${p.mapsUrl?`<span class="dot"></span><a class="mono" style="font-size:11px" href="${p.mapsUrl}" target="_blank">Maps ↗</a>`:""}
         </div>
         ${p.address?`<div class="c-sub">${esc(p.address)}</div>`:""}
@@ -443,12 +447,16 @@ async function openKit(id){
   document.getElementById("kitEmail").value = k.emailBody || "";
   document.getElementById("kitWa").value = k.whatsapp || "";
   WA_PHONE = k.waPhone || "";
+  EMAIL_TO = k.emailTo || "";
+  document.getElementById("kitTo").innerHTML = EMAIL_TO
+    ? `Para: <b>${esc(EMAIL_TO)}</b> <span style="color:var(--faint)">(se carga solo en Gmail)</span>`
+    : `<span style="color:var(--faint)">Sin email en el sitio — cargá el destinatario en Gmail.</span>`;
   updateSendLinks();
   document.getElementById("dlgLoading").hidden = true;
   document.getElementById("dlgKit").hidden = false;
 }
 
-let WA_PHONE = "";
+let WA_PHONE = "", EMAIL_TO = "";
 function updateSendLinks(){
   const wa = document.getElementById("btnWa");
   const gm = document.getElementById("btnGmail");
@@ -457,7 +465,8 @@ function updateSendLinks(){
   else { wa.removeAttribute("href"); wa.classList.add("off"); wa.title="Sin teléfono en la ficha"; }
   const su = encodeURIComponent(document.getElementById("kitSubject").value || "");
   const body = encodeURIComponent(document.getElementById("kitEmail").value || "");
-  gm.href = `https://mail.google.com/mail/?view=cm&fs=1&tf=1&su=${su}&body=${body}`;
+  const to = EMAIL_TO ? `&to=${encodeURIComponent(EMAIL_TO)}` : "";
+  gm.href = `https://mail.google.com/mail/?view=cm&fs=1&tf=1${to}&su=${su}&body=${body}`;
 }
 ["kitWa","kitSubject","kitEmail"].forEach(id=>{
   const el = document.getElementById(id);
