@@ -24,6 +24,8 @@ import { auditSite } from "./audit.js";
 import { recommendServices } from "./services.js";
 import { getLeads, setLead, getViews, logView, LEAD_STATES } from "./store.js";
 import { metaAds, adSignal } from "./ads.js";
+import { authEnabled, checkLogin, makeToken, verifyToken, cookies, isPublic } from "./auth.js";
+import { LOGIN_PAGE } from "./loginpage.js";
 
 function hostName(u) {
   try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return u; }
@@ -93,6 +95,29 @@ const server = createServer(async (req, res) => {
   const url = new URL(req.url, `http://localhost`);
   const path = url.pathname;
 
+  // Login (operador). Las páginas públicas (demos/diagnósticos/audit) quedan abiertas.
+  if (path === "/login") return send(res, 200, "text/html; charset=utf-8", LOGIN_PAGE);
+  if (path === "/api/login" && req.method === "POST") {
+    let b = {};
+    try { b = JSON.parse((await readBody(req)) || "{}"); } catch {}
+    if (checkLogin(b.user, b.pass)) {
+      res.writeHead(200, { "Content-Type": "application/json", "Set-Cookie": `sess=${makeToken(b.user)}; Path=/; HttpOnly; Max-Age=2592000; SameSite=Lax` });
+      return res.end(JSON.stringify({ ok: true }));
+    }
+    return json(res, 401, { error: "usuario o clave incorrectos" });
+  }
+  if (path === "/api/logout") {
+    res.writeHead(302, { "Set-Cookie": "sess=; Path=/; Max-Age=0", "Location": "/login" });
+    return res.end();
+  }
+  // Gate: si hay usuarios configurados, exigí sesión para el panel.
+  if (authEnabled() && !isPublic(path)) {
+    if (!verifyToken(cookies(req).sess)) {
+      if (path.startsWith("/api/")) return json(res, 401, { error: "no autorizado" });
+      return send(res, 200, "text/html; charset=utf-8", LOGIN_PAGE);
+    }
+  }
+
   if (path === "/" || path === "/index.html") {
     return send(res, 200, "text/html; charset=utf-8", readFileSync(join(ROOT, "review.html")));
   }
@@ -106,7 +131,7 @@ const server = createServer(async (req, res) => {
   // Config por defecto para prellenar el formulario del dashboard.
   if (path === "/api/defaults") {
     const regions = Object.entries(REGIONS).map(([k, r]) => ({ key: k, label: r.label, flag: r.flag, zonas: r.zonas }));
-    return json(res, 200, { rubros: RUBROS, zonas: ZONAS, regions, defaultRegion: DEFAULT_REGION, hasToken: !!(process.env.APIFY_TOKEN || process.env.APIFY_API_TOKEN), needsKey: !!process.env.DASHBOARD_KEY });
+    return json(res, 200, { rubros: RUBROS, zonas: ZONAS, regions, defaultRegion: DEFAULT_REGION, hasToken: !!(process.env.APIFY_TOKEN || process.env.APIFY_API_TOKEN), needsKey: false });
   }
 
   if (path === "/api/status") {
@@ -145,9 +170,7 @@ const server = createServer(async (req, res) => {
   }
 
   if (path === "/api/scan" && req.method === "POST") {
-    if (process.env.DASHBOARD_KEY && req.headers["x-key"] !== process.env.DASHBOARD_KEY) {
-      return json(res, 401, { error: "clave inválida" });
-    }
+    // El acceso ya está protegido por el login del panel.
     if (!(process.env.APIFY_TOKEN || process.env.APIFY_API_TOKEN)) {
       return json(res, 400, { error: "falta APIFY_TOKEN en el servidor" });
     }
