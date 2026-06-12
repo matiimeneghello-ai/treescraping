@@ -5,8 +5,8 @@
 // con hallazgos reales del audit. Para casos de SEO / redes / paid.
 // ============================================================
 
-import { esc, waLink, competitiveLine } from "./fill.js";
-import { brandName, resolveRubro } from "./content.js";
+import { esc, waLink, competitiveLine, localizeES } from "./fill.js";
+import { brandName, resolveRubro, regionOf } from "./content.js";
 
 function checkRow(ok, label) {
   const icon = ok
@@ -51,7 +51,7 @@ export function renderReport(p) {
       <p>${esc(s.reason)}</p>
     </div>`).join("");
 
-  return `<!doctype html>
+  const html = `<!doctype html>
 <html lang="es"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Diagnóstico digital · ${esc(name)}</title>
@@ -173,4 +173,5 @@ export function renderReport(p) {
   })();
   </script>` : ""}
 </body></html>`;
+  return regionOf(p) === "es" ? localizeES(html) : html;
 }

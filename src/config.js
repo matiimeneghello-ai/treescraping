@@ -25,6 +25,16 @@ export const RUBROS_SUGERIDOS = [
   "fabrica de pastas", "vivero", "peluqueria canina",
 ];
 
+// Regiones soportadas. Elegir una en el dashboard setea país, idioma, contenido
+// (rioplatense vs peninsular) y zonas de ejemplo — búsqueda más exacta.
+export const REGIONS = {
+  ar: { label: "Argentina", flag: "🇦🇷", countryCode: "ar", language: "es", region: "ar",
+    zonas: "Villa Urquiza, CABA, Argentina, Caballito, CABA, Argentina" },
+  es: { label: "España", flag: "🇪🇸", countryCode: "es", language: "es", region: "es",
+    zonas: "Chamberí, Madrid, España, Gràcia, Barcelona, España" },
+};
+export const DEFAULT_REGION = "ar";
+
 export const QUERY = {
   limit: 60,          // resultados por query (maxCrawledPlacesPerSearch)
   language: "es",     // idioma de los resultados; configurable por scan

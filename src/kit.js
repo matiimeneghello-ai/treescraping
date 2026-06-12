@@ -5,7 +5,7 @@
 // ============================================================
 
 import { fill, competitiveLine } from "./fill.js";
-import { COPY, SERVICE_COPY, resolveRubro, brandName } from "./content.js";
+import { serviceCopyOf, copyOf, resolveRubro, brandName } from "./content.js";
 
 export function buildKit(p, dealUrl) {
   const tokens = {
@@ -19,7 +19,9 @@ export function buildKit(p, dealUrl) {
   };
 
   const svcKey = (p.primaryService && p.primaryService.key) || "web";
-  const copy = SERVICE_COPY[svcKey] || SERVICE_COPY.web;
+  const SC = serviceCopyOf(p);
+  const CO = copyOf(p);
+  const copy = SC[svcKey] || SC.web;
 
   // Análisis: los hallazgos concretos del motor de servicios. Fallback a las
   // frases de presencia para datos viejos sin p.services.
@@ -28,7 +30,7 @@ export function buildKit(p, dealUrl) {
   if (p.services && p.services.length) {
     analysis = [...(comp ? [comp] : []), ...p.services.slice(0, 3).map((s) => s.reason)];
   } else {
-    const ps = COPY.painSentences;
+    const ps = CO.painSentences;
     const list = [];
     if (p.webState === "none") list.push(ps.noWeb);
     else if (p.webState === "social") list.push(ps.socialOnly);
@@ -45,7 +47,7 @@ export function buildKit(p, dealUrl) {
     emailBody: fill(copy.emailBody, tokens),
     whatsapp: fill(copy.whatsapp, tokens),
     analysis,
-    valueProps: COPY.valueProps || [],
+    valueProps: CO.valueProps || [],
     waPhone: p.phoneIntl || String(p.phone || "").replace(/[^0-9]/g, ""),
   };
 }

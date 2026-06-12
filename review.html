@@ -58,6 +58,10 @@
   .scan-row{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap}
   .field{display:flex;flex-direction:column;gap:6px;flex:1;min-width:200px}
   .field.sm{flex:0 0 104px;min-width:104px}
+  .field.sm2{flex:0 0 150px;min-width:150px}
+  .field select{background:var(--bg);color:var(--text);border:1px solid var(--soft);
+    border-radius:9px;padding:11px 13px;font-family:inherit;font-size:14px;cursor:pointer;height:44px}
+  .field select:focus{outline:none;border-color:var(--acid)}
   .field label{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-weight:600}
   .field label span{text-transform:none;letter-spacing:0;opacity:.55;font-weight:400}
   .field input{background:var(--bg);color:var(--text);border:1px solid var(--soft);
@@ -232,10 +236,11 @@
   <section class="scanbox">
     <div class="scan-head"><span class="led"></span> Nuevo scan</div>
     <div class="scan-row">
+      <div class="field sm2"><label>Región</label><select id="inRegion"></select></div>
       <div class="field"><label>Rubros <span>(separá con coma)</span></label><input id="inRubros" placeholder="estudio contable, odontologo" /></div>
-      <div class="field"><label>Zonas <span>(coma · incluí ciudad/país)</span></label><input id="inZonas" placeholder="Caballito CABA, Miami FL USA" /></div>
-      <div class="field sm"><label>País <span>(opc.)</span></label><input id="inCountry" placeholder="ar / us…" /></div>
-      <div class="field sm"><label>Idioma</label><input id="inLang" placeholder="es / en" /></div>
+      <div class="field"><label>Zonas <span>(coma)</span></label><input id="inZonas" placeholder="zonas a apuntar" /></div>
+      <div class="field sm manual" hidden><label>País</label><input id="inCountry" placeholder="ar / us…" /></div>
+      <div class="field sm manual" hidden><label>Idioma</label><input id="inLang" placeholder="es / en" /></div>
       <button class="btn primary" id="btnScan">Correr scan</button>
     </div>
     <div class="scan-prog" id="scanProg"></div>
@@ -496,11 +501,21 @@ const logEl = document.getElementById("scanLog");
 const progEl = document.getElementById("scanProg");
 const btn = document.getElementById("btnScan");
 
+let REGIONS_MAP = {};
+function applyRegion(){
+  const k = document.getElementById("inRegion").value;
+  const manual = k==="otro";
+  document.querySelectorAll(".field.manual").forEach(el=>el.hidden = !manual);
+  if(!manual && REGIONS_MAP[k]) document.getElementById("inZonas").value = REGIONS_MAP[k].zonas || "";
+}
 fetch("/api/defaults").then(r=>r.json()).then(d=>{
   document.getElementById("inRubros").value = (d.rubros||[]).join(", ");
-  document.getElementById("inZonas").value  = (d.zonas||[]).join(", ");
-  document.getElementById("inCountry").value = d.countryCode || "";
-  document.getElementById("inLang").value = d.language || "es";
+  const sel = document.getElementById("inRegion");
+  (d.regions||[]).forEach(r=>{ REGIONS_MAP[r.key]=r; });
+  sel.innerHTML = (d.regions||[]).map(r=>`<option value="${r.key}">${(r.flag||"")} ${r.label}</option>`).join("") + `<option value="otro">🌍 Otro país</option>`;
+  sel.value = d.defaultRegion || "ar";
+  applyRegion();
+  sel.addEventListener("change", applyRegion);
   NEEDS_KEY = d.needsKey;
   if(!d.hasToken){ btn.disabled = true; btn.textContent = "falta APIFY_TOKEN"; }
 }).catch(()=>{});
@@ -517,6 +532,7 @@ btn.onclick = async ()=>{
   const body = JSON.stringify({
     rubros: document.getElementById("inRubros").value,
     zonas: document.getElementById("inZonas").value,
+    region: document.getElementById("inRegion").value,
     countryCode: document.getElementById("inCountry").value,
     language: document.getElementById("inLang").value,
   });

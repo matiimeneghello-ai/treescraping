@@ -8,8 +8,8 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { ROOT } from "./pipeline.js";
 import { existsSync } from "node:fs";
-import { fill, esc, waLink } from "./fill.js";
-import { resolveRubro, brandName } from "./content.js";
+import { fill, esc, waLink, localizeES } from "./fill.js";
+import { resolveRubro, brandName, regionOf } from "./content.js";
 
 // Un template por rubro (cacheado). Fallback al genérico, y a un
 // template viejo si los nuevos no estuvieran presentes.
@@ -56,5 +56,6 @@ export function renderLanding(p) {
     ABOUT: esc(content.about),
     SERVICES_HTML: servicesHtml(content), // ya viene escapado por campo
   };
-  return fill(TEMPLATE, tokens);
+  const html = fill(TEMPLATE, tokens);
+  return regionOf(p) === "es" ? localizeES(html) : html;
 }

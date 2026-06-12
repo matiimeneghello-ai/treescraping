@@ -14,7 +14,7 @@ import { createServer } from "node:http";
 import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { loadEnv, runScan, ROOT, OUT } from "./pipeline.js";
-import { RUBROS, ZONAS, QUERY } from "./config.js";
+import { RUBROS, ZONAS, QUERY, REGIONS, DEFAULT_REGION } from "./config.js";
 import { renderLanding } from "./landing.js";
 import { renderReport } from "./report.js";
 import { buildKit } from "./kit.js";
@@ -54,20 +54,22 @@ import { copyFileSync, mkdirSync } from "node:fs";
 // Estado del job en memoria (un scan a la vez).
 let job = { status: "idle", startedAt: null, finishedAt: null, log: [], error: null, counts: null };
 
-function startScan({ rubros, zonas, countryCode, language }) {
+function startScan({ rubros, zonas, countryCode, language, region }) {
   if (job.status === "running") return false;
   job = { status: "running", startedAt: new Date().toISOString(), finishedAt: null, log: [], error: null, counts: null };
   const onLog = (m) => { job.log.push(`${new Date().toISOString().slice(11, 19)} ${m}`); if (job.log.length > 200) job.log.shift(); };
-  // País e idioma configurables por scan (modo mundial). "" = sin sesgo de país.
-  const query = {
-    ...QUERY,
-    countryCode: countryCode !== undefined ? String(countryCode).toLowerCase().trim() : QUERY.countryCode,
-    language: language ? String(language).toLowerCase().trim() : QUERY.language,
-  };
+  // Si se eligió una región conocida, manda ella (país/idioma/contenido); si no,
+  // país e idioma manuales (modo "otro"), con contenido AR por defecto.
+  const R = REGIONS[region];
+  const cc = R ? R.countryCode : (countryCode !== undefined ? String(countryCode).toLowerCase().trim() : QUERY.countryCode);
+  const lang = R ? R.language : (language ? String(language).toLowerCase().trim() : QUERY.language);
+  const contentRegion = R ? R.region : "ar";
+  const query = { ...QUERY, countryCode: cc, language: lang };
   runScan({
     rubros: rubros?.length ? rubros : RUBROS,
     zonas: zonas?.length ? zonas : ZONAS,
     query,
+    region: contentRegion,
     onLog,
   })
     .then((payload) => { job.status = "done"; job.finishedAt = new Date().toISOString(); job.counts = payload.counts; })
@@ -103,7 +105,8 @@ const server = createServer(async (req, res) => {
 
   // Config por defecto para prellenar el formulario del dashboard.
   if (path === "/api/defaults") {
-    return json(res, 200, { rubros: RUBROS, zonas: ZONAS, countryCode: QUERY.countryCode, language: QUERY.language, hasToken: !!(process.env.APIFY_TOKEN || process.env.APIFY_API_TOKEN), needsKey: !!process.env.DASHBOARD_KEY });
+    const regions = Object.entries(REGIONS).map(([k, r]) => ({ key: k, label: r.label, flag: r.flag, zonas: r.zonas }));
+    return json(res, 200, { rubros: RUBROS, zonas: ZONAS, regions, defaultRegion: DEFAULT_REGION, hasToken: !!(process.env.APIFY_TOKEN || process.env.APIFY_API_TOKEN), needsKey: !!process.env.DASHBOARD_KEY });
   }
 
   if (path === "/api/status") {
@@ -156,6 +159,7 @@ const server = createServer(async (req, res) => {
       zonas: clean(body.zonas),
       countryCode: body.countryCode,
       language: body.language,
+      region: body.region,
     });
     if (!started) return json(res, 409, { error: "ya hay un scan corriendo" });
     return json(res, 202, { status: "running" });

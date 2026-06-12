@@ -18,8 +18,7 @@ export function fill(tpl, tokens) {
 export function competitiveLine(p, rubroLabel) {
   const c = p && p.competitive;
   if (!c || c.cohortSize < 3) return "";
-  const r = rubroLabel || "negocios de tu rubro";
-  let s = `Entre los ${c.cohortSize} ${r} de tu zona, estás ${c.reviewRank}º por reseñas`;
+  let s = `En tu zona hay ${c.cohortSize} negocios como el tuyo y estás ${c.reviewRank}º por reseñas`;
   const extra = [];
   if (p.webState !== "own" && c.withWebCount > 0)
     extra.push(`${c.withWebCount} de ${c.cohortSize} ya tienen sitio web propio`);
@@ -27,6 +26,23 @@ export function competitiveLine(p, rubroLabel) {
     extra.push(`el primero tiene ${c.leaderReviews} reseñas`);
   if (extra.length) s += "; " + extra.join(" y ");
   return s + ".";
+}
+
+// Localiza a español de España los textos fijos rioplatenses de los templates
+// (imperativos voseo + "turno"->"cita"). Se aplica solo cuando la región es ES.
+const ES_MAP = [
+  [/Escribinos/g, "Escríbenos"], [/Coordinás/g, "Coordinas"], [/Coordiná/g, "Coordina"],
+  [/Reservá/g, "Reserva"], [/Agendá/g, "Agenda"], [/Llamános/g, "Llámanos"], [/Llamá/g, "Llama"],
+  [/Contactános/g, "Contáctanos"], [/Contactá/g, "Contacta"], [/Conocé/g, "Conoce"],
+  [/Aprovechá/g, "Aprovecha"], [/\bPasá\b/g, "Pasa"], [/\bMirá\b/g, "Mira"], [/\bPedí\b/g, "Pide"],
+  [/\bSacá\b/g, "Saca"], [/\bVení\b/g, "Ven"], [/\bEscribí\b/g, "Escribe"], [/\bSumás\b/g, "Sumas"],
+  [/\btenés\b/g, "tienes"], [/\bquerés\b/g, "quieres"], [/\bpodés\b/g, "puedes"], [/\bsabés\b/g, "sabes"],
+  [/tu turno/g, "tu cita"], [/\bturnos\b/g, "citas"], [/\bturno\b/g, "cita"],
+];
+export function localizeES(html) {
+  let h = html;
+  for (const [re, to] of ES_MAP) h = h.replace(re, to);
+  return h;
 }
 
 // Normaliza para matchear rubros (lowercase sin acentos).

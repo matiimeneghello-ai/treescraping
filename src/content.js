@@ -5,17 +5,26 @@
 // ============================================================
 
 import { norm } from "./fill.js";
+import { COPY_ES, SERVICE_COPY_ES, RUBROS_ES } from "./content-es.js";
+
+// Región de contenido/idioma del candidato: "es" = España (peninsular), resto = "ar".
+export function regionOf(candidate) {
+  return candidate && candidate.region === "es" ? "es" : "ar";
+}
+export function copyOf(candidate) { return COPY[regionOf(candidate)] || COPY.ar; }
+export function serviceCopyOf(candidate) { return SERVICE_COPY[regionOf(candidate)] || SERVICE_COPY.ar; }
 
 // Resuelve el contenido del rubro a partir de un candidato (rubro/category),
-// matcheando por las keywords de cada rubro (r.match) o por el slug.
+// matcheando por las keywords de cada rubro (r.match) o por el slug, en la región.
 export function resolveRubro(candidate) {
+  const list = RUBROS_CONTENT[regionOf(candidate)] || RUBROS_CONTENT.ar;
   const hay = norm(`${candidate.rubro || ""} ${candidate.category || ""}`);
-  const hit = RUBROS_CONTENT.find((r) => {
+  const hit = list.find((r) => {
     if (r.slug === "generico") return false;
     const kws = r.match && r.match.length ? r.match : [r.slug];
     return kws.some((k) => hay.includes(norm(k)));
   });
-  return hit || RUBROS_CONTENT.find((r) => r.slug === "generico") || RUBROS_CONTENT[0];
+  return hit || list.find((r) => r.slug === "generico") || list[0];
 }
 
 // Palabras que ya indican "marca de negocio" (si están, no se toca el nombre).
@@ -35,7 +44,7 @@ export function brandName(candidate) {
   return name;
 }
 
-export const COPY = {
+const COPY_AR = {
   emailSubject: "{{NAME}}, te armé el sitio y quiero que lo veas",
   emailBody:
 `Hola, soy de Tree Marketing. Encontramos {{NAME}} en {{NEIGHBORHOOD}} y vimos que tienen {{RATING}} estrellas con {{REVIEWS}} reseñas en Google. Eso habla muy bien del laburo que hacen.
@@ -71,7 +80,7 @@ No es una plantilla genérica, es para su {{RUBRO}}. Si les gusta, la dejamos an
 
 // Copy de outreach por servicio recomendado. {{DEAL_URL}} = link al deliverable
 // (demo de sitio para web/redesign, diagnóstico /report para seo/social/paid).
-export const SERVICE_COPY = {
+const SERVICE_COPY_AR = {
   web: {
     emailSubject: "Así se vería {{NAME}} cuando te buscan en {{NEIGHBORHOOD}}",
     emailBody:
@@ -158,7 +167,7 @@ Te armamos un diagnóstico de qué le falta y cómo dejarla impecable: {{DEAL_UR
   },
 };
 
-export const RUBROS_CONTENT = [
+const RUBROS_AR = [
   {
     slug: "odontologo",
     label: "odontología",
@@ -256,3 +265,8 @@ export const RUBROS_CONTENT = [
     ],
   },
 ];
+
+// ---------- Exports por región (AR = rioplatense, ES = peninsular) ----------
+export const COPY = { ar: COPY_AR, es: COPY_ES };
+export const SERVICE_COPY = { ar: SERVICE_COPY_AR, es: SERVICE_COPY_ES };
+export const RUBROS_CONTENT = { ar: RUBROS_AR, es: RUBROS_ES };

@@ -94,7 +94,7 @@ function toCsv(rows) {
 }
 
 // onLog: (msg:string) => void  para reportar progreso a CLI o web.
-export async function runScan({ rubros = RUBROS, zonas = ZONAS, query = QUERY, onLog = () => {} } = {}) {
+export async function runScan({ rubros = RUBROS, zonas = ZONAS, query = QUERY, region, onLog = () => {} } = {}) {
   const queries = buildQueries(rubros, zonas);
   onLog(`Queries: ${queries.length} (${rubros.length} rubros x ${zonas.length} zonas, limit ${query.limit})`);
   onLog("Corriendo el actor de Apify (1–4 min)...");
@@ -115,6 +115,9 @@ export async function runScan({ rubros = RUBROS, zonas = ZONAS, query = QUERY, o
     if (!byId.has(p.placeId)) byId.set(p.placeId, p);
   }
   const places = [...byId.values()];
+  // Región (idioma/contenido): la del selector, o inferida del país del scan.
+  const reg = region || (String(query.countryCode || "").toLowerCase() === "es" ? "es" : "ar");
+  for (const p of places) p.region = reg;
   onLog(`${places.length} únicos tras dedupe.`);
 
   // Conteo de cadenas (mismo nombre normalizado)
