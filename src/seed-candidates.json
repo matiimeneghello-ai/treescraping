@@ -72,6 +72,17 @@
         "label": "Sitio web",
         "score": 90,
         "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      },
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 28,
+        "ratingRank": 45,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
       }
     },
     {
@@ -128,6 +139,17 @@
         "label": "Sitio web",
         "score": 90,
         "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      },
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 10,
+        "ratingRank": 29,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
       }
     },
     {
@@ -190,6 +212,17 @@
         "label": "Sitio web",
         "score": 90,
         "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      },
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 27,
+        "ratingRank": 26,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
       }
     },
     {
@@ -252,6 +285,17 @@
         "label": "Sitio web",
         "score": 90,
         "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      },
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 13,
+        "ratingRank": 39,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
       }
     },
     {
@@ -308,6 +352,17 @@
         "label": "Sitio web",
         "score": 90,
         "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      },
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 16,
+        "ratingRank": 4,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
       }
     },
     {
@@ -364,6 +419,17 @@
         "label": "Sitio web",
         "score": 90,
         "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      },
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 32,
+        "ratingRank": 7,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
       }
     },
     {
@@ -420,6 +486,17 @@
         "label": "Sitio web",
         "score": 90,
         "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      },
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 12,
+        "ratingRank": 36,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
       }
     },
     {
@@ -476,6 +553,17 @@
         "label": "Sitio web",
         "score": 90,
         "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      },
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 35,
+        "ratingRank": 30,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
       }
     },
     {
@@ -532,6 +620,17 @@
         "label": "Sitio web",
         "score": 90,
         "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      },
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 18,
+        "ratingRank": 4,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
       }
     },
     {
@@ -588,6 +687,17 @@
         "label": "Sitio web",
         "score": 90,
         "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      },
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 16,
+        "ratingRank": 28,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
       }
     },
     {
@@ -644,6 +754,17 @@
         "label": "Sitio web",
         "score": 90,
         "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      },
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 37,
+        "ratingRank": 12,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
       }
     },
     {
@@ -700,6 +821,17 @@
         "label": "Sitio web",
         "score": 90,
         "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      },
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 6,
+        "ratingRank": 33,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
       }
     },
     {
@@ -756,6 +888,17 @@
         "label": "Sitio web",
         "score": 90,
         "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      },
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 41,
+        "ratingRank": 18,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
       }
     },
     {
@@ -812,6 +955,17 @@
         "label": "Sitio web",
         "score": 90,
         "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      },
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 12,
+        "ratingRank": 44,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
       }
     },
     {
@@ -868,6 +1022,17 @@
         "label": "Sitio web",
         "score": 90,
         "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      },
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 3,
+        "ratingRank": 6,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
       }
     },
     {
@@ -924,6 +1089,17 @@
         "label": "Sitio web",
         "score": 90,
         "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      },
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 16,
+        "ratingRank": 3,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
       }
     },
     {
@@ -980,6 +1156,17 @@
         "label": "Sitio web",
         "score": 90,
         "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      },
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 40,
+        "ratingRank": 41,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
       }
     },
     {
@@ -1036,6 +1223,17 @@
         "label": "Sitio web",
         "score": 90,
         "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      },
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 31,
+        "ratingRank": 3,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
       }
     },
     {
@@ -1092,6 +1290,17 @@
         "label": "Sitio web",
         "score": 90,
         "reason": "No tiene sitio web propio: cuando lo buscan en Google no encuentra dónde conocerlo ni contactarlo."
+      },
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 39,
+        "ratingRank": 42,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
       }
     },
     {
@@ -1160,6 +1369,17 @@
         "label": "Ficha de Google (GBP)",
         "score": 71,
         "reason": "Su ficha de Google está incompleta (pocas fotos, sin horarios cargados, ficha sin reclamar): en 2026 la ficha es lo que te muestra en Maps y en las IA, más que la web."
+      },
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 38,
+        "ratingRank": 43,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
       }
     },
     {
@@ -1222,6 +1442,17 @@
         "label": "Sitio web",
         "score": 68,
         "reason": "Solo tiene redes; le falta un sitio propio que sea suyo y no dependa del algoritmo de Instagram."
+      },
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 17,
+        "ratingRank": 5,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
       }
     },
     {
@@ -1284,6 +1515,17 @@
         "label": "Sitio web",
         "score": 68,
         "reason": "Solo tiene redes; le falta un sitio propio que sea suyo y no dependa del algoritmo de Instagram."
+      },
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 32,
+        "ratingRank": 1,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
       }
     },
     {
@@ -1346,6 +1588,17 @@
         "label": "Sitio web",
         "score": 68,
         "reason": "Solo tiene redes; le falta un sitio propio que sea suyo y no dependa del algoritmo de Instagram."
+      },
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 36,
+        "ratingRank": 5,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
       }
     },
     {
@@ -1408,6 +1661,17 @@
         "label": "Sitio web",
         "score": 68,
         "reason": "Solo tiene redes; le falta un sitio propio que sea suyo y no dependa del algoritmo de Instagram."
+      },
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 42,
+        "ratingRank": 21,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
       }
     },
     {
@@ -1470,6 +1734,17 @@
         "label": "Sitio web",
         "score": 68,
         "reason": "Solo tiene redes; le falta un sitio propio que sea suyo y no dependa del algoritmo de Instagram."
+      },
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 25,
+        "ratingRank": 20,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
       }
     },
     {
@@ -1532,6 +1807,17 @@
         "label": "Sitio web",
         "score": 68,
         "reason": "Solo tiene redes; le falta un sitio propio que sea suyo y no dependa del algoritmo de Instagram."
+      },
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 28,
+        "ratingRank": 23,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
       }
     },
     {
@@ -1594,6 +1880,17 @@
         "label": "Sitio web",
         "score": 68,
         "reason": "Solo tiene redes; le falta un sitio propio que sea suyo y no dependa del algoritmo de Instagram."
+      },
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 29,
+        "ratingRank": 19,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
       }
     }
   ],
@@ -1633,7 +1930,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 4,
+        "ratingRank": 1,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJgWVKZku3vJURPccgiFCr2xU",
@@ -1670,7 +1978,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 8,
+        "ratingRank": 2,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJJfwleTq3vJUR-R2EXB3rQao",
@@ -1709,7 +2028,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 29,
+        "ratingRank": 3,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJmY8rSYa3vJURMqc-NB4SLg4",
@@ -1745,7 +2075,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 16,
+        "ratingRank": 4,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJGWNar0W3vJURSEp9BqRZ91U",
@@ -1784,7 +2125,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 18,
+        "ratingRank": 5,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJi6HrfVW3vJUR1n4SqzTJVzU",
@@ -1821,7 +2173,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 15,
+        "ratingRank": 6,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJP1OIF1u2vJURb1knoXkXx_A",
@@ -1860,7 +2223,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 19,
+        "ratingRank": 7,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJ2RbqMQC3vJURfywamhCcnaY",
@@ -1899,7 +2273,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 27,
+        "ratingRank": 8,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJ_VWQPPi2vJURS-IIwTB6414",
@@ -1938,7 +2323,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 31,
+        "ratingRank": 9,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJBYAlWA21vJUR3fNsJLGGCpo",
@@ -1975,7 +2371,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 7,
+        "ratingRank": 10,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJTYTbDJa3vJUR6pA3OGuLax4",
@@ -2014,7 +2421,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 34,
+        "ratingRank": 11,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJQzFQxW62vJURVzF6eNEO3v0",
@@ -2053,7 +2471,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 26,
+        "ratingRank": 42,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJq03WdDe3vJURAUg2AcHKj9k",
@@ -2092,7 +2521,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 33,
+        "ratingRank": 12,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJp2q8QGO3vJURybAFzCQxO0Q",
@@ -2129,7 +2569,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 5,
+        "ratingRank": 13,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJSZ3V0NDJvJUReF4TKFCh3ZQ",
@@ -2166,7 +2617,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 2,
+        "ratingRank": 14,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJC2D62H316gsRlVWFFjcK5L4",
@@ -2205,7 +2667,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 22,
+        "ratingRank": 15,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJN9ppPPi2vJURW8PR9YUvPK0",
@@ -2244,7 +2717,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 32,
+        "ratingRank": 16,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJu-vbkmu3vJUR1Kbq9_mMEnc",
@@ -2281,7 +2765,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 14,
+        "ratingRank": 17,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJJcuy2I23vJURkAH6mw99BTo",
@@ -2318,7 +2813,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 9,
+        "ratingRank": 18,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJI_ghj9W1vJURx2jZ8PqXEVQ",
@@ -2355,7 +2861,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 10,
+        "ratingRank": 19,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJr0S93djLvJUR_H0vwGXJu9s",
@@ -2392,7 +2909,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 1,
+        "ratingRank": 1,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJbzEAtTzLvJURc5YSBmJxGY4",
@@ -2429,7 +2957,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 3,
+        "ratingRank": 2,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJkbChbUDKvJURfoYWtd-u9A8",
@@ -2466,7 +3005,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 9,
+        "ratingRank": 3,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJ_eTCFmvKvJURYUtsvssxeRs",
@@ -2505,7 +3055,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 20,
+        "ratingRank": 31,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJfQ1_n0jKvJURydapb6r1-LA",
@@ -2544,7 +3105,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 12,
+        "ratingRank": 29,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJ46pqyz7KvJURznnkXUiJL8A",
@@ -2583,7 +3155,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 25,
+        "ratingRank": 28,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJ89y59HbLvJURW-0aVq3TUuU",
@@ -2621,7 +3204,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Solo Instagram/Facebook",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 15,
+        "ratingRank": 4,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJXeNRCyfKvJUR7W4AzE09CIQ",
@@ -2658,7 +3252,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 8,
+        "ratingRank": 27,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJ_Z0JhiHLvJURbXwQRnXGjx8",
@@ -2696,7 +3301,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 22,
+        "ratingRank": 5,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJgWMwMEfKvJURVfHyJZ2iC34",
@@ -2735,7 +3351,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 23,
+        "ratingRank": 32,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJL0zrfgDJvJURLdg9EiV8HDw",
@@ -2774,7 +3401,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 16,
+        "ratingRank": 6,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJq0Xvk-bJvJUR-IBCzDWy5Lk",
@@ -2811,7 +3449,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 4,
+        "ratingRank": 30,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJv_S6_07LvJURJwKb5LWl4nE",
@@ -2850,7 +3499,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 26,
+        "ratingRank": 7,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJmR5KmovJvJURNe_4EQifu0U",
@@ -2890,7 +3550,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 36,
+        "ratingRank": 36,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJ67_7SzS3vJURLKIyR5yYORg",
@@ -2928,7 +3599,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 30,
+        "ratingRank": 8,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJYWmm9YnNvJUR_jGvj5IE1uI",
@@ -2965,7 +3647,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 2,
+        "ratingRank": 9,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJSQeOIULKvJURvJNEzDNAGf8",
@@ -3003,7 +3696,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 31,
+        "ratingRank": 10,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJh2DmdDS3vJURhqrv69-OjSI",
@@ -3041,7 +3745,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Solo Instagram/Facebook",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 18,
+        "ratingRank": 11,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJTRmRi_HLvJURNYwtmoS722c",
@@ -3078,7 +3793,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 11,
+        "ratingRank": 12,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJgfWnNtO3vJURLDLN3iP9DCg",
@@ -3115,7 +3841,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 2,
+        "ratingRank": 35,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJw7UD6GW2vJURxblChuwgmjQ",
@@ -3152,7 +3889,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 4,
+        "ratingRank": 40,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJA_Nl_Aq3vJURM5vboYoCjck",
@@ -3188,7 +3936,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Solo Instagram/Facebook",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 32,
+        "ratingRank": 1,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJN92oIcW3vJUR2mUe-_lOJdw",
@@ -3224,7 +3983,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Solo Instagram/Facebook",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 11,
+        "ratingRank": 2,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJEfB_W122vJURfTCCzz7T880",
@@ -3260,7 +4030,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Solo Instagram/Facebook",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 9,
+        "ratingRank": 23,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJ4VifWy63vJURolT8NJ46c8M",
@@ -3296,7 +4077,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 31,
+        "ratingRank": 3,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJ7eJMMMy3vJURsphl2ZfFGZI",
@@ -3332,7 +4124,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 18,
+        "ratingRank": 4,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJe4j_YDu3vJURgnKqQgtLhSU",
@@ -3368,7 +4171,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Solo Instagram/Facebook",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 19,
+        "ratingRank": 24,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJnSkVOoS3vJUR7nbEDqjwm2U",
@@ -3404,7 +4218,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Solo Instagram/Facebook",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 36,
+        "ratingRank": 5,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJ9fa8pWG3vJURBkz2TemwJvM",
@@ -3441,7 +4266,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 21,
+        "ratingRank": 36,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJuYdlx7O3vJURevvjrA3oFUI",
@@ -3477,7 +4313,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 3,
+        "ratingRank": 6,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJfaoCd2i2vJURzGjHDrYnLmg",
@@ -3514,7 +4361,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 13,
+        "ratingRank": 25,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJA63QdsjLvJURrpFLhyBAzp8",
@@ -3551,7 +4409,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 30,
+        "ratingRank": 7,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJ578FiaK3vJURE9tRAcPQ70c",
@@ -3588,7 +4457,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 34,
+        "ratingRank": 26,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJO0EDRoq3vJURlSgQ8J4wMe4",
@@ -3625,7 +4505,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 23,
+        "ratingRank": 37,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJFfR24qW3vJURnqI2vinDsVA",
@@ -3663,7 +4554,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 44,
+        "ratingRank": 27,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJyVl8R8-3vJURhwDZhLhLywU",
@@ -3701,7 +4603,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Solo Instagram/Facebook",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 46,
+        "ratingRank": 8,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJIcuKZ8-3vJURwjSvyncGc7A",
@@ -3737,7 +4650,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 16,
+        "ratingRank": 28,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJrQf_8fm3vJUR8-7JLfnHRVc",
@@ -3774,7 +4698,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 25,
+        "ratingRank": 9,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJyUB7sAq3vJURGDWgHljNlZ4",
@@ -3812,7 +4747,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 45,
+        "ratingRank": 10,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJH4qBgkPKvJUR-yH11xDkx44",
@@ -3849,7 +4795,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 6,
+        "ratingRank": 34,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJEQ0aQBPKvJURxbseyUnf95E",
@@ -3885,7 +4842,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Solo Instagram/Facebook",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 30,
+        "ratingRank": 1,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJAdAx6GrKvJUReLP0A_pWi5U",
@@ -3922,7 +4890,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 10,
+        "ratingRank": 37,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJeR8drybLvJURVDEQoDeG1B8",
@@ -3959,7 +4938,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 15,
+        "ratingRank": 18,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJl6Co_Q7LvJURtgXPn5jsb48",
@@ -3996,7 +4986,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 13,
+        "ratingRank": 27,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJnSvue1zLvJURJ20h1rYh8xs",
@@ -4033,7 +5034,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 21,
+        "ratingRank": 28,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJ86GxVkbKvJURdpcMNywXtq8",
@@ -4072,7 +5084,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 36,
+        "ratingRank": 19,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJNexemUTKvJUR4pUOhG6gc_s",
@@ -4109,7 +5132,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 5,
+        "ratingRank": 35,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJOVUF3jvKvJUR1Rob38JC7hI",
@@ -4146,7 +5180,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 20,
+        "ratingRank": 38,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJf1lQXyjLvJURgOUYbicCWnI",
@@ -4182,7 +5227,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Solo Instagram/Facebook",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 8,
+        "ratingRank": 2,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJT_hMxqXLvJURGdaLeE_jjaE",
@@ -4218,7 +5274,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Solo Instagram/Facebook",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 25,
+        "ratingRank": 20,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJ2_yo6j7LvJURa8h1FRkkC2k",
@@ -4255,7 +5322,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 24,
+        "ratingRank": 21,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJ-RI1E37LvJUR-rFEnz_ldyY",
@@ -4291,7 +5369,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 16,
+        "ratingRank": 3,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJ8fgj2EXLvJUR5c2boGyxtWY",
@@ -4328,7 +5417,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 22,
+        "ratingRank": 22,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJ5RJOg_rLvJURI-hX8WWK9LQ",
@@ -4364,7 +5464,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Solo Instagram/Facebook",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 28,
+        "ratingRank": 23,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJY8_8AgDLvJUR2b7ZkC2uD1Q",
@@ -4402,7 +5513,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 50,
+        "ratingRank": 4,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJTWfkE6DLvJURwbz2f6EZAH0",
@@ -4441,7 +5563,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Solo Instagram/Facebook",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 44,
+        "ratingRank": 55,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJazVmocnLvJURsRa-VNTa-04",
@@ -4478,7 +5611,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 14,
+        "ratingRank": 24,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJUfcKykbKvJURSB2McMn_1S0",
@@ -4515,7 +5659,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 19,
+        "ratingRank": 29,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJ1ypJkDjKvJURMyY7Mp546t4",
@@ -4553,7 +5708,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Solo Instagram/Facebook",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 34,
+        "ratingRank": 44,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJ1xD6hte1vJUR2DWYF7Cs9gI",
@@ -4590,7 +5756,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 3,
+        "ratingRank": 40,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJFVP6y5y3vJURmdW2KWNGc6Q",
@@ -4628,7 +5805,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 35,
+        "ratingRank": 20,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJv9X6e5DKvJURdSkwfPujCxo",
@@ -4665,7 +5853,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 6,
+        "ratingRank": 41,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJTxv_VQDLvJURyTJY4LdZUGs",
@@ -4704,7 +5903,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 37,
+        "ratingRank": 37,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJ_8i1PwDLvJUR0HYpAjfXRzE",
@@ -4743,7 +5953,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 38,
+        "ratingRank": 38,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJoQWGOlGwvJUR90oFYip50J8",
@@ -4779,7 +6000,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 40,
+        "ratingRank": 41,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJgzjOHGe2vJURzcOkvCEVwcY",
@@ -4815,7 +6047,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 10,
+        "ratingRank": 29,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJA8LdSl-2vJURrsWzmdSkjmQ",
@@ -4853,7 +6096,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 55,
+        "ratingRank": 11,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJ8wJQAgDLvJURr-S8BjBrXKg",
@@ -4891,7 +6145,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 21,
+        "ratingRank": 13,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJfxoJzknLvJUR2uHc_MZL4C0",
@@ -4927,7 +6192,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Solo Instagram/Facebook",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 17,
+        "ratingRank": 5,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJv1QJPsLLvJURk1fejXIuFe8",
@@ -4964,7 +6240,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 23,
+        "ratingRank": 25,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJ32WSdFLKvJURf8O-zpKRBSg",
@@ -5003,7 +6290,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 38,
+        "ratingRank": 6,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJ02lWQwC3vJUR6dHcGAIPSbo",
@@ -5042,7 +6340,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 46,
+        "ratingRank": 46,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJNZIwwSK3vJURlj-D-TZrqgU",
@@ -5078,7 +6387,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 37,
+        "ratingRank": 12,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJGQmXGpe3vJURv5IWwse4o3Y",
@@ -5117,7 +6437,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 47,
+        "ratingRank": 47,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJsSLAua63vJURdr_i3w8K5cY",
@@ -5153,7 +6484,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Solo Instagram/Facebook",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 33,
+        "ratingRank": 13,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJvRNDJUzKvJURWWyTQSweN9w",
@@ -5191,7 +6533,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 29,
+        "ratingRank": 46,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJ1fSHbv-2vJUR1MXnNBYHyXQ",
@@ -5229,7 +6582,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 43,
+        "ratingRank": 32,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJyUwSH1e3vJURCcrvRp33xl8",
@@ -5267,7 +6631,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 48,
+        "ratingRank": 14,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJlwCp-We2vJURnV_Eb08rnKc",
@@ -5307,7 +6682,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 40,
+        "ratingRank": 44,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJZ3CRqsG3vJUR_FzlxMAk0qU",
@@ -5346,7 +6732,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 41,
+        "ratingRank": 21,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJDwsXoW-3vJUR2qIRHmvAMkw",
@@ -5382,7 +6779,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 39,
+        "ratingRank": 42,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJ9TjRVN3JvJURtpqUHtTBXV0",
@@ -5419,7 +6827,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 11,
+        "ratingRank": 22,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJpa9Hyq_JvJURKcMXQ7PXQ-k",
@@ -5456,7 +6875,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 6,
+        "ratingRank": 14,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJ5RDEeYnLvJUR_vqvM7GOL70",
@@ -5492,7 +6922,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 32,
+        "ratingRank": 7,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJreWGzRfLvJURlCIx263D_-Q",
@@ -5528,7 +6969,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 27,
+        "ratingRank": 26,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJk4rNZvxrgZYRbVekf2K1Uj8",
@@ -5568,7 +7020,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 45,
+        "ratingRank": 48,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJz_IgEN23vJURWEbETnpYhNY",
@@ -5607,7 +7070,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 42,
+        "ratingRank": 23,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJr0m30Da3vJUR8lzJrPVnWtQ",
@@ -5646,7 +7120,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 48,
+        "ratingRank": 48,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJm2Vijmm3vJURGVx4ZbMyihw",
@@ -5685,7 +7170,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 49,
+        "ratingRank": 49,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJ6_lGf2-3vJURhZXuw26TZ84",
@@ -5725,7 +7221,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 50,
+        "ratingRank": 50,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJQUtISCK3vJUR4cQEkgjtoAc",
@@ -5764,7 +7271,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 43,
+        "ratingRank": 24,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJw59zSgC3vJUR0Ft6GqTLMKE",
@@ -5802,7 +7320,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 36,
+        "ratingRank": 25,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJr2D96e23vJURmlMrCHN7deY",
@@ -5842,7 +7371,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 51,
+        "ratingRank": 51,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJ-UkJjDm3vJUR36SJ8_H2-c4",
@@ -5882,7 +7422,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 52,
+        "ratingRank": 52,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJsQZaVGG2vJUR-0FwErZFaTM",
@@ -5922,7 +7473,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 53,
+        "ratingRank": 53,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJnzPbKwC3vJURpj-zvFkWWK4",
@@ -5961,7 +7523,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 54,
+        "ratingRank": 54,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJ4VAfHGS2vJURRqJh1Kyb19E",
@@ -6001,7 +7574,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 55,
+        "ratingRank": 55,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJ37W_JxS1vJURxGG8Au9bSLI",
@@ -6040,7 +7624,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 20,
+        "ratingRank": 26,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJKXiieKS1vJURgBtMp7Som6k",
@@ -6079,7 +7674,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 23,
+        "ratingRank": 27,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJm00x-522vJURH134DRQ8kwY",
@@ -6117,7 +7723,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 44,
+        "ratingRank": 28,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJmaj_oO-1vJURPxe7NxbGles",
@@ -6156,7 +7773,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 17,
+        "ratingRank": 29,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJxcv2oAi3vJURJYNG-B2wKsk",
@@ -6194,7 +7822,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 30,
+        "ratingRank": 30,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJaUksdtS3vJUR-tShS1LHV0s",
@@ -6231,7 +7870,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 1,
+        "ratingRank": 31,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJA3_gcVm3vJURWxyoXg_nl0w",
@@ -6271,7 +7921,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 56,
+        "ratingRank": 56,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJVQOxNP-1vJURHBALkAB9seA",
@@ -6311,7 +7972,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 57,
+        "ratingRank": 57,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJ8Zw0HW62vJUR74E2mn6R6pE",
@@ -6350,7 +8022,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 45,
+        "ratingRank": 32,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJrQf9h222vJURg-vv9zukxWg",
@@ -6389,7 +8072,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 37,
+        "ratingRank": 43,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJa7cjXma2vJURD4w9gje0syw",
@@ -6428,7 +8122,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 58,
+        "ratingRank": 58,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJsQ-QNUsmcIIR2QAqwahXVAA",
@@ -6467,7 +8172,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 21,
+        "ratingRank": 33,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJsRF_K9G1vJURalEBdMzA460",
@@ -6505,7 +8221,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 24,
+        "ratingRank": 34,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJkTpvrZXLvJURCjGxJrZSVnc",
@@ -6544,7 +8271,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 25,
+        "ratingRank": 35,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJN2U2jby1vJURbq1--DOBbts",
@@ -6580,7 +8318,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 13,
+        "ratingRank": 39,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJoc3CZjK1vJURFCj5Dg--jB4",
@@ -6616,7 +8365,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 12,
+        "ratingRank": 36,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJL6mWbDK1vJUR4u3PfjcS-IE",
@@ -6655,7 +8415,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 28,
+        "ratingRank": 37,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJk5HFQtK1vJUREakYQO5cYFA",
@@ -6693,7 +8464,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 38,
+        "ratingRank": 38,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJkxyyX4G1vJUR6pUok5SGPqA",
@@ -6733,7 +8515,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 59,
+        "ratingRank": 59,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJlQulG-q1vJURcNffDVxqHsw",
@@ -6772,7 +8565,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 60,
+        "ratingRank": 60,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJh66Jk9O1vJURU5NJJx8BuwE",
@@ -6812,7 +8616,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 39,
+        "ratingRank": 45,
+        "withWebCount": 44,
+        "withWebPct": 73,
+        "leaderReviews": 384,
+        "leaderHasWeb": true,
+        "medianReviews": 5,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJtdIoui-3vJURY3fX9BHE644",
@@ -6850,7 +8665,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 52,
+        "ratingRank": 47,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJ_WESKADLvJUR66XKb1WdQ0Q",
@@ -6890,7 +8716,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 39,
+        "ratingRank": 39,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJaUGkpEDKvJURJSBHMgTLobI",
@@ -6929,7 +8766,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 40,
+        "ratingRank": 40,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJ3ZJzBUfKvJURNYJCpL8y3gU",
@@ -6967,7 +8815,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 32,
+        "ratingRank": 15,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJ29wfJvbLvJURobLTaqlHRRY",
@@ -7006,7 +8865,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 41,
+        "ratingRank": 41,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJR_wZI8HKvJURbkcrWIA0TNk",
@@ -7044,7 +8914,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 33,
+        "ratingRank": 16,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJgdw8t0HKvJURulLDbTqriJ0",
@@ -7084,7 +8965,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 42,
+        "ratingRank": 42,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJd55BqmrKvJURXmZffSnO_tc",
@@ -7122,7 +9014,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 7,
+        "ratingRank": 34,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJFYZdpBPLvJURo2XkrVRngdQ",
@@ -7161,7 +9064,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 43,
+        "ratingRank": 43,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJVVSrLkjKvJURk1W1T6Zi4GQ",
@@ -7200,7 +9114,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 17,
+        "ratingRank": 33,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJs9b_20nLvJURDfByX-B-NfE",
@@ -7238,7 +9163,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 44,
+        "ratingRank": 44,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJfYomZhHLvJUR7TUChlNavRk",
@@ -7276,7 +9212,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 27,
+        "ratingRank": 17,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJk_MhB1_LvJURk-D0pTzKHxY",
@@ -7315,7 +9262,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 45,
+        "ratingRank": 45,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJoW01JGXLvJURhgN7MQXkBFc",
@@ -7354,7 +9312,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 46,
+        "ratingRank": 46,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJTb1YTMjLvJURMIvgKB6858s",
@@ -7394,7 +9363,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 47,
+        "ratingRank": 47,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJ7c3AsgLLvJURg8veOrNmtp0",
@@ -7433,7 +9413,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 34,
+        "ratingRank": 18,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJt2X9uifKvJURFSKDjCgYk6g",
@@ -7470,7 +9461,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 5,
+        "ratingRank": 19,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJCzxJiyXKvJURWxdvMWpHon8",
@@ -7508,7 +9510,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 28,
+        "ratingRank": 20,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJXS7I3MLLvJUR79oI5eg623w",
@@ -7548,7 +9561,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 48,
+        "ratingRank": 48,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJt8Clb3XLvJURnasnRrFT1_Y",
@@ -7586,7 +9610,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 14,
+        "ratingRank": 21,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJx8bibfhXFmgR_rYEW0TK89Y",
@@ -7623,7 +9658,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 10,
+        "ratingRank": 22,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJmXwNrXvLvJURY9FYrgLGFkM",
@@ -7663,7 +9709,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 49,
+        "ratingRank": 49,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJR-ImsOW8EU0RclVMcWE3Ido",
@@ -7701,7 +9758,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Solo Instagram/Facebook",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 19,
+        "ratingRank": 23,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJDWgScr_LvJURVsEPDXRpBwc",
@@ -7741,7 +9809,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 50,
+        "ratingRank": 50,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJsyWX1vpZMiwR3PmfD-A2zII",
@@ -7780,7 +9859,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 51,
+        "ratingRank": 51,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJK7rkhbfKvJURL5aMqbMqhOo",
@@ -7820,7 +9910,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 52,
+        "ratingRank": 52,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJCxchzQ-z-oURrEVpEG3VCmo",
@@ -7860,7 +9961,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 53,
+        "ratingRank": 53,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJi0gWc7vJvJURCMi1B02KN3g",
@@ -7899,7 +10011,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 13,
+        "ratingRank": 24,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJVVSmxT_JvJURc17CSkIj7QA",
@@ -7939,7 +10062,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 54,
+        "ratingRank": 54,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJmY-sWWW2vJURmgAXIGmjeMs",
@@ -7975,7 +10109,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 28,
+        "ratingRank": 45,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJg57tsWe2vJURfDYprZV_4R8",
@@ -8014,7 +10159,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 20,
+        "ratingRank": 54,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJHxoZNPK3vJURBCxwi22ZqHs",
@@ -8053,7 +10209,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 17,
+        "ratingRank": 50,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJqdvA8Ki3vJURasQ0iYOBK0c",
@@ -8091,7 +10258,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 49,
+        "ratingRank": 15,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJyyYVWwC3vJURBiAP7kHY08g",
@@ -8127,7 +10305,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Solo Instagram/Facebook",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 38,
+        "ratingRank": 43,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJKxh-OAC3vJURBAJdkZCSx9A",
@@ -8165,7 +10354,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Solo Instagram/Facebook",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 56,
+        "ratingRank": 16,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJWce6Vma2vJURUCEvhItTec8",
@@ -8202,7 +10402,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 14,
+        "ratingRank": 46,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJP2BVUWa2vJURq9Ok3krRCC4",
@@ -8241,7 +10452,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 57,
+        "ratingRank": 57,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJs-RTsGe2vJURaiA66d49iBo",
@@ -8279,7 +10501,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 7,
+        "ratingRank": 48,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJTUCUf3O3vJURIvNY6dKbvkc",
@@ -8316,7 +10549,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 24,
+        "ratingRank": 17,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJ9UsLUWa2vJURLD5vpDiHhYE",
@@ -8353,7 +10597,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 5,
+        "ratingRank": 38,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJ9yXia7W3vJURSRYZt2KvHHw",
@@ -8389,7 +10644,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 6,
+        "ratingRank": 33,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJ-a75U2a2vJUR-kcOgYe2UEo",
@@ -8428,7 +10694,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 27,
+        "ratingRank": 56,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJr6NfAAK3vJUR341xZt3YI8s",
@@ -8467,7 +10744,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 47,
+        "ratingRank": 39,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJtWEOzN63vJURhy4kXBZS3o4",
@@ -8503,7 +10791,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 41,
+        "ratingRank": 18,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJryGaLQC3vJURXNxghyCLBW8",
@@ -8542,7 +10841,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Solo Instagram/Facebook",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 50,
+        "ratingRank": 52,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJ56KMBkm3vJURWhiC-JhE_q0",
@@ -8578,7 +10888,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 12,
+        "ratingRank": 44,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJ7XIgE1bLvJURHTBr3sDQav8",
@@ -8618,7 +10939,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 55,
+        "ratingRank": 55,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJMQNnnrPLvJURh4G9OwJyWgI",
@@ -8657,7 +10989,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 56,
+        "ratingRank": 56,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJC_236wnLvJURsQEXlUnXhUY",
@@ -8697,7 +11040,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 57,
+        "ratingRank": 57,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJr0ggtry3vJURWYZJIbkZEFc",
@@ -8733,7 +11087,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Solo Instagram/Facebook",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 29,
+        "ratingRank": 19,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJyRoBhUO2vJUR_kalKVbHPug",
@@ -8772,7 +11137,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 1,
+        "ratingRank": 55,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJSUzTrqm3vJURhmNppfsIo08",
@@ -8811,7 +11187,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 8,
+        "ratingRank": 51,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJs-uti0K2vJURNy_N78y6UdM",
@@ -8849,7 +11236,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 51,
+        "ratingRank": 34,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJf5aTVN61vJURwmb-Bqcfzq4",
@@ -8885,7 +11283,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 35,
+        "ratingRank": 30,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJB01Xx3S2vJURm04IwA9gbng",
@@ -8922,7 +11331,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 15,
+        "ratingRank": 31,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJU2pB7GW2vJURZ_YAjgPlSss",
@@ -8960,7 +11380,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 22,
+        "ratingRank": 53,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJmX7TU2a2vJURS0teULYiQFI",
@@ -8999,7 +11430,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 58,
+        "ratingRank": 58,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJz3pOqbG3vJURNNLMy6u_3_g",
@@ -9038,7 +11480,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Solo Instagram/Facebook",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 59,
+        "ratingRank": 59,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJw6jgCgi3vJURuoflJob2qq0",
@@ -9076,7 +11529,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 53,
+        "ratingRank": 20,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJiYEkUla3vJURfZdi0Hju-e4",
@@ -9112,7 +11576,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Solo Instagram/Facebook",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 42,
+        "ratingRank": 21,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJ2cOGMV22vJUR0EGPkqYPsMk",
@@ -9151,7 +11626,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 26,
+        "ratingRank": 49,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJd_HsBzG3vJURlNZQGnn0zPk",
@@ -9189,7 +11675,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 54,
+        "ratingRank": 22,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJaQYDDe-3vJURxIRgt0Cix9Y",
@@ -9229,7 +11726,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 60,
+        "ratingRank": 60,
+        "withWebCount": 20,
+        "withWebPct": 33,
+        "leaderReviews": 1004,
+        "leaderHasWeb": true,
+        "medianReviews": 42,
+        "avgPhotos": 25
+      }
     },
     {
       "placeId": "ChIJ2YKNLiDLvJURHL-pMIwy0Rc",
@@ -9266,7 +11774,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 33,
+        "ratingRank": 30,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJUTv4LSjLvJURrxU6ffDUUfk",
@@ -9303,7 +11822,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 26,
+        "ratingRank": 43,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJgREzewDLvJURJVnVlDZJNF8",
@@ -9342,7 +11872,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 39,
+        "ratingRank": 8,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJr1-YoETKvJUR1jxlgZiHwtg",
@@ -9381,7 +11922,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 37,
+        "ratingRank": 53,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJGaXsD0XKvJUR0h1GkNLujcI",
@@ -9419,7 +11971,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 46,
+        "ratingRank": 9,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJg1LLzETKvJURRDe7BiRn0xg",
@@ -9456,7 +12019,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 9,
+        "ratingRank": 31,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJ_ef95kTKvJURkp9K7HiOVtA",
@@ -9495,7 +12069,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 40,
+        "ratingRank": 50,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJzXdJ56bLvJURSMYceL-1MBA",
@@ -9533,7 +12118,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Solo Instagram/Facebook",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 47,
+        "ratingRank": 32,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJrWWHpMnLvJUR-aoFaq2VeTI",
@@ -9571,7 +12167,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 41,
+        "ratingRank": 41,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJOcy1ykTKvJURL131L7dUt7c",
@@ -9609,7 +12216,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 49,
+        "ratingRank": 10,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJOf6XwFzKvJURF78wTMo2O8k",
@@ -9648,7 +12266,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 1,
+        "ratingRank": 49,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJSVUsEEPKvJURZB3BQGiE4Xc",
@@ -9685,7 +12314,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 18,
+        "ratingRank": 45,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJwVYr60_LvJURZOzNmL3MTUw",
@@ -9723,7 +12363,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 42,
+        "ratingRank": 11,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJr1-YoETKvJURR7olFqbUC74",
@@ -9760,7 +12411,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 35,
+        "ratingRank": 33,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJoWBBtAvLvJURgadgNYoufOI",
@@ -9798,7 +12460,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 48,
+        "ratingRank": 39,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJ95DnkUPKvJURJzwe2V6S63g",
@@ -9837,7 +12510,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 2,
+        "ratingRank": 47,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJz1-YoETKvJURkhZHRMpLgb8",
@@ -9875,7 +12559,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 31,
+        "ratingRank": 51,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJJwNvi2_KvJURlVT-Kxq-a8E",
@@ -9912,7 +12607,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 4,
+        "ratingRank": 40,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJL4EQ0l7LvJURzMdNIAOgvo0",
@@ -9949,7 +12655,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 12,
+        "ratingRank": 12,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJt2flz0DKvJURkiKeTxBGtD0",
@@ -9987,7 +12704,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 51,
+        "ratingRank": 13,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJt9peu0DKvJUR1w7XLeb3CBA",
@@ -10025,7 +12753,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 43,
+        "ratingRank": 14,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJCRh4skjKvJUR_Crp3MQ_gCY",
@@ -10064,7 +12803,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 3,
+        "ratingRank": 54,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJmU8WV67LvJURLu74tpcdYs0",
@@ -10103,7 +12853,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 58,
+        "ratingRank": 58,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJPVgvhC3LvJURD6UmYWXVYiw",
@@ -10141,7 +12902,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 53,
+        "ratingRank": 15,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJccEKjIbLvJURiWhNU6K1N_M",
@@ -10180,7 +12952,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 59,
+        "ratingRank": 59,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJq5XEakHKvJUR3eoEoeghN4E",
@@ -10218,7 +13001,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 54,
+        "ratingRank": 16,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJMWwj60PKvJURJ2akojX8H-o",
@@ -10257,7 +13051,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 55,
+        "ratingRank": 56,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJhXSNTkHKvJUR2ynwKdVe8lE",
@@ -10294,7 +13099,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 7,
+        "ratingRank": 42,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJ4fhGgkPKvJURUan3UNTdfEE",
@@ -10333,7 +13149,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 52,
+        "ratingRank": 52,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJC_itRt7LvJURvDkqKfHdO48",
@@ -10372,7 +13199,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 60,
+        "ratingRank": 60,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJke4r7mDLvJURyOXVLuBJPoo",
@@ -10411,7 +13249,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 56,
+        "ratingRank": 17,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJrS_rPgDLvJUR6jRLhxyLrzk",
@@ -10450,7 +13299,18 @@
         "recency": 0,
         "unclaimed": 5
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 57,
+        "ratingRank": 57,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJrYmilEbKvJUR2XOVj4P62Mk",
@@ -10487,7 +13347,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 11,
+        "ratingRank": 36,
+        "withWebCount": 28,
+        "withWebPct": 47,
+        "leaderReviews": 1003,
+        "leaderHasWeb": true,
+        "medianReviews": 22,
+        "avgPhotos": 21
+      }
     },
     {
       "placeId": "ChIJK0_ktgQTtZURk4usMlg-ZEQ",
@@ -10526,7 +13397,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 29,
+        "ratingRank": 25,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJhdSDvKXLvJURh7_gSPPzkHg",
@@ -10565,7 +13447,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Web propia"
+      "webLabel": "Web propia",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 24,
+        "ratingRank": 26,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJt9jHFNTLvJUR-Lify6p8HCk",
@@ -10604,7 +13497,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 58,
+        "ratingRank": 58,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJLz7CVUPKvJUR6WcsdZXT148",
@@ -10643,7 +13547,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 35,
+        "ratingRank": 35,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJN0NXP2rLvJUR_uI-2hIGbEc",
@@ -10682,7 +13597,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Sin presencia (ni web ni redes)"
+      "webLabel": "Sin presencia (ni web ni redes)",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 59,
+        "ratingRank": 59,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     },
     {
       "placeId": "ChIJ66kekLdtkpUR20WIAA49o3k",
@@ -10721,7 +13647,18 @@
         "recency": 0,
         "unclaimed": 0
       },
-      "webLabel": "Solo Instagram/Facebook"
+      "webLabel": "Solo Instagram/Facebook",
+      "competitive": {
+        "cohortSize": 60,
+        "reviewRank": 60,
+        "ratingRank": 60,
+        "withWebCount": 35,
+        "withWebPct": 58,
+        "leaderReviews": 258,
+        "leaderHasWeb": true,
+        "medianReviews": 1,
+        "avgPhotos": 7
+      }
     }
   ]
 }

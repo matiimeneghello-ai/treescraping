@@ -15,6 +15,40 @@ import { applyGates, scorePlace, webLabel } from "./score.js";
 import { auditSite } from "./audit.js";
 import { recommendServices } from "./services.js";
 
+// Contexto competitivo: para cada negocio, su posición dentro de la cohorte
+// (mismo rubro+zona del scan). Es el ángulo de venta más fuerte: "tu competidor
+// te está ganando". Usa la data que ya scrapeamos.
+export function computeCompetitive(places) {
+  const groups = new Map();
+  for (const p of places) {
+    const k = p.rubro || "(sin rubro)";
+    if (!groups.has(k)) groups.set(k, []);
+    groups.get(k).push(p);
+  }
+  for (const list of groups.values()) {
+    const size = list.length;
+    const byReviews = [...list].sort((a, b) => (b.reviews || 0) - (a.reviews || 0));
+    const byRating = [...list].sort((a, b) => (b.rating || 0) - (a.rating || 0));
+    const withWeb = list.filter((p) => p.webState === "own").length;
+    const leader = byReviews[0];
+    const avgPhotos = Math.round(list.reduce((s, p) => s + (p.photos || 0), 0) / size);
+    const medReviews = byReviews[Math.floor(size / 2)];
+    for (const p of list) {
+      p.competitive = {
+        cohortSize: size,
+        reviewRank: byReviews.indexOf(p) + 1,
+        ratingRank: byRating.indexOf(p) + 1,
+        withWebCount: withWeb,
+        withWebPct: Math.round((withWeb / size) * 100),
+        leaderReviews: leader ? (leader.reviews || 0) : 0,
+        leaderHasWeb: leader ? leader.webState === "own" : false,
+        medianReviews: medReviews ? (medReviews.reviews || 0) : 0,
+        avgPhotos,
+      };
+    }
+  }
+}
+
 // Corre tareas async con concurrencia acotada.
 async function mapLimit(items, limit, fn) {
   const out = new Array(items.length);
@@ -110,6 +144,8 @@ export async function runScan({ rubros = RUBROS, zonas = ZONAS, query = QUERY, o
     p.score = rec.opportunityScore;   // headline = oportunidad
     delete p._normName;
   }
+
+  computeCompetitive(places);
 
   const candidates = places
     .filter((p) => p.passed && p.score >= SCORE_THRESHOLD)

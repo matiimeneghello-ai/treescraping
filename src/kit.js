@@ -4,7 +4,7 @@
 // análisis con los hallazgos reales, y el link al deliverable correcto.
 // ============================================================
 
-import { fill } from "./fill.js";
+import { fill, competitiveLine } from "./fill.js";
 import { COPY, SERVICE_COPY, resolveRubro, brandName } from "./content.js";
 
 export function buildKit(p, dealUrl) {
@@ -24,8 +24,9 @@ export function buildKit(p, dealUrl) {
   // Análisis: los hallazgos concretos del motor de servicios. Fallback a las
   // frases de presencia para datos viejos sin p.services.
   let analysis;
+  const comp = competitiveLine(p, tokens.RUBRO);
   if (p.services && p.services.length) {
-    analysis = p.services.slice(0, 3).map((s) => s.reason);
+    analysis = [...(comp ? [comp] : []), ...p.services.slice(0, 3).map((s) => s.reason)];
   } else {
     const ps = COPY.painSentences;
     const list = [];

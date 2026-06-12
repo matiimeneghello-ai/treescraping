@@ -5,8 +5,8 @@
 // con hallazgos reales del audit. Para casos de SEO / redes / paid.
 // ============================================================
 
-import { esc, waLink } from "./fill.js";
-import { brandName } from "./content.js";
+import { esc, waLink, competitiveLine } from "./fill.js";
+import { brandName, resolveRubro } from "./content.js";
 
 function checkRow(ok, label) {
   const icon = ok
@@ -102,6 +102,12 @@ export function renderReport(p) {
   .psi-bar{flex:1;height:9px;background:#edf1ee;border-radius:6px;overflow:hidden}
   .psi-bar i{display:block;height:100%;border-radius:6px;transition:width .6s ease}
   .psi-row b{flex:0 0 34px;text-align:right;font-variant-numeric:tabular-nums}
+  .cgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px}
+  .cstat{background:var(--brand-wash);border:1px solid var(--border);border-radius:14px;padding:18px 20px}
+  .cv{font-size:2rem;font-weight:800;color:var(--brand-deep);line-height:1}
+  .cv small{font-size:.9rem;font-weight:600;color:var(--mute)}
+  .cl{color:var(--ink-soft);font-size:.92rem;margin-top:8px}
+  @media(max-width:520px){.cgrid{grid-template-columns:1fr}}
   @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style></head>
 <body>
@@ -124,6 +130,16 @@ export function renderReport(p) {
       <h2>Velocidad de tu sitio, según Google</h2>
       <p class="sec-sub">Medido en celular con PageSpeed, la herramienta oficial de Google.</p>
       <div id="psi" class="psi"><span class="psi-loading">Midiendo… (tarda unos segundos)</span></div>
+    </section>` : ""}
+
+    ${p.competitive && p.competitive.cohortSize >= 3 ? `<section>
+      <h2>Cómo estás vs tu competencia</h2>
+      <p class="sec-sub">Miramos los ${p.competitive.cohortSize} negocios de tu rubro en tu zona.</p>
+      <div class="cgrid">
+        <div class="cstat"><div class="cv">${p.competitive.reviewRank}º <small>de ${p.competitive.cohortSize}</small></div><div class="cl">por cantidad de reseñas</div></div>
+        <div class="cstat"><div class="cv">${p.competitive.withWebCount} <small>de ${p.competitive.cohortSize}</small></div><div class="cl">competidores ya tienen sitio web</div></div>
+      </div>
+      <p class="lead" style="margin-top:18px">${esc(competitiveLine(p, resolveRubro(p).label))}</p>
     </section>` : ""}
 
     <section>

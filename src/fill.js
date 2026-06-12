@@ -13,6 +13,22 @@ export function fill(tpl, tokens) {
   );
 }
 
+// Frase de venta con el contexto competitivo del negocio (su posición en la
+// cohorte rubro+zona del scan). El ángulo "tu competidor te está ganando".
+export function competitiveLine(p, rubroLabel) {
+  const c = p && p.competitive;
+  if (!c || c.cohortSize < 3) return "";
+  const r = rubroLabel || "negocios de tu rubro";
+  let s = `Entre los ${c.cohortSize} ${r} de tu zona, estás ${c.reviewRank}º por reseñas`;
+  const extra = [];
+  if (p.webState !== "own" && c.withWebCount > 0)
+    extra.push(`${c.withWebCount} de ${c.cohortSize} ya tienen sitio web propio`);
+  if (c.reviewRank > 1 && c.leaderReviews >= (Number(p.reviews) || 0) + 10)
+    extra.push(`el primero tiene ${c.leaderReviews} reseñas`);
+  if (extra.length) s += "; " + extra.join(" y ");
+  return s + ".";
+}
+
 // Normaliza para matchear rubros (lowercase sin acentos).
 export function norm(s) {
   return (s || "").toLowerCase().normalize("NFD").replace(/[^a-z0-9 ]/g, "").trim();
