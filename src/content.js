@@ -6,10 +6,12 @@
 
 import { norm } from "./fill.js";
 import { COPY_ES, SERVICE_COPY_ES, RUBROS_ES } from "./content-es.js";
+import { COPY_LATAM, SERVICE_COPY_LATAM, RUBROS_LATAM } from "./content-latam.js";
 
-// Región de contenido/idioma del candidato: "es" = España (peninsular), resto = "ar".
+// Región de contenido/idioma: "ar" rioplatense, "es" peninsular, "latam" neutro.
 export function regionOf(candidate) {
-  return candidate && candidate.region === "es" ? "es" : "ar";
+  const r = candidate && candidate.region;
+  return r === "es" || r === "latam" ? r : "ar";
 }
 export function copyOf(candidate) { return COPY[regionOf(candidate)] || COPY.ar; }
 export function serviceCopyOf(candidate) { return SERVICE_COPY[regionOf(candidate)] || SERVICE_COPY.ar; }
@@ -267,6 +269,6 @@ const RUBROS_AR = [
 ];
 
 // ---------- Exports por región (AR = rioplatense, ES = peninsular) ----------
-export const COPY = { ar: COPY_AR, es: COPY_ES };
-export const SERVICE_COPY = { ar: SERVICE_COPY_AR, es: SERVICE_COPY_ES };
-export const RUBROS_CONTENT = { ar: RUBROS_AR, es: RUBROS_ES };
+export const COPY = { ar: COPY_AR, es: COPY_ES, latam: COPY_LATAM };
+export const SERVICE_COPY = { ar: SERVICE_COPY_AR, es: SERVICE_COPY_ES, latam: SERVICE_COPY_LATAM };
+export const RUBROS_CONTENT = { ar: RUBROS_AR, es: RUBROS_ES, latam: RUBROS_LATAM };

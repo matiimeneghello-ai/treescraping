@@ -57,5 +57,5 @@ export function renderLanding(p) {
     SERVICES_HTML: servicesHtml(content), // ya viene escapado por campo
   };
   const html = fill(TEMPLATE, tokens);
-  return regionOf(p) === "es" ? localizeES(html) : html;
+  return regionOf(p) !== "ar" ? localizeES(html) : html;
 }

@@ -173,5 +173,5 @@ export function renderReport(p) {
   })();
   </script>` : ""}
 </body></html>`;
-  return regionOf(p) === "es" ? localizeES(html) : html;
+  return regionOf(p) !== "ar" ? localizeES(html) : html;
 }

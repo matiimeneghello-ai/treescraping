@@ -63,7 +63,7 @@ function startScan({ rubros, zonas, countryCode, language, region }) {
   const R = REGIONS[region];
   const cc = R ? R.countryCode : (countryCode !== undefined ? String(countryCode).toLowerCase().trim() : QUERY.countryCode);
   const lang = R ? R.language : (language ? String(language).toLowerCase().trim() : QUERY.language);
-  const contentRegion = R ? R.region : "ar";
+  const contentRegion = R ? R.content : "ar";
   const query = { ...QUERY, countryCode: cc, language: lang };
   runScan({
     rubros: rubros?.length ? rubros : RUBROS,

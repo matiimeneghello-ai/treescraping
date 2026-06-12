@@ -28,10 +28,20 @@ export const RUBROS_SUGERIDOS = [
 // Regiones soportadas. Elegir una en el dashboard setea país, idioma, contenido
 // (rioplatense vs peninsular) y zonas de ejemplo — búsqueda más exacta.
 export const REGIONS = {
-  ar: { label: "Argentina", flag: "🇦🇷", countryCode: "ar", language: "es", region: "ar",
+  ar: { label: "Argentina", flag: "🇦🇷", countryCode: "ar", language: "es", content: "ar",
     zonas: "Villa Urquiza, CABA, Argentina, Caballito, CABA, Argentina" },
-  es: { label: "España", flag: "🇪🇸", countryCode: "es", language: "es", region: "es",
+  es: { label: "España", flag: "🇪🇸", countryCode: "es", language: "es", content: "es",
     zonas: "Chamberí, Madrid, España, Gràcia, Barcelona, España" },
+  mx: { label: "México", flag: "🇲🇽", countryCode: "mx", language: "es", content: "latam",
+    zonas: "Roma Norte, CDMX, México, Providencia, Guadalajara, México" },
+  cl: { label: "Chile", flag: "🇨🇱", countryCode: "cl", language: "es", content: "latam",
+    zonas: "Providencia, Santiago, Chile, Las Condes, Santiago, Chile" },
+  cr: { label: "Costa Rica", flag: "🇨🇷", countryCode: "cr", language: "es", content: "latam",
+    zonas: "Escazú, San José, Costa Rica, Santa Ana, San José, Costa Rica" },
+  uy: { label: "Uruguay", flag: "🇺🇾", countryCode: "uy", language: "es", content: "ar",
+    zonas: "Pocitos, Montevideo, Uruguay, Cordón, Montevideo, Uruguay" },
+  pa: { label: "Panamá", flag: "🇵🇦", countryCode: "pa", language: "es", content: "latam",
+    zonas: "Costa del Este, Ciudad de Panamá, Panamá, Bella Vista, Ciudad de Panamá, Panamá" },
 };
 export const DEFAULT_REGION = "ar";
 
