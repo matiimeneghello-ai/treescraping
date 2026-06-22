@@ -7,10 +7,15 @@ import { GATES, WEIGHTS } from "./config.js";
 
 export function applyGates(p, chainCounts) {
   const reasons = [];
+  if ((chainCounts.get(p._normName) || 0) > GATES.maxChainBranches) reasons.push("cadena/franquicia");
+  // Instagram: no hay reseñas/rating; gate por seguidores (negocio real con audiencia).
+  if (p.source === "instagram") {
+    if ((Number(p.followers) || 0) < GATES.minFollowers) reasons.push(`<${GATES.minFollowers} seguidores`);
+    return { passed: reasons.length === 0, reasons };
+  }
   if (p.businessStatus && p.businessStatus !== "OPERATIONAL") reasons.push("no operativo");
   if (p.reviews < GATES.minReviews) reasons.push(`<${GATES.minReviews} reviews`);
   if (p.rating < GATES.minRating) reasons.push(`rating <${GATES.minRating}`);
-  if ((chainCounts.get(p._normName) || 0) > GATES.maxChainBranches) reasons.push("cadena/franquicia");
   return { passed: reasons.length === 0, reasons };
 }
 

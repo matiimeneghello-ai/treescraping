@@ -5,7 +5,7 @@
 // Docs: https://apify.com/compass/crawler-google-places/api
 // ============================================================
 
-const ACTOR = "compass~crawler-google-places";
+const MAPS_ACTOR = "compass~crawler-google-places";
 const BASE = "https://api.apify.com/v2";
 
 function token() {
@@ -21,13 +21,13 @@ function token() {
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-async function startRun(input) {
+async function startRun(actorId, input) {
   // Por defecto usamos la memoria del actor (probada y estable). Forzar RAM alta
   // (ej 4096) hace abortar el run en el plan free de Apify. Si querés acelerar y
   // tu plan lo permite, seteá APIFY_MEMORY (ej 2048/4096) como override explícito.
   const mem = Number(process.env.APIFY_MEMORY);
   const memParam = mem ? `&memory=${mem}` : "";
-  const res = await fetch(`${BASE}/acts/${ACTOR}/runs?token=${token()}${memParam}`, {
+  const res = await fetch(`${BASE}/acts/${actorId}/runs?token=${token()}${memParam}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(input),
@@ -67,6 +67,13 @@ async function getItems(datasetId) {
   return res.json();
 }
 
+// Corre cualquier actor de Apify (run async -> poll -> items).
+export async function runActor(actorId, input, { onTick } = {}) {
+  const run = await startRun(actorId, input);
+  const done = await pollRun(run.id, { onTick });
+  return getItems(done.defaultDatasetId);
+}
+
 // Busca lugares. queries = array de strings ("rubro en zona").
 // opts: { limit, language, countryCode, maxReviews, reviewsSort }
 export async function searchPlaces(queries, opts = {}, { onTick } = {}) {
@@ -85,8 +92,5 @@ export async function searchPlaces(queries, opts = {}, { onTick } = {}) {
     scrapeContacts: false,
     skipClosedPlaces: true,
   };
-  const run = await startRun(input);
-  const done = await pollRun(run.id, { onTick });
-  const items = await getItems(done.defaultDatasetId);
-  return items;
+  return runActor(MAPS_ACTOR, input, { onTick });
 }

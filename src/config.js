@@ -74,6 +74,7 @@ export const GATES = {
   minRating: 4.0,
   minReviews: 20,
   maxChainBranches: 3,   // mismo nombre normalizado > N sucursales => cadena
+  minFollowers: 100,     // gate para leads de Instagram (no tienen reseñas)
 };
 
 // Pesos del score (0–100). Los componentes marcados (enrich) sólo se

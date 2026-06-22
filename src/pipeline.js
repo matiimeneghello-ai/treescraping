@@ -10,6 +10,7 @@ import { fileURLToPath } from "node:url";
 
 import { RUBROS, ZONAS, QUERY, SCORE_THRESHOLD } from "./config.js";
 import { searchPlaces } from "./apify.js";
+import { searchInstagram, normalizeIgProfile } from "./instagram.js";
 import { normalizePlace, normName } from "./normalize.js";
 import { applyGates, scorePlace, webLabel } from "./score.js";
 import { auditSite } from "./audit.js";
@@ -94,29 +95,34 @@ function toCsv(rows) {
 }
 
 // onLog: (msg:string) => void  para reportar progreso a CLI o web.
-export async function runScan({ rubros = RUBROS, zonas = ZONAS, query = QUERY, region, onLog = () => {} } = {}) {
-  const queries = buildQueries(rubros, zonas);
-  onLog(`Queries: ${queries.length} (${rubros.length} rubros x ${zonas.length} zonas, limit ${query.limit})`);
-  onLog("Corriendo el actor de Apify (1–4 min)...");
+export async function runScan({ rubros = RUBROS, zonas = ZONAS, query = QUERY, region, source = "maps", onLog = () => {} } = {}) {
+  const isIg = source === "instagram";
+  // Región (idioma/contenido): la del selector, o inferida del país del scan.
+  const reg = region || (String(query.countryCode || "").toLowerCase() === "es" ? "es" : "ar");
+  // Para IG la query es un término limpio "rubro barrio" (sin comas internas).
+  const queries = isIg
+    ? rubros.flatMap((r) => zonas.map((z) => `${r} ${String(z).split(",")[0].trim()}`))
+    : buildQueries(rubros, zonas);
+  onLog(`Fuente: ${isIg ? "Instagram" : "Google Maps"} · ${queries.length} búsquedas`);
+  onLog(`Corriendo el actor de Apify (1–4 min)...`);
 
   let last = "";
-  const raw = await searchPlaces(queries, query, {
-    onTick: (st) => { if (st !== last) { last = st; onLog(`estado: ${st}`); } },
-  });
-  onLog(`${raw.length} lugares crudos recibidos.`);
+  const onTick = (st) => { if (st !== last) { last = st; onLog(`estado: ${st}`); } };
+  const raw = isIg
+    ? await searchInstagram(queries, { perQuery: Math.min(query.limit || 20, 30) }, { onTick })
+    : await searchPlaces(queries, query, { onTick });
+  onLog(`${raw.length} ${isIg ? "perfiles" : "lugares"} recibidos.`);
 
   // Normalizar + dedupe por placeId
   const now = Date.now();
   const byId = new Map();
   for (const r of raw) {
-    const p = normalizePlace(r, now);
+    const p = isIg ? normalizeIgProfile(r, reg) : normalizePlace(r, now);
     p._normName = normName(p.name);
     if (!p.placeId) p.placeId = `${p._normName}|${p.address || ""}`;
     if (!byId.has(p.placeId)) byId.set(p.placeId, p);
   }
   const places = [...byId.values()];
-  // Región (idioma/contenido): la del selector, o inferida del país del scan.
-  const reg = region || (String(query.countryCode || "").toLowerCase() === "es" ? "es" : "ar");
   for (const p of places) p.region = reg;
   onLog(`${places.length} únicos tras dedupe.`);
 
@@ -149,7 +155,7 @@ export async function runScan({ rubros = RUBROS, zonas = ZONAS, query = QUERY, r
     delete p._normName;
   }
 
-  computeCompetitive(places);
+  if (!isIg) computeCompetitive(places); // IG no tiene reseñas: el ranking no aplica
 
   const candidates = places
     .filter((p) => p.passed && p.score >= SCORE_THRESHOLD)

@@ -191,6 +191,8 @@
   .send-btn{margin-left:auto;font-family:inherit;font-size:10.5px;font-weight:700;letter-spacing:0;text-transform:none;
     border-radius:7px;padding:5px 11px;cursor:pointer;border:1px solid transparent;transition:.15s;display:inline-flex;align-items:center;gap:5px}
   .send-btn.wa{background:#1faa52;color:#fff} .send-btn.wa:hover{background:#178a43}
+  .send-btn.ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff}
+  .send-btn.ig:hover{filter:brightness(1.1)}
   .send-btn.gmail{background:rgba(255,255,255,.05);color:var(--text);border-color:var(--soft)}
   .send-btn.gmail:hover{border-color:var(--acid);color:var(--acid)}
   .send-btn.off{opacity:.4;pointer-events:none}
@@ -239,6 +241,7 @@
   <section class="scanbox">
     <div class="scan-head"><span class="led"></span> Nuevo scan</div>
     <div class="scan-row">
+      <div class="field sm2"><label>Fuente</label><select id="inSource"><option value="maps">Google Maps</option><option value="instagram">Instagram</option></select></div>
       <div class="field sm2"><label>Región</label><select id="inRegion"></select></div>
       <div class="field"><label>Rubros <span>(separá con coma)</span></label><input id="inRubros" placeholder="estudio contable, odontologo" /></div>
       <div class="field"><label>Zonas <span>(coma)</span></label><input id="inZonas" placeholder="zonas a apuntar" /></div>
@@ -271,7 +274,7 @@
         <div class="kit-label">Análisis · qué le falta</div>
         <ul id="kitAnalysis" class="kit-analysis"></ul>
       </div>
-      <div class="kit-sec">
+      <div class="kit-sec" id="secMail">
         <div class="kit-label">Mail <button class="copy-mini" data-copy="kitEmailFull">copiar</button>
           <a class="send-btn gmail" id="btnGmail" target="_blank" rel="noopener">Abrir en Gmail ↗</a></div>
         <div id="kitTo" class="kit-to"></div>
@@ -279,10 +282,11 @@
         <textarea id="kitEmail" class="kit-ta"></textarea>
       </div>
       <div class="kit-sec">
-        <div class="kit-label">WhatsApp <button class="copy-mini" data-copy="kitWa">copiar</button>
-          <a class="send-btn wa" id="btnWa" target="_blank" rel="noopener">Enviar por WhatsApp ↗</a></div>
+        <div class="kit-label"><span id="kitWaLabel">WhatsApp</span> <button class="copy-mini" data-copy="kitWa">copiar</button>
+          <a class="send-btn wa" id="btnWa" target="_blank" rel="noopener">Enviar por WhatsApp ↗</a>
+          <a class="send-btn ig" id="btnIg" target="_blank" rel="noopener" hidden>Abrir Instagram ↗</a></div>
         <textarea id="kitWa" class="kit-ta" style="min-height:96px"></textarea>
-        <div class="wa-note">Mandá el mail primero; usá WhatsApp como 2º toque. Máx. ~30 nuevos por día por número para no comerte un ban.</div>
+        <div class="wa-note" id="waNote">Mandá el mail primero; usá WhatsApp como 2º toque. Máx. ~30 nuevos por día por número para no comerte un ban.</div>
       </div>
     </div>
   </div>
@@ -390,7 +394,7 @@ function render(){
           ${p.category?`<span>${esc(p.category)}</span>`:""}
           ${p.phone?`<span class="dot"></span><span>${esc(p.phone)}</span>`:""}
           ${p.email?`<span class="dot"></span><span style="color:var(--info)">${esc(p.email)}</span>`:""}
-          ${p.mapsUrl?`<span class="dot"></span><a class="mono" style="font-size:11px" href="${p.mapsUrl}" target="_blank">Maps ↗</a>`:""}
+          ${p.mapsUrl?`<span class="dot"></span><a class="mono" style="font-size:11px" href="${p.mapsUrl}" target="_blank">${p.source==='instagram'?'Instagram':'Maps'} ↗</a>`:""}
         </div>
         ${p.address?`<div class="c-sub">${esc(p.address)}</div>`:""}
         <div class="row-badges">
@@ -402,10 +406,13 @@ function render(){
         </div>
         ${p.primaryService?`<div class="svc-reason">${esc(p.primaryService.reason)}</div>`:""}
         <div class="health">
-          <span><b class="star">★ ${p.rating}</b> <span style="color:var(--faint)">(${p.reviews})</span></span>
+          ${p.source==='instagram'
+            ? `<span><b class="star">${Number(p.followers||0).toLocaleString('es')}</b> seguidores</span>${p.igUsername?`<span class="dot"></span><span>@${esc(p.igUsername)}</span>`:""}${p.photos?`<span class="dot"></span><span>${p.photos} posts</span>`:""}`
+            : `<span><b class="star">★ ${p.rating}</b> <span style="color:var(--faint)">(${p.reviews})</span></span>
           <span class="dot"></span><span>${p.photos} fotos</span>
           ${p.lastReviewDays!=null?`<span class="dot"></span><span>últ. reseña ${p.lastReviewDays}d</span>`:""}
-          ${p.competitive&&p.competitive.cohortSize>=3?`<span class="dot"></span><span class="compet">${p.competitive.reviewRank}º de ${p.competitive.cohortSize} en reseñas · ${p.competitive.withWebCount}/${p.competitive.cohortSize} con web</span>`:""}
+          ${p.competitive&&p.competitive.cohortSize>=3?`<span class="dot"></span><span class="compet">${p.competitive.reviewRank}º de ${p.competitive.cohortSize} en reseñas · ${p.competitive.withWebCount}/${p.competitive.cohortSize} con web</span>`:""}`
+          }
         </div>
         <div class="chips">${whyChips(p.breakdown||{})}</div>
       </div>
@@ -452,6 +459,14 @@ async function openKit(id){
   document.getElementById("kitTo").innerHTML = EMAIL_TO
     ? `Para: <b>${esc(EMAIL_TO)}</b> <span style="color:var(--faint)">(se carga solo en Gmail)</span>`
     : `<span style="color:var(--faint)">Sin email en el sitio — cargá el destinatario en Gmail.</span>`;
+  // Instagram: sin mail/teléfono → contacto por DM. Mostrar "Abrir Instagram".
+  const isIg = k.source === "instagram";
+  document.getElementById("secMail").hidden = isIg;
+  document.getElementById("btnWa").hidden = isIg;
+  document.getElementById("kitWaLabel").textContent = isIg ? "Mensaje para el DM de Instagram" : "WhatsApp";
+  const ig = document.getElementById("btnIg");
+  ig.hidden = !isIg;
+  if (isIg) { ig.href = k.igUrl || "#"; document.getElementById("waNote").textContent = "Abrí el perfil, mandá el DM con este mensaje y el link a la demo. Máx. ~20-30 DMs nuevos por día para no comerte un bloqueo."; }
   updateSendLinks();
   document.getElementById("dlgLoading").hidden = true;
   document.getElementById("dlgKit").hidden = false;
@@ -543,6 +558,7 @@ btn.onclick = async ()=>{
     rubros: document.getElementById("inRubros").value,
     zonas: document.getElementById("inZonas").value,
     region: document.getElementById("inRegion").value,
+    source: document.getElementById("inSource").value,
     countryCode: document.getElementById("inCountry").value,
     language: document.getElementById("inLang").value,
   });

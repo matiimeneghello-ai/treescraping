@@ -56,7 +56,7 @@ import { copyFileSync, mkdirSync } from "node:fs";
 // Estado del job en memoria (un scan a la vez).
 let job = { status: "idle", startedAt: null, finishedAt: null, log: [], error: null, counts: null };
 
-function startScan({ rubros, zonas, countryCode, language, region }) {
+function startScan({ rubros, zonas, countryCode, language, region, source }) {
   if (job.status === "running") return false;
   job = { status: "running", startedAt: new Date().toISOString(), finishedAt: null, log: [], error: null, counts: null };
   const onLog = (m) => { job.log.push(`${new Date().toISOString().slice(11, 19)} ${m}`); if (job.log.length > 200) job.log.shift(); };
@@ -72,6 +72,7 @@ function startScan({ rubros, zonas, countryCode, language, region }) {
     zonas: zonas?.length ? zonas : ZONAS,
     query,
     region: contentRegion,
+    source: source === "instagram" ? "instagram" : "maps",
     onLog,
   })
     .then((payload) => { job.status = "done"; job.finishedAt = new Date().toISOString(); job.counts = payload.counts; })
@@ -183,6 +184,7 @@ const server = createServer(async (req, res) => {
       countryCode: body.countryCode,
       language: body.language,
       region: body.region,
+      source: body.source,
     });
     if (!started) return json(res, 409, { error: "ya hay un scan corriendo" });
     return json(res, 202, { status: "running" });
@@ -282,7 +284,7 @@ const server = createServer(async (req, res) => {
     const svc = (c.primaryService && c.primaryService.key) || "web";
     const dealUrl = (svc === "web" || svc === "redesign") ? demoUrl : reportUrl;
     try {
-      return json(res, 200, { demoUrl, reportUrl, dealUrl, dealType: (svc === "web" || svc === "redesign") ? "demo" : "report", emailTo: c.email || "", ...buildKit(c, dealUrl) });
+      return json(res, 200, { demoUrl, reportUrl, dealUrl, dealType: (svc === "web" || svc === "redesign") ? "demo" : "report", emailTo: c.email || "", source: c.source || "maps", igUrl: c.igUrl || "", ...buildKit(c, dealUrl) });
     } catch (e) {
       return json(res, 500, { error: e.message });
     }
