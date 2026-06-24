@@ -177,10 +177,12 @@ const server = createServer(async (req, res) => {
     }
     let body = {};
     try { body = JSON.parse((await readBody(req)) || "{}"); } catch {}
-    const clean = (s) => String(s || "").split(/\n|,/).map((x) => x.trim()).filter(Boolean);
+    // Rubros: separados por coma. Zonas: por ';' (las direcciones llevan comas internas).
+    const cleanR = (s) => String(s || "").split(/\n|[,;]/).map((x) => x.trim()).filter(Boolean);
+    const cleanZ = (s) => String(s || "").split(/\n|;/).map((x) => x.trim()).filter(Boolean);
     const started = startScan({
-      rubros: clean(body.rubros),
-      zonas: clean(body.zonas),
+      rubros: cleanR(body.rubros),
+      zonas: cleanZ(body.zonas),
       countryCode: body.countryCode,
       language: body.language,
       region: body.region,
